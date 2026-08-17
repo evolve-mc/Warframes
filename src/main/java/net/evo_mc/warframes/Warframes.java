@@ -1,6 +1,10 @@
 package net.evo_mc.warframes;
 
 import com.mojang.logging.LogUtils;
+import net.evo_mc.warframes.block.ModBlocks;
+import net.evo_mc.warframes.item.ModCreativeModeTabs;
+import net.evo_mc.warframes.item.ModItems;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -18,13 +22,16 @@ import org.slf4j.Logger;
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Warframes.MOD_ID)
 public class Warframes {
-    // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "warframes";
-    // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
-    // test
+
     public Warframes(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
+
+        ModCreativeModeTabs.register(modEventBus);
+
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -39,7 +46,9 @@ public class Warframes {
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.WRENCH);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
