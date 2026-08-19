@@ -15,7 +15,6 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
-import net.minecraft.world.level.block.state.properties.SlabType;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
@@ -25,8 +24,6 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
-
-import static net.evo_mc.warframes.block.WarframeSlabType.CENTER;
 
 public class WarframeSlabBlock extends Block implements SimpleWaterloggedBlock {
     public static final EnumProperty<WarframeSlabType> TYPE = EnumProperty.create("type", WarframeSlabType.class);
@@ -66,20 +63,27 @@ public class WarframeSlabBlock extends Block implements SimpleWaterloggedBlock {
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
         BlockPos blockpos = pContext.getClickedPos();
         BlockState blockstate = pContext.getLevel().getBlockState(blockpos);
-        if (blockstate.is(this)) {
+        if (blockstate.is(this) && blockstate.getValue(TYPE)!= WarframeSlabType.CENTER) {
             return blockstate.setValue(TYPE, WarframeSlabType.DOUBLE).setValue(WATERLOGGED, Boolean.valueOf(false));
-        } else {
-            FluidState fluidstate = pContext.getLevel().getFluidState(blockpos);
-            BlockState blockstate1 = this.defaultBlockState().setValue(TYPE, WarframeSlabType.BOTTOM).setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
-            Direction direction = pContext.getClickedFace();
-            return direction != Direction.DOWN && (direction == Direction.UP || !(pContext.getClickLocation().y - (double)blockpos.getY() > 0.5D)) ? blockstate1 : blockstate1.setValue(TYPE, WarframeSlabType.TOP);
+       } else {
+            if ((pContext.getClickLocation().y - (double) blockpos.getY() < 0.3D)) {
+                FluidState fluidstate = pContext.getLevel().getFluidState(blockpos);
+                BlockState blockstate1 = this.defaultBlockState().setValue(TYPE, WarframeSlabType.CENTER).setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
+                Direction direction = pContext.getClickedFace();
+                return direction != Direction.UP && (direction == Direction.DOWN || !(pContext.getClickLocation().y - (double) blockpos.getY() < 0.3D)) ? blockstate1 : blockstate1.setValue(TYPE, WarframeSlabType.BOTTOM);
+            } else {
+                FluidState fluidstate = pContext.getLevel().getFluidState(blockpos);
+                BlockState blockstate1 = this.defaultBlockState().setValue(TYPE, WarframeSlabType.CENTER).setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
+                Direction direction = pContext.getClickedFace();
+                return direction != Direction.DOWN && (direction == Direction.UP || !(pContext.getClickLocation().y - (double) blockpos.getY() > 0.7D)) ? blockstate1 : blockstate1.setValue(TYPE, WarframeSlabType.TOP);
+            }
         }
     }
 
     public boolean canBeReplaced(BlockState pState, BlockPlaceContext pUseContext) {
         ItemStack itemstack = pUseContext.getItemInHand();
         WarframeSlabType slabtype = pState.getValue(TYPE);
-        if (slabtype != WarframeSlabType.DOUBLE && itemstack.is(this.asItem())) {
+        if (slabtype != WarframeSlabType.DOUBLE && itemstack.is(this.asItem()) || slabtype != WarframeSlabType.CENTER && itemstack.is(this.asItem())) {
             if (pUseContext.replacingClickedOnBlock()) {
                 boolean flag = pUseContext.getClickLocation().y - (double)pUseContext.getClickedPos().getY() > 0.5D;
                 Direction direction = pUseContext.getClickedFace();

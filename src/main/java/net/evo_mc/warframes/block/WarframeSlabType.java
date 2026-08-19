@@ -10,7 +10,7 @@ public enum WarframeSlabType implements StringRepresentable {
 
     private final String name;
 
-    private WarframeSlabType(String pName) {
+    WarframeSlabType(String pName) {
         this.name = pName;
     }
 

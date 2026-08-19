@@ -60,16 +60,7 @@ public class WarframeLayerBlock extends Block {
     }
 
     public boolean canBeReplaced(BlockState pState, BlockPlaceContext pUseContext) {
-        int i = pState.getValue(LAYERS);
-        if (pUseContext.getItemInHand().is(this.asItem()) && i < 8) {
-            if (pUseContext.replacingClickedOnBlock()) {
-                return pUseContext.getClickedFace() == Direction.UP;
-            } else {
-                return true;
-            }
-        } else {
-            return i == 1;
-        }
+        return !pUseContext.isSecondaryUseActive() && pUseContext.getItemInHand().getItem() == this.asItem() && pState.getValue(LAYERS) < 8 ? true : super.canBeReplaced(pState, pUseContext);
     }
 
     @Nullable

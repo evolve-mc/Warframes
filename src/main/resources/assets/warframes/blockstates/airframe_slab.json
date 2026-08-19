@@ -8,6 +8,9 @@
     },
     "type=top": {
       "model": "warframes:block/airframe_slab_top"
+    },
+    "type=center": {
+      "model": "warframes:block/airframe_slab_center"
     }
   }
 }
