@@ -23,7 +23,7 @@ public class ModCreativeModeTabs {
 
 
                     pOutput.accept(ModBlocks.AIRFRAME_BLOCK.get());
-                    pOutput.accept(ModBlocks.AIRFRAME_SLAB.get());
+                    pOutput.accept(ModBlocks.AIRFRAME_SLAB_WING.get());
                     pOutput.accept(ModBlocks.AIRFRAME_LAYER.get());
                 })
                 .build());

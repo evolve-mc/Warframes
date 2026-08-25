@@ -22,8 +22,8 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> AIRFRAME_BLOCK = registerBlock("airframe_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.ANVIL).noOcclusion()));
-    public static final RegistryObject<Block> AIRFRAME_SLAB = registerBlock("airframe_slab",
-            () -> new WarframeSlabBlock(BlockBehaviour.Properties.copy(Blocks.ANVIL).noOcclusion()));
+    public static final RegistryObject<Block> AIRFRAME_SLAB_WING = registerBlock("airframe_slab_wing",
+            () -> new WarframeSlabWingBlock(BlockBehaviour.Properties.copy(Blocks.ANVIL).noOcclusion()));
     public static final RegistryObject<Block> AIRFRAME_LAYER = registerBlock("airframe_layer",
             () -> new WarframeLayerBlock(BlockBehaviour.Properties.copy(Blocks.ANVIL).noOcclusion()));
 

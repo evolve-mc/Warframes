@@ -2,7 +2,7 @@ package net.evo_mc.warframes.block;
 
 import net.minecraft.util.StringRepresentable;
 
-public enum WarframeSlabType implements StringRepresentable {
+public enum WarframeSlabWingType implements StringRepresentable {
     TOP("top"),
     BOTTOM("bottom"),
     CENTER("center"),
@@ -10,7 +10,7 @@ public enum WarframeSlabType implements StringRepresentable {
 
     private final String name;
 
-    WarframeSlabType(String pName) {
+    WarframeSlabWingType(String pName) {
         this.name = pName;
     }
 

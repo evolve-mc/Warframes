@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "warframes:airframe_slab"
+          "name": "warframes:airframe_slab_wing"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "warframes:blocks/airframe_slab"
+  "random_sequence": "warframes:blocks/airframe_slab_wing"
 }

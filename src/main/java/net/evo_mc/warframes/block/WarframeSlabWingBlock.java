@@ -25,20 +25,20 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
 
-public class WarframeSlabBlock extends Block implements SimpleWaterloggedBlock {
-    public static final EnumProperty<WarframeSlabType> TYPE = EnumProperty.create("type", WarframeSlabType.class);
+public class WarframeSlabWingBlock extends Block implements SimpleWaterloggedBlock {
+    public static final EnumProperty<WarframeSlabWingType> TYPE = EnumProperty.create("type", WarframeSlabWingType.class);
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     protected static final VoxelShape BOTTOM_AABB = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D);
     protected static final VoxelShape TOP_AABB = Block.box(0.0D, 8.0D, 0.0D, 16.0D, 16.0D, 16.0D);
     protected static final VoxelShape CENTER_AABB = Block.box(0.0D, 4.0D, 0.0D, 16.0D, 12.0D, 16.0D);
 
-    public WarframeSlabBlock(BlockBehaviour.Properties pProperties) {
+    public WarframeSlabWingBlock(BlockBehaviour.Properties pProperties) {
         super(pProperties);
-        this.registerDefaultState(this.defaultBlockState().setValue(TYPE, WarframeSlabType.BOTTOM).setValue(WATERLOGGED, Boolean.valueOf(false)));
+        this.registerDefaultState(this.defaultBlockState().setValue(TYPE, WarframeSlabWingType.BOTTOM).setValue(WATERLOGGED, Boolean.valueOf(false)));
     }
 
     public boolean useShapeForLightOcclusion(BlockState pState) {
-        return pState.getValue(TYPE) != WarframeSlabType.DOUBLE;
+        return pState.getValue(TYPE) != WarframeSlabWingType.DOUBLE;
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
@@ -46,7 +46,7 @@ public class WarframeSlabBlock extends Block implements SimpleWaterloggedBlock {
     }
 
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        WarframeSlabType slabtype = pState.getValue(TYPE);
+        WarframeSlabWingType slabtype = pState.getValue(TYPE);
         switch (slabtype) {
             case DOUBLE:
                 return Shapes.block();
@@ -63,31 +63,31 @@ public class WarframeSlabBlock extends Block implements SimpleWaterloggedBlock {
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
         BlockPos blockpos = pContext.getClickedPos();
         BlockState blockstate = pContext.getLevel().getBlockState(blockpos);
-        if (blockstate.is(this) && blockstate.getValue(TYPE)!= WarframeSlabType.CENTER) {
-            return blockstate.setValue(TYPE, WarframeSlabType.DOUBLE).setValue(WATERLOGGED, Boolean.valueOf(false));
+        if (blockstate.is(this) && blockstate.getValue(TYPE)!= WarframeSlabWingType.CENTER) {
+            return blockstate.setValue(TYPE, WarframeSlabWingType.DOUBLE).setValue(WATERLOGGED, Boolean.valueOf(false));
        } else {
             if ((pContext.getClickLocation().y - (double) blockpos.getY() < 0.3D)) {
                 FluidState fluidstate = pContext.getLevel().getFluidState(blockpos);
-                BlockState blockstate1 = this.defaultBlockState().setValue(TYPE, WarframeSlabType.CENTER).setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
+                BlockState blockstate1 = this.defaultBlockState().setValue(TYPE, WarframeSlabWingType.CENTER).setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
                 Direction direction = pContext.getClickedFace();
-                return direction != Direction.UP && (direction == Direction.DOWN || !(pContext.getClickLocation().y - (double) blockpos.getY() < 0.3D)) ? blockstate1 : blockstate1.setValue(TYPE, WarframeSlabType.BOTTOM);
+                return direction != Direction.UP && (direction == Direction.DOWN || !(pContext.getClickLocation().y - (double) blockpos.getY() < 0.3D)) ? blockstate1 : blockstate1.setValue(TYPE, WarframeSlabWingType.BOTTOM);
             } else {
                 FluidState fluidstate = pContext.getLevel().getFluidState(blockpos);
-                BlockState blockstate1 = this.defaultBlockState().setValue(TYPE, WarframeSlabType.CENTER).setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
+                BlockState blockstate1 = this.defaultBlockState().setValue(TYPE, WarframeSlabWingType.CENTER).setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
                 Direction direction = pContext.getClickedFace();
-                return direction != Direction.DOWN && (direction == Direction.UP || !(pContext.getClickLocation().y - (double) blockpos.getY() > 0.7D)) ? blockstate1 : blockstate1.setValue(TYPE, WarframeSlabType.TOP);
+                return direction != Direction.DOWN && (direction == Direction.UP || !(pContext.getClickLocation().y - (double) blockpos.getY() > 0.7D)) ? blockstate1 : blockstate1.setValue(TYPE, WarframeSlabWingType.TOP);
             }
         }
     }
 
     public boolean canBeReplaced(BlockState pState, BlockPlaceContext pUseContext) {
         ItemStack itemstack = pUseContext.getItemInHand();
-        WarframeSlabType slabtype = pState.getValue(TYPE);
-        if (slabtype != WarframeSlabType.DOUBLE && itemstack.is(this.asItem()) || slabtype != WarframeSlabType.CENTER && itemstack.is(this.asItem())) {
+        WarframeSlabWingType slabtype = pState.getValue(TYPE);
+        if (slabtype != WarframeSlabWingType.DOUBLE && slabtype != WarframeSlabWingType.CENTER && itemstack.is(this.asItem())) {
             if (pUseContext.replacingClickedOnBlock()) {
                 boolean flag = pUseContext.getClickLocation().y - (double)pUseContext.getClickedPos().getY() > 0.5D;
                 Direction direction = pUseContext.getClickedFace();
-                if (slabtype == WarframeSlabType.BOTTOM) {
+                if (slabtype == WarframeSlabWingType.BOTTOM) {
                     return direction == Direction.UP || flag && direction.getAxis().isHorizontal();
                 } else {
                     return direction == Direction.DOWN || !flag && direction.getAxis().isHorizontal();
@@ -105,11 +105,11 @@ public class WarframeSlabBlock extends Block implements SimpleWaterloggedBlock {
     }
 
     public boolean placeLiquid(LevelAccessor pLevel, BlockPos pPos, BlockState pState, FluidState pFluidState) {
-        return pState.getValue(TYPE) != WarframeSlabType.DOUBLE ? SimpleWaterloggedBlock.super.placeLiquid(pLevel, pPos, pState, pFluidState) : false;
+        return pState.getValue(TYPE) != WarframeSlabWingType.DOUBLE ? SimpleWaterloggedBlock.super.placeLiquid(pLevel, pPos, pState, pFluidState) : false;
     }
 
     public boolean canPlaceLiquid(BlockGetter pLevel, BlockPos pPos, BlockState pState, Fluid pFluid) {
-        return pState.getValue(TYPE) != WarframeSlabType.DOUBLE ? SimpleWaterloggedBlock.super.canPlaceLiquid(pLevel, pPos, pState, pFluid) : false;
+        return pState.getValue(TYPE) != WarframeSlabWingType.DOUBLE ? SimpleWaterloggedBlock.super.canPlaceLiquid(pLevel, pPos, pState, pFluid) : false;
     }
 
     /**
