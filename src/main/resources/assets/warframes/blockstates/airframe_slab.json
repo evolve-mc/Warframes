@@ -1,0 +1,32 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "warframes:block/airframe_slab"
+    },
+    "type=top": {
+      "model": "warframes:block/airframe_slab_top"
+    },
+    "type=double": {
+      "model": "warframes:block/airframe_block"
+    },
+    "type=north": {
+      "model": "warframes:block/airframe_slab",
+      "x": 90
+    },
+    "type=east": {
+      "model": "warframes:block/airframe_slab",
+      "x": 90,
+      "y": 90
+    },
+    "type=south": {
+      "model": "warframes:block/airframe_slab",
+      "x": 90,
+      "y": 180
+    },
+    "type=west": {
+      "model": "warframes:block/airframe_slab",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

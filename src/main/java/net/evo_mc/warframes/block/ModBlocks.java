@@ -6,6 +6,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -21,11 +22,13 @@ public class ModBlocks {
 
 
     public static final RegistryObject<Block> AIRFRAME_BLOCK = registerBlock("airframe_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.ANVIL).noOcclusion()));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BASALT).sound(SoundType.NETHERITE_BLOCK).noOcclusion()));
+    public static final RegistryObject<Block> AIRFRAME_SLAB = registerBlock("airframe_slab",
+            () -> new WarframeSlabBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).sound(SoundType.NETHERITE_BLOCK).noOcclusion()));
     public static final RegistryObject<Block> AIRFRAME_SLAB_WING = registerBlock("airframe_slab_wing",
-            () -> new WarframeSlabWingBlock(BlockBehaviour.Properties.copy(Blocks.ANVIL).noOcclusion()));
+            () -> new WarframeSlabWingBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).sound(SoundType.NETHERITE_BLOCK).noOcclusion()));
     public static final RegistryObject<Block> AIRFRAME_LAYER = registerBlock("airframe_layer",
-            () -> new WarframeLayerBlock(BlockBehaviour.Properties.copy(Blocks.ANVIL).noOcclusion()));
+            () -> new WarframeLayerBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).sound(SoundType.NETHERITE_BLOCK).noOcclusion()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
