@@ -1,0 +1,48 @@
+{
+  "variants": {
+    "half=bottom,corner=northeast": {
+      "model": "warframes:block/airframe_quarter_slab",
+      "y": 0,
+      "uvlock": true
+    },
+    "half=top,corner=northeast": {
+      "model": "warframes:block/airframe_quarter_slab",
+      "x": 180,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=bottom,corner=northwest": {
+      "model": "warframes:block/airframe_quarter_slab",
+      "y": 270,
+      "uvlock": true
+    },
+    "half=top,corner=northwest": {
+      "model": "warframes:block/airframe_quarter_slab",
+      "x": 180,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=bottom,corner=southeast": {
+      "model": "warframes:block/airframe_quarter_slab",
+      "y": 90,
+      "uvlock": true
+    },
+    "half=top,corner=southeast": {
+      "model": "warframes:block/airframe_quarter_slab",
+      "x": 180,
+      "y": 0,
+      "uvlock": true
+    },
+    "half=bottom,corner=southwest": {
+      "model": "warframes:block/airframe_quarter_slab",
+      "y": 180,
+      "uvlock": true
+    },
+    "half=top,corner=southwest": {
+      "model": "warframes:block/airframe_quarter_slab",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    }
+  }
+}

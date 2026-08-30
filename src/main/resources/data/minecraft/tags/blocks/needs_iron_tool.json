@@ -4,6 +4,8 @@
     "warframes:airframe_slab",
     "warframes:airframe_slab_wing",
     "warframes:airframe_layer",
-    "warframes:airframe_stairs"
+    "warframes:airframe_stairs",
+    "warframes:airframe_half_slab",
+    "warframes:airframe_quarter_slab"
   ]
 }

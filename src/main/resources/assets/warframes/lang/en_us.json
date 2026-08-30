@@ -5,7 +5,9 @@
   "block.warframes.airframe_slab_wing": "Airframe Slab Wing",
   "block.warframes.airframe_slab": "Airframe Slab",
   "block.warframes.airframe_layer": "Airframe Layer",
-  "block.warframes.airframe_stair": "Airframe Stair",
+  "block.warframes.airframe_stairs": "Airframe Stair",
+  "block.warframes.airframe_half_slab": "Airframe Half Slab",
+  "block.warframes.airframe_quarter_slab": "Airframe Quarter Slab",
 
   "creativetab.warframes_tab": "Warframes"
 }

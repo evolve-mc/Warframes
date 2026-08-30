@@ -25,8 +25,6 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.BASALT).sound(SoundType.NETHERITE_BLOCK).noOcclusion()));
     public static final RegistryObject<Block> AIRFRAME_SLAB = registerBlock("airframe_slab",
             () -> new WarframeSlabBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).sound(SoundType.NETHERITE_BLOCK).noOcclusion()));
-    public static final RegistryObject<Block> AIRFRAME_HALF_SLAB = registerBlock("airframe_half_slab",
-            () -> new WarframeSlabBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).sound(SoundType.NETHERITE_BLOCK).noOcclusion()));
     public static final RegistryObject<Block> AIRFRAME_SLAB_WING = registerBlock("airframe_slab_wing",
             () -> new WarframeSlabWingBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).sound(SoundType.NETHERITE_BLOCK).noOcclusion()));
     public static final RegistryObject<Block> AIRFRAME_LAYER = registerBlock("airframe_layer",
@@ -34,6 +32,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> AIRFRAME_STAIRS = registerBlock("airframe_stairs",
             () -> new WarframeStairsBlock(() -> AIRFRAME_BLOCK.get().defaultBlockState(),
                     BlockBehaviour.Properties.copy(Blocks.BASALT).sound(SoundType.NETHERITE_BLOCK).noOcclusion()));
+    public static final RegistryObject<Block> AIRFRAME_HALF_SLAB = registerBlock("airframe_half_slab",
+            () -> new WarframeHalfSlabBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).sound(SoundType.NETHERITE_BLOCK).noOcclusion()));
+    public static final RegistryObject<Block> AIRFRAME_QUARTER_SLAB = registerBlock("airframe_quarter_slab",
+            () -> new WarframeQuarterSlabBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).sound(SoundType.NETHERITE_BLOCK).noOcclusion()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

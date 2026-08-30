@@ -23,7 +23,6 @@ import java.util.function.Supplier;
 public class WarframeStairsBlock extends StairBlock {
     public static final EnumProperty<WarframeCornerVerticalType> VERTICAL =
             EnumProperty.create("vertical", WarframeCornerVerticalType.class);
-
     protected static final VoxelShape VERTICAL_NORTHEAST = Shapes.or(
             Block.box(8.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
             Block.box(0.0D, 0.0D, 0.0D, 8.0D, 16.0D, 8.0D)
@@ -108,7 +107,6 @@ public class WarframeStairsBlock extends StairBlock {
             }
         }
 
-        // Vanilla handles facing/half/shape computation entirely
         BlockState stateForPlacement = super.getStateForPlacement(pContext);
         return stateForPlacement == null ? null : stateForPlacement.setValue(VERTICAL, WarframeCornerVerticalType.NONE);
     }
