@@ -22,8 +22,8 @@ import javax.annotation.Nullable;
 
 public class WarframeQuarterSlabBlock extends Block implements SimpleWaterloggedBlock {
     public static final EnumProperty<Half> HALF = BlockStateProperties.HALF;
-    public static final EnumProperty<WarframeCornerVerticalType> CORNER =
-            EnumProperty.create("corner", WarframeCornerVerticalType.class);
+    public static final EnumProperty<WarframeCornerType> CORNER =
+            EnumProperty.create("corner", WarframeCornerType.class);
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
 
@@ -40,7 +40,7 @@ public class WarframeQuarterSlabBlock extends Block implements SimpleWaterlogged
         super(pProperties);
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(HALF, Half.BOTTOM)
-                .setValue(CORNER, WarframeCornerVerticalType.NORTHEAST)
+                .setValue(CORNER, WarframeCornerType.NORTHEAST)
                 .setValue(WATERLOGGED, Boolean.valueOf(false)));
     }
 
@@ -73,7 +73,7 @@ public class WarframeQuarterSlabBlock extends Block implements SimpleWaterlogged
         FluidState fluidstate = pContext.getLevel().getFluidState(blockpos);
         boolean waterlogged = fluidstate.getType() == Fluids.WATER;
 
-        WarframeCornerVerticalType quadrant;
+        WarframeCornerType quadrant;
         Half half;
 
         if (clickedFace == Direction.UP || clickedFace == Direction.DOWN) {
@@ -81,28 +81,28 @@ public class WarframeQuarterSlabBlock extends Block implements SimpleWaterlogged
             boolean east = relX > 0.5D;
             boolean south = relZ > 0.5D;
             quadrant = east
-                    ? (south ? WarframeCornerVerticalType.SOUTHEAST : WarframeCornerVerticalType.NORTHEAST)
-                    : (south ? WarframeCornerVerticalType.SOUTHWEST : WarframeCornerVerticalType.NORTHWEST);
+                    ? (south ? WarframeCornerType.SOUTHEAST : WarframeCornerType.NORTHEAST)
+                    : (south ? WarframeCornerType.SOUTHWEST : WarframeCornerType.NORTHWEST);
         } else {
             half = relY > 0.5D ? Half.TOP : Half.BOTTOM;
             boolean right;
             switch (clickedFace) {
                 case SOUTH:
                     right = relX > 0.5D;
-                    quadrant = right ? WarframeCornerVerticalType.NORTHEAST : WarframeCornerVerticalType.NORTHWEST;
+                    quadrant = right ? WarframeCornerType.NORTHEAST : WarframeCornerType.NORTHWEST;
                     break;
                 case NORTH:
                     right = relX < 0.5D;
-                    quadrant = right ? WarframeCornerVerticalType.SOUTHWEST : WarframeCornerVerticalType.SOUTHEAST;
+                    quadrant = right ? WarframeCornerType.SOUTHWEST : WarframeCornerType.SOUTHEAST;
                     break;
                 case EAST:
                     right = relZ < 0.5D;
-                    quadrant = right ? WarframeCornerVerticalType.NORTHWEST : WarframeCornerVerticalType.SOUTHWEST;
+                    quadrant = right ? WarframeCornerType.NORTHWEST : WarframeCornerType.SOUTHWEST;
                     break;
                 case WEST:
                 default:
                     right = relZ > 0.5D;
-                    quadrant = right ? WarframeCornerVerticalType.SOUTHEAST : WarframeCornerVerticalType.NORTHEAST;
+                    quadrant = right ? WarframeCornerType.SOUTHEAST : WarframeCornerType.NORTHEAST;
                     break;
             }
         }

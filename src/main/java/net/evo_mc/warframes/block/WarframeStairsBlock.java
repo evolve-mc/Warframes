@@ -21,8 +21,8 @@ import javax.annotation.Nullable;
 import java.util.function.Supplier;
 
 public class WarframeStairsBlock extends StairBlock {
-    public static final EnumProperty<WarframeCornerVerticalType> VERTICAL =
-            EnumProperty.create("vertical", WarframeCornerVerticalType.class);
+    public static final EnumProperty<WarframeCornerType> VERTICAL =
+            EnumProperty.create("vertical", WarframeCornerType.class);
     protected static final VoxelShape VERTICAL_NORTHEAST = Shapes.or(
             Block.box(8.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
             Block.box(0.0D, 0.0D, 0.0D, 8.0D, 16.0D, 8.0D)
@@ -47,12 +47,12 @@ public class WarframeStairsBlock extends StairBlock {
                 .setValue(HALF, net.minecraft.world.level.block.state.properties.Half.BOTTOM)
                 .setValue(SHAPE, net.minecraft.world.level.block.state.properties.StairsShape.STRAIGHT)
                 .setValue(WATERLOGGED, Boolean.valueOf(false))
-                .setValue(VERTICAL, WarframeCornerVerticalType.NONE));
+                .setValue(VERTICAL, WarframeCornerType.NONE));
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        super.createBlockStateDefinition(pBuilder); // adds FACING, HALF, SHAPE, WATERLOGGED
+        super.createBlockStateDefinition(pBuilder);
         pBuilder.add(VERTICAL);
     }
 
@@ -83,35 +83,35 @@ public class WarframeStairsBlock extends StairBlock {
 
         if (clickedFace == Direction.NORTH) {
             if (relX < 0.2D) {
-                return verticalState(pContext, WarframeCornerVerticalType.SOUTHWEST);
+                return verticalState(pContext, WarframeCornerType.SOUTHWEST);
             } else if (relX > 0.8D) {
-                return verticalState(pContext, WarframeCornerVerticalType.SOUTHEAST);
+                return verticalState(pContext, WarframeCornerType.SOUTHEAST);
             }
         } else if (clickedFace == Direction.EAST) {
             if (relZ < 0.2D) {
-                return verticalState(pContext, WarframeCornerVerticalType.NORTHWEST);
+                return verticalState(pContext, WarframeCornerType.NORTHWEST);
             } else if (relZ > 0.8D) {
-                return verticalState(pContext, WarframeCornerVerticalType.SOUTHWEST);
+                return verticalState(pContext, WarframeCornerType.SOUTHWEST);
             }
         } else if (clickedFace == Direction.SOUTH) {
             if (relX > 0.8D) {
-                return verticalState(pContext, WarframeCornerVerticalType.NORTHEAST);
+                return verticalState(pContext, WarframeCornerType.NORTHEAST);
             } else if (relX < 0.2D) {
-                return verticalState(pContext, WarframeCornerVerticalType.NORTHWEST);
+                return verticalState(pContext, WarframeCornerType.NORTHWEST);
             }
         } else if (clickedFace == Direction.WEST) {
             if (relZ > 0.8D) {
-                return verticalState(pContext, WarframeCornerVerticalType.SOUTHEAST);
+                return verticalState(pContext, WarframeCornerType.SOUTHEAST);
             } else if (relZ < 0.2D) {
-                return verticalState(pContext, WarframeCornerVerticalType.NORTHEAST);
+                return verticalState(pContext, WarframeCornerType.NORTHEAST);
             }
         }
 
         BlockState stateForPlacement = super.getStateForPlacement(pContext);
-        return stateForPlacement == null ? null : stateForPlacement.setValue(VERTICAL, WarframeCornerVerticalType.NONE);
+        return stateForPlacement == null ? null : stateForPlacement.setValue(VERTICAL, WarframeCornerType.NONE);
     }
 
-    private BlockState verticalState(BlockPlaceContext pContext, WarframeCornerVerticalType corner) {
+    private BlockState verticalState(BlockPlaceContext pContext, WarframeCornerType corner) {
         FluidState fluidstate = pContext.getLevel().getFluidState(pContext.getClickedPos());
         return this.defaultBlockState()
                 .setValue(FACING, Direction.NORTH)

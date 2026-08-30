@@ -2,7 +2,7 @@ package net.evo_mc.warframes.block;
 
 import net.minecraft.util.StringRepresentable;
 
-public enum WarframeCornerVerticalType implements StringRepresentable {
+public enum WarframeCornerType implements StringRepresentable {
     NONE("none"),
     NORTHEAST("northeast"),
     NORTHWEST("northwest"),
@@ -11,7 +11,7 @@ public enum WarframeCornerVerticalType implements StringRepresentable {
 
     private final String name;
 
-    WarframeCornerVerticalType(String pName) {
+    WarframeCornerType(String pName) {
         this.name = pName;
     }
 

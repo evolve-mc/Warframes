@@ -19,7 +19,6 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
@@ -28,8 +27,8 @@ public class WarframeHalfSlabBlock extends Block implements SimpleWaterloggedBlo
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     public static final EnumProperty<Half> HALF = BlockStateProperties.HALF;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-    public static final EnumProperty<WarframeCornerVerticalType> VERTICAL =
-            EnumProperty.create("vertical", WarframeCornerVerticalType.class);
+    public static final EnumProperty<WarframeCornerType> VERTICAL =
+            EnumProperty.create("vertical", WarframeCornerType.class);
 
     protected static final VoxelShape NORTH_TOP = Block.box(0.0D, 8.0D, 0.0D, 16.0D, 16.0D, 8.0D);
     protected static final VoxelShape NORTH_BOTTOM = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 8.0D);
@@ -49,13 +48,13 @@ public class WarframeHalfSlabBlock extends Block implements SimpleWaterloggedBlo
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(FACING, Direction.NORTH)
                 .setValue(HALF, Half.BOTTOM)
-                .setValue(VERTICAL, WarframeCornerVerticalType.NONE)
+                .setValue(VERTICAL, WarframeCornerType.NONE)
                 .setValue(WATERLOGGED, Boolean.valueOf(false)));
     }
 
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        WarframeCornerVerticalType vertical = pState.getValue(VERTICAL);
+        WarframeCornerType vertical = pState.getValue(VERTICAL);
         switch (vertical) {
             case NORTHEAST:
                 return VERTICAL_NORTHEAST;
@@ -96,27 +95,27 @@ public class WarframeHalfSlabBlock extends Block implements SimpleWaterloggedBlo
 
         if (clickedFace == Direction.NORTH) {
             if (relX < 0.2D) {
-                return verticalState(pContext, WarframeCornerVerticalType.NORTHEAST);
+                return verticalState(pContext, WarframeCornerType.NORTHEAST);
             } else if (relX > 0.8D) {
-                return verticalState(pContext, WarframeCornerVerticalType.NORTHWEST);
+                return verticalState(pContext, WarframeCornerType.NORTHWEST);
             }
         } else if (clickedFace == Direction.EAST) {
             if (relZ < 0.2D) {
-                return verticalState(pContext, WarframeCornerVerticalType.SOUTHEAST);
+                return verticalState(pContext, WarframeCornerType.SOUTHEAST);
             } else if (relZ > 0.8D) {
-                return verticalState(pContext, WarframeCornerVerticalType.NORTHEAST);
+                return verticalState(pContext, WarframeCornerType.NORTHEAST);
             }
         } else if (clickedFace == Direction.SOUTH) {
             if (relX > 0.8D) {
-                return verticalState(pContext, WarframeCornerVerticalType.SOUTHWEST);
+                return verticalState(pContext, WarframeCornerType.SOUTHWEST);
             } else if (relX < 0.2D) {
-                return verticalState(pContext, WarframeCornerVerticalType.SOUTHEAST);
+                return verticalState(pContext, WarframeCornerType.SOUTHEAST);
             }
         } else if (clickedFace == Direction.WEST) {
             if (relZ > 0.8D) {
-                return verticalState(pContext, WarframeCornerVerticalType.NORTHWEST);
+                return verticalState(pContext, WarframeCornerType.NORTHWEST);
             } else if (relZ < 0.2D) {
-                return verticalState(pContext, WarframeCornerVerticalType.SOUTHWEST);
+                return verticalState(pContext, WarframeCornerType.SOUTHWEST);
             }
         }
 
@@ -130,10 +129,10 @@ public class WarframeHalfSlabBlock extends Block implements SimpleWaterloggedBlo
                 .setValue(FACING, facing)
                 .setValue(HALF, half)
                 .setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER))
-                .setValue(VERTICAL, WarframeCornerVerticalType.NONE);
+                .setValue(VERTICAL, WarframeCornerType.NONE);
     }
 
-    private BlockState verticalState(BlockPlaceContext pContext, WarframeCornerVerticalType corner) {
+    private BlockState verticalState(BlockPlaceContext pContext, WarframeCornerType corner) {
         FluidState fluidstate = pContext.getLevel().getFluidState(pContext.getClickedPos());
         return this.defaultBlockState()
                 .setValue(FACING, Direction.NORTH)

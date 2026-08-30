@@ -36,6 +36,8 @@ public class ModBlocks {
             () -> new WarframeHalfSlabBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).sound(SoundType.NETHERITE_BLOCK).noOcclusion()));
     public static final RegistryObject<Block> AIRFRAME_QUARTER_SLAB = registerBlock("airframe_quarter_slab",
             () -> new WarframeQuarterSlabBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).sound(SoundType.NETHERITE_BLOCK).noOcclusion()));
+    public static final RegistryObject<Block> AIRFRAME_CENTERED_LAYER = registerBlock("airframe_centered_layer",
+            () -> new WarframeCenteredLayerBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).sound(SoundType.NETHERITE_BLOCK).noOcclusion()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
