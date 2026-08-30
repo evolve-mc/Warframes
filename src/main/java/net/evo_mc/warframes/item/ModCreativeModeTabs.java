@@ -26,6 +26,7 @@ public class ModCreativeModeTabs {
                     pOutput.accept(ModBlocks.AIRFRAME_SLAB.get());
                     pOutput.accept(ModBlocks.AIRFRAME_SLAB_WING.get());
                     pOutput.accept(ModBlocks.AIRFRAME_LAYER.get());
+                    pOutput.accept(ModBlocks.AIRFRAME_STAIRS.get());
                 })
                 .build());
 

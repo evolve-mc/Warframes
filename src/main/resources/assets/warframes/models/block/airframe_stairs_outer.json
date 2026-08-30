@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "warframes:block/airframe_block",
+    "top": "warframes:block/airframe_block",
+    "side": "warframes:block/airframe_block"
+  }
+}
