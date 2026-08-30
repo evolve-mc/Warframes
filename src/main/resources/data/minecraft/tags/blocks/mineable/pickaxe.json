@@ -7,6 +7,8 @@
     "warframes:airframe_stairs",
     "warframes:airframe_half_slab",
     "warframes:airframe_quarter_slab",
-    "warframes:airframe_centered_layer"
+    "warframes:airframe_centered_layer",
+    "warframes:airframe_edge_slice",
+    "warframes:airframe_centered_slice"
   ]
 }

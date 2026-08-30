@@ -30,6 +30,8 @@ public class ModCreativeModeTabs {
                     pOutput.accept(ModBlocks.AIRFRAME_HALF_SLAB.get());
                     pOutput.accept(ModBlocks.AIRFRAME_QUARTER_SLAB.get());
                     pOutput.accept(ModBlocks.AIRFRAME_CENTERED_LAYER.get());
+                    pOutput.accept(ModBlocks.AIRFRAME_EDGE_SLICE.get());
+                    pOutput.accept(ModBlocks.AIRFRAME_CENTERED_SLICE.get());
                 })
                 .build());
 
