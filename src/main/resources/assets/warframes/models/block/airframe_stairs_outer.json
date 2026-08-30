@@ -1,8 +1,120 @@
 {
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "warframes:block/airframe_block",
-    "top": "warframes:block/airframe_block",
-    "side": "warframes:block/airframe_block"
-  }
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"0": "warframes:block/airframe_block",
+		"particle": "warframes:block/airframe_block"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 4, 16],
+			"faces": {
+				"north": {"uv": [0, 12, 16, 16], "texture": "#0", "cullface": "north"},
+				"east": {"uv": [0, 12, 16, 16], "texture": "#0", "cullface": "north"},
+				"south": {"uv": [0, 12, 16, 16], "texture": "#0", "cullface": "north"},
+				"west": {"uv": [0, 12, 16, 16], "texture": "#0", "cullface": "north"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#0", "cullface": "north"}
+			}
+		},
+		{
+			"from": [12, 4, 12],
+			"to": [16, 8, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 4, 0]},
+			"faces": {
+				"east": {"uv": [0, 8, 4, 12], "texture": "#0", "cullface": "north"},
+				"south": {"uv": [12, 8, 16, 12], "texture": "#0", "cullface": "north"}
+			}
+		},
+		{
+			"from": [12, 4, 8],
+			"to": [16, 8, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 4, -4]},
+			"faces": {
+				"east": {"uv": [4, 8, 8, 12], "texture": "#0", "cullface": "north"}
+			}
+		},
+		{
+			"from": [8, 4, 8],
+			"to": [12, 8, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-4, 4, 0]},
+			"faces": {
+				"south": {"uv": [8, 8, 12, 12], "texture": "#0", "cullface": "north"}
+			}
+		},
+		{
+			"from": [0, 4, 0],
+			"to": [8, 8, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 4, 0]},
+			"faces": {
+				"north": {"uv": [8, 0, 16, 4], "texture": "#0", "cullface": "west"},
+				"south": {"uv": [0, 0, 8, 4], "texture": "#0", "cullface": "west"},
+				"west": {"uv": [0, 0, 16, 4], "texture": "#0", "cullface": "west"},
+				"up": {"uv": [0, 0, 8, 16], "texture": "#0", "cullface": "west"}
+			}
+		},
+		{
+			"from": [12, 8, 8],
+			"to": [16, 16, 12],
+			"faces": {
+				"north": {"uv": [0, 0, 4, 8], "texture": "#0", "cullface": "north"},
+				"east": {"uv": [12, 0, 16, 8], "texture": "#0", "cullface": "north"},
+				"up": {"uv": [12, 0, 16, 4], "texture": "#0", "cullface": "north"}
+			}
+		},
+		{
+			"from": [12, 8, 12],
+			"to": [16, 16, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 4]},
+			"faces": {
+				"east": {"uv": [0, 0, 4, 8], "texture": "#0", "cullface": "north"},
+				"south": {"uv": [12, 0, 16, 8], "texture": "#0", "cullface": "north"},
+				"up": {"uv": [12, 12, 16, 16], "texture": "#0", "cullface": "north"}
+			}
+		},
+		{
+			"from": [8, 8, 12],
+			"to": [12, 16, 16],
+			"faces": {
+				"south": {"uv": [0, 0, 4, 8], "texture": "#0", "cullface": "north"},
+				"west": {"uv": [12, 0, 16, 8], "texture": "#0", "cullface": "north"},
+				"up": {"uv": [0, 12, 4, 16], "texture": "#0", "cullface": "north"}
+			}
+		},
+		{
+			"from": [8, 8, 8],
+			"to": [12, 16, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-4, 0, 0]},
+			"faces": {
+				"north": {"uv": [12, 0, 16, 8], "texture": "#0", "cullface": "south"},
+				"west": {"uv": [0, 0, 4, 8], "texture": "#0", "cullface": "south"},
+				"up": {"uv": [0, 0, 4, 4], "texture": "#0", "cullface": "south"}
+			}
+		},
+		{
+			"from": [8, 4, 0],
+			"to": [16, 8, 8],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-4, -8, 0]},
+			"faces": {
+				"north": {"uv": [0, 0, 8, 4], "texture": "#0", "cullface": "north"},
+				"east": {"uv": [8, 0, 16, 4], "texture": "#0", "cullface": "east"},
+				"up": {"uv": [8, 0, 16, 8], "texture": "#0", "cullface": "up"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_lefthand": {
+			"rotation": [75, -135, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"gui": {
+			"rotation": [30, 135, 0],
+			"scale": [0.625, 0.625, 0.625]
+		},
+		"head": {
+			"rotation": [0, -90, 0]
+		}
+	}
 }

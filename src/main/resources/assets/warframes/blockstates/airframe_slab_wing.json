@@ -1,16 +1,18 @@
 {
   "variants": {
     "type=bottom": {
-      "model": "warframes:block/airframe_slab_wing"
+      "model": "warframes:block/airframe_slab"
     },
     "type=double": {
       "model": "warframes:block/airframe_block"
     },
     "type=top": {
-      "model": "warframes:block/airframe_slab_wing_top"
+      "model": "warframes:block/airframe_slab",
+      "x": 180,
+      "uvlock": true
     },
     "type=center": {
-      "model": "warframes:block/airframe_slab_wing_center"
+      "model": "warframes:block/airframe_slab_center"
     }
   }
 }

@@ -4,7 +4,9 @@
       "model": "warframes:block/airframe_slab"
     },
     "type=top": {
-      "model": "warframes:block/airframe_slab_top"
+      "model": "warframes:block/airframe_slab",
+      "x": 180,
+      "uvlock": true
     },
     "type=double": {
       "model": "warframes:block/airframe_block"
