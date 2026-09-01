@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 4,
+  "ingredient": {
+    "item": "warframes:airframe_block"
+  },
+  "result": "warframes:airframe_half_slab_wing"
+}

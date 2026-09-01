@@ -1,4 +1,4 @@
-package net.evo_mc.warframes.block;
+package net.evo_mc.warframes.block.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -13,82 +13,54 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
 
-public class WarframeLayerBlock extends Block implements SimpleWaterloggedBlock {
-    public static final int MAX_HEIGHT = 8;
+public class WarframeCenteredSliceBlock extends Block implements SimpleWaterloggedBlock {
+    public static final int MAX_LAYERS = 8;
     public static final IntegerProperty LAYERS = BlockStateProperties.LAYERS;
-    public static final DirectionProperty FACING = DirectionProperty.create("facing", Direction.values());
+    public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.AXIS;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
-    protected static final VoxelShape[] SHAPE_BY_LAYER = new VoxelShape[]{
-            Shapes.empty(),
-            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
-            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D),
-            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D),
-            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D),
-            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D),
-            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D),
-            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 14.0D, 16.0D),
-            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)
-    };
-
-    public WarframeLayerBlock(BlockBehaviour.Properties pProperties) {
+    public WarframeCenteredSliceBlock(BlockBehaviour.Properties pProperties) {
         super(pProperties);
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(LAYERS, Integer.valueOf(1))
-                .setValue(FACING, Direction.DOWN)
+                .setValue(AXIS, Direction.Axis.Y)
                 .setValue(WATERLOGGED, Boolean.valueOf(false)));
     }
 
-
-    private VoxelShape getRotatedShape(BlockState pState) {
+    private VoxelShape getCenteredShape(BlockState pState) {
         int layers = pState.getValue(LAYERS);
-        double height = layers * 2.0D;
+        double half = layers;
+        double min = 8.0D - half;
+        double max = 8.0D + half;
 
-        switch (pState.getValue(FACING)) {
-            case DOWN:
-                return Block.box(0.0D, 16.0D - height, 0.0D, 16.0D, 16.0D, 16.0D);
-            case UP:
-                return Block.box(0.0D, 0.0D, 0.0D, 16.0D, height, 16.0D);
-            case NORTH:
-                return Block.box(0.0D, 0.0D, 16.0D - height, 16.0D, 16.0D, 16.0D);
-            case SOUTH:
-                return Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, height);
-            case EAST:
-                return Block.box(0.0D, 0.0D, 0.0D, height, 16.0D, 16.0D);
-            case WEST:
+        switch (pState.getValue(AXIS)) {
+            case X:
+                return Block.box(0.0D, min, min, 16.0D, max, max);
+            case Z:
+                return Block.box(min, min, 0.0D, max, max, 16.0D);
+            case Y:
             default:
-                return Block.box(16.0D - height, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
+                return Block.box(min, 0.0D, min, max, 16.0D, max);
         }
     }
 
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        return getRotatedShape(pState);
+        return getCenteredShape(pState);
     }
 
     @Override
     public VoxelShape getCollisionShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        return getRotatedShape(pState);
-    }
-
-    @Override
-    public VoxelShape getBlockSupportShape(BlockState pState, BlockGetter pReader, BlockPos pPos) {
-        return getRotatedShape(pState);
-    }
-
-    @Override
-    public VoxelShape getVisualShape(BlockState pState, BlockGetter pReader, BlockPos pPos, CollisionContext pContext) {
-        return getRotatedShape(pState);
+        return getCenteredShape(pState);
     }
 
     @Override
@@ -98,7 +70,7 @@ public class WarframeLayerBlock extends Block implements SimpleWaterloggedBlock 
 
     @Override
     public float getShadeBrightness(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
-        return pState.getValue(LAYERS) == 8 ? 0.2F : 1.0F;
+        return pState.getValue(LAYERS) == MAX_LAYERS ? 0.2F : 1.0F;
     }
 
     @Override
@@ -113,7 +85,7 @@ public class WarframeLayerBlock extends Block implements SimpleWaterloggedBlock 
     public boolean canBeReplaced(BlockState pState, BlockPlaceContext pUseContext) {
         return !pUseContext.isSecondaryUseActive()
                 && pUseContext.getItemInHand().getItem() == this.asItem()
-                && pState.getValue(LAYERS) < 8
+                && pState.getValue(LAYERS) < MAX_LAYERS
                 ? true
                 : super.canBeReplaced(pState, pUseContext);
     }
@@ -126,19 +98,21 @@ public class WarframeLayerBlock extends Block implements SimpleWaterloggedBlock 
 
         if (existing.is(this)) {
             int i = existing.getValue(LAYERS);
-            return existing.setValue(LAYERS, Integer.valueOf(Math.min(8, i + 1)));
+            return existing.setValue(LAYERS, Integer.valueOf(Math.min(MAX_LAYERS, i + 1)));
         }
+
+        Direction.Axis axis = pContext.getClickedFace().getAxis();
 
         FluidState fluidstate = pContext.getLevel().getFluidState(blockpos);
         return this.defaultBlockState()
-                .setValue(FACING, pContext.getClickedFace())
+                .setValue(AXIS, axis)
                 .setValue(LAYERS, Integer.valueOf(1))
                 .setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(LAYERS, FACING, WATERLOGGED);
+        pBuilder.add(LAYERS, AXIS, WATERLOGGED);
     }
 
     @Override

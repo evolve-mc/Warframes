@@ -9,6 +9,11 @@
     "warframes:airframe_quarter_slab",
     "warframes:airframe_centered_layer",
     "warframes:airframe_edge_slice",
-    "warframes:airframe_centered_slice"
+    "warframes:airframe_centered_slice",
+    "warframes:airframe_slab_stabilizer",
+    "warframes:airframe_vertical_slab_stabilizer",
+    "warframes:airframe_half_slab_wing",
+    "warframes:airframe_half_slab_stabilizer",
+    "warframes:airframe_vertical_half_slab_stabilizer"
   ]
 }

@@ -1,19 +1,18 @@
-package net.evo_mc.warframes.block;
+package net.evo_mc.warframes.block.custom;
 
 import net.minecraft.util.StringRepresentable;
 
-public enum WarframeSlabType implements StringRepresentable {
-    TOP("top"),
-    BOTTOM("bottom"),
+public enum WarframeFacingType implements StringRepresentable {
     NORTH("north"),
     SOUTH("south"),
     EAST("east"),
     WEST("west"),
-    DOUBLE("double");
+    CORNER("corner"),
+    NONE("none");
 
     private final String name;
 
-    WarframeSlabType(String pName) {
+    WarframeFacingType(String pName) {
         this.name = pName;
     }
 

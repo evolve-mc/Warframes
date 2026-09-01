@@ -3,18 +3,19 @@
 	"credit": "Made with Blockbench",
 	"parent": "minecraft:block/slab",
 	"textures": {
-		"bottom": "warframes:block/airframe_block"
+		"particle": "warframes:block/airframe_block",
+		"texture": "warframes:block/airframe_block"
 	},
 	"elements": [
 		{
 			"from": [0, 0, 0],
 			"to": [16, 4, 16],
 			"faces": {
-				"north": {"uv": [0, 12, 16, 16], "texture": "#bottom"},
-				"east": {"uv": [0, 12, 16, 16], "texture": "#bottom"},
-				"south": {"uv": [0, 12, 16, 16], "texture": "#bottom"},
-				"west": {"uv": [0, 12, 16, 16], "texture": "#bottom"},
-				"down": {"uv": [0, 0, 16, 16], "texture": "#bottom"}
+				"north": {"uv": [0, 12, 16, 16], "texture": "#texture"},
+				"east": {"uv": [0, 12, 16, 16], "texture": "#texture"},
+				"south": {"uv": [0, 12, 16, 16], "texture": "#texture"},
+				"west": {"uv": [0, 12, 16, 16], "texture": "#texture"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#texture"}
 			}
 		},
 		{
@@ -22,11 +23,11 @@
 			"to": [16, 8, 16],
 			"rotation": {"angle": 0, "axis": "y", "origin": [0, 4, 0]},
 			"faces": {
-				"north": {"uv": [0, 0, 16, 4], "texture": "#bottom"},
-				"east": {"uv": [0, 0, 16, 4], "texture": "#bottom"},
-				"south": {"uv": [0, 0, 16, 4], "texture": "#bottom"},
-				"west": {"uv": [0, 0, 16, 4], "texture": "#bottom"},
-				"up": {"uv": [0, 0, 16, 16], "texture": "#bottom"}
+				"north": {"uv": [0, 0, 16, 4], "texture": "#texture"},
+				"east": {"uv": [0, 0, 16, 4], "texture": "#texture"},
+				"south": {"uv": [0, 0, 16, 4], "texture": "#texture"},
+				"west": {"uv": [0, 0, 16, 4], "texture": "#texture"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#texture"}
 			}
 		}
 	],

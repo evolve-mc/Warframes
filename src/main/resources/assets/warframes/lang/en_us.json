@@ -11,6 +11,11 @@
   "block.warframes.airframe_centered_layer": "Airframe Centered Layer",
   "block.warframes.airframe_edge_slice": "Airframe Edge Slice",
   "block.warframes.airframe_centered_slice": "Airframe Centered Slice",
+  "block.warframes.airframe_slab_stabilizer": "Airframe Slab Stabilizer",
+  "block.warframes.airframe_vertical_slab_stabilizer": "Airframe Vertical Slab Stabilizer",
+  "block.warframes.airframe_half_slab_wing": "Airframe Half Slab Wing",
+  "block.warframes.airframe_half_slab_stabilizer": "Airframe Half Slab Stabilizer",
+  "block.warframes.airframe_vertical_half_slab_stabilizer": "Airframe Vertical Half Slab Stabilizer",
 
   "creativetab.warframes_tab": "Warframes"
 }

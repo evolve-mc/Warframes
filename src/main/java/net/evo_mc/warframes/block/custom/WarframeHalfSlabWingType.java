@@ -1,0 +1,23 @@
+package net.evo_mc.warframes.block.custom;
+
+import net.minecraft.util.StringRepresentable;
+
+public enum WarframeHalfSlabWingType implements StringRepresentable {
+    TOP("top"),
+    BOTTOM("bottom"),
+    CENTER("center");
+
+    private final String name;
+
+    WarframeHalfSlabWingType(String pName) {
+        this.name = pName;
+    }
+
+    public String toString() {
+        return this.name;
+    }
+
+    public String getSerializedName() {
+        return this.name;
+    }
+}

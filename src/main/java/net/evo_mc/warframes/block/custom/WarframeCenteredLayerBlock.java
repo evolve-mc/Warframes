@@ -1,4 +1,4 @@
-package net.evo_mc.warframes.block;
+package net.evo_mc.warframes.block.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -22,13 +22,13 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
 
-public class WarframeCenteredSliceBlock extends Block implements SimpleWaterloggedBlock {
-    public static final int MAX_LAYERS = 8;
+public class WarframeCenteredLayerBlock extends Block implements SimpleWaterloggedBlock {
+    public static final int MAX_HEIGHT = 8;
     public static final IntegerProperty LAYERS = BlockStateProperties.LAYERS;
     public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.AXIS;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
-    public WarframeCenteredSliceBlock(BlockBehaviour.Properties pProperties) {
+    public WarframeCenteredLayerBlock(BlockBehaviour.Properties pProperties) {
         super(pProperties);
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(LAYERS, Integer.valueOf(1))
@@ -44,12 +44,12 @@ public class WarframeCenteredSliceBlock extends Block implements SimpleWaterlogg
 
         switch (pState.getValue(AXIS)) {
             case X:
-                return Block.box(0.0D, min, min, 16.0D, max, max);
+                return Block.box(min, 0.0D, 0.0D, max, 16.0D, 16.0D);
             case Z:
-                return Block.box(min, min, 0.0D, max, max, 16.0D);
+                return Block.box(0.0D, 0.0D, min, 16.0D, 16.0D, max);
             case Y:
             default:
-                return Block.box(min, 0.0D, min, max, 16.0D, max);
+                return Block.box(0.0D, min, 0.0D, 16.0D, max, 16.0D);
         }
     }
 
@@ -64,13 +64,23 @@ public class WarframeCenteredSliceBlock extends Block implements SimpleWaterlogg
     }
 
     @Override
+    public VoxelShape getBlockSupportShape(BlockState pState, BlockGetter pReader, BlockPos pPos) {
+        return getCenteredShape(pState);
+    }
+
+    @Override
+    public VoxelShape getVisualShape(BlockState pState, BlockGetter pReader, BlockPos pPos, CollisionContext pContext) {
+        return getCenteredShape(pState);
+    }
+
+    @Override
     public boolean useShapeForLightOcclusion(BlockState pState) {
         return true;
     }
 
     @Override
     public float getShadeBrightness(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
-        return pState.getValue(LAYERS) == MAX_LAYERS ? 0.2F : 1.0F;
+        return pState.getValue(LAYERS) == 8 ? 0.2F : 1.0F;
     }
 
     @Override
@@ -85,7 +95,7 @@ public class WarframeCenteredSliceBlock extends Block implements SimpleWaterlogg
     public boolean canBeReplaced(BlockState pState, BlockPlaceContext pUseContext) {
         return !pUseContext.isSecondaryUseActive()
                 && pUseContext.getItemInHand().getItem() == this.asItem()
-                && pState.getValue(LAYERS) < MAX_LAYERS
+                && pState.getValue(LAYERS) < 8
                 ? true
                 : super.canBeReplaced(pState, pUseContext);
     }
@@ -98,10 +108,18 @@ public class WarframeCenteredSliceBlock extends Block implements SimpleWaterlogg
 
         if (existing.is(this)) {
             int i = existing.getValue(LAYERS);
-            return existing.setValue(LAYERS, Integer.valueOf(Math.min(MAX_LAYERS, i + 1)));
+            return existing.setValue(LAYERS, Integer.valueOf(Math.min(8, i + 1)));
         }
 
-        Direction.Axis axis = pContext.getClickedFace().getAxis();
+        Direction clickedFace = pContext.getClickedFace();
+        Direction.Axis axis;
+
+        if (clickedFace == Direction.UP || clickedFace == Direction.DOWN) {
+            Direction.Axis playerAxis = pContext.getHorizontalDirection().getAxis();
+            axis = playerAxis == Direction.Axis.X ? Direction.Axis.Z : Direction.Axis.X;
+        } else {
+            axis = Direction.Axis.Y;
+        }
 
         FluidState fluidstate = pContext.getLevel().getFluidState(blockpos);
         return this.defaultBlockState()

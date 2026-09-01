@@ -1,6 +1,7 @@
 package net.evo_mc.warframes.block;
 
 import net.evo_mc.warframes.Warframes;
+import net.evo_mc.warframes.block.custom.*;
 import net.evo_mc.warframes.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -42,6 +43,17 @@ public class ModBlocks {
             () -> new WarframeEdgeSliceBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).sound(SoundType.NETHERITE_BLOCK).noOcclusion()));
     public static final RegistryObject<Block> AIRFRAME_CENTERED_SLICE = registerBlock("airframe_centered_slice",
             () -> new WarframeCenteredSliceBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).sound(SoundType.NETHERITE_BLOCK).noOcclusion()));
+    public static final RegistryObject<Block> AIRFRAME_SLAB_STABILIZER = registerBlock("airframe_slab_stabilizer",
+            () -> new WarframeSlabStabilizerBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).sound(SoundType.NETHERITE_BLOCK).noOcclusion()));
+    public static final RegistryObject<Block> AIRFRAME_VERTICAL_SLAB_STABILIZER = registerBlock("airframe_vertical_slab_stabilizer",
+            () -> new WarframeVerticalSlabStabilizerBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).sound(SoundType.NETHERITE_BLOCK).noOcclusion()));
+    public static final RegistryObject<Block> AIRFRAME_HALF_SLAB_WING = registerBlock("airframe_half_slab_wing",
+            () -> new WarframeHalfSlabWingBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).sound(SoundType.NETHERITE_BLOCK).noOcclusion()));
+    public static final RegistryObject<Block> AIRFRAME_HALF_SLAB_STABILIZER = registerBlock("airframe_half_slab_stabilizer",
+            () -> new WarframeHalfSlabStabilizerBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).sound(SoundType.NETHERITE_BLOCK).noOcclusion()));
+    public static final RegistryObject<Block> AIRFRAME_VERTICAL_HALF_SLAB_STABILIZER = registerBlock("airframe_vertical_half_slab_stabilizer",
+            () -> new WarframeVerticalHalfSlabStabilizerBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).sound(SoundType.NETHERITE_BLOCK).noOcclusion()));
+
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

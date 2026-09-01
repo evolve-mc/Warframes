@@ -1,4 +1,4 @@
-package net.evo_mc.warframes.block;
+package net.evo_mc.warframes.block.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

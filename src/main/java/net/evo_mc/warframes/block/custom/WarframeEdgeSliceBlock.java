@@ -1,4 +1,4 @@
-package net.evo_mc.warframes.block;
+package net.evo_mc.warframes.block.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -13,9 +13,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
-import net.minecraft.world.level.block.state.properties.Half;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
@@ -27,8 +25,8 @@ import javax.annotation.Nullable;
 
 public class WarframeEdgeSliceBlock extends Block implements SimpleWaterloggedBlock {
     public static final int MAX_LAYERS = 8;
-    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-    public static final EnumProperty<Half> HALF = BlockStateProperties.HALF;
+    public static final EnumProperty<WarframeFacingType> FACING = EnumProperty.create("facing", WarframeFacingType.class);
+    public static final EnumProperty<WarframeHalfType> HALF = EnumProperty.create("half", WarframeHalfType.class);
     public static final EnumProperty<WarframeCornerType> CORNER = EnumProperty.create("corner", WarframeCornerType.class);
     public static final IntegerProperty LAYERS = BlockStateProperties.LAYERS;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
@@ -36,8 +34,8 @@ public class WarframeEdgeSliceBlock extends Block implements SimpleWaterloggedBl
     public WarframeEdgeSliceBlock(BlockBehaviour.Properties pProperties) {
         super(pProperties);
         this.registerDefaultState(this.stateDefinition.any()
-                .setValue(FACING, Direction.NORTH)
-                .setValue(HALF, Half.BOTTOM)
+                .setValue(FACING, WarframeFacingType.NORTH)
+                .setValue(HALF, WarframeHalfType.BOTTOM)
                 .setValue(CORNER, WarframeCornerType.NONE)
                 .setValue(LAYERS, Integer.valueOf(1))
                 .setValue(WATERLOGGED, Boolean.valueOf(false)));
@@ -47,9 +45,10 @@ public class WarframeEdgeSliceBlock extends Block implements SimpleWaterloggedBl
         int layers = pState.getValue(LAYERS);
         double thickness = layers * 2.0D;
 
-        WarframeCornerType corner = pState.getValue(CORNER);
-        if (corner != WarframeCornerType.NONE) {
-            switch (corner) {
+        WarframeFacingType facing = pState.getValue(FACING);
+
+        if (facing == WarframeFacingType.CORNER) {
+            switch (pState.getValue(CORNER)) {
                 case NORTHEAST:
                     return Block.box(16.0D - thickness, 0.0D, 0.0D, 16.0D, 16.0D, thickness);
                 case NORTHWEST:
@@ -62,11 +61,11 @@ public class WarframeEdgeSliceBlock extends Block implements SimpleWaterloggedBl
             }
         }
 
-        boolean isTop = pState.getValue(HALF) == Half.TOP;
+        boolean isTop = pState.getValue(HALF) == WarframeHalfType.TOP;
         double yMin = isTop ? 16.0D - thickness : 0.0D;
         double yMax = isTop ? 16.0D : thickness;
 
-        switch (pState.getValue(FACING)) {
+        switch (facing) {
             case NORTH:
                 return Block.box(0.0D, yMin, 0.0D, 16.0D, yMax, thickness);
             case SOUTH:
@@ -162,10 +161,26 @@ public class WarframeEdgeSliceBlock extends Block implements SimpleWaterloggedBl
             }
         }
 
-        Direction facing = pContext.getHorizontalDirection();
+        WarframeFacingType facing;
+        switch (pContext.getHorizontalDirection()) {
+            case SOUTH:
+                facing = WarframeFacingType.SOUTH;
+                break;
+            case EAST:
+                facing = WarframeFacingType.EAST;
+                break;
+            case WEST:
+                facing = WarframeFacingType.WEST;
+                break;
+            case NORTH:
+            default:
+                facing = WarframeFacingType.NORTH;
+                break;
+        }
+
         boolean isTop = clickedFace == Direction.DOWN
                 || (clickedFace != Direction.UP && relY > 0.5D);
-        Half half = isTop ? Half.TOP : Half.BOTTOM;
+        WarframeHalfType half = isTop ? WarframeHalfType.TOP : WarframeHalfType.BOTTOM;
 
         return this.defaultBlockState()
                 .setValue(FACING, facing)
@@ -177,6 +192,7 @@ public class WarframeEdgeSliceBlock extends Block implements SimpleWaterloggedBl
 
     private BlockState cornerState(WarframeCornerType corner, boolean waterlogged) {
         return this.defaultBlockState()
+                .setValue(FACING, WarframeFacingType.CORNER)
                 .setValue(CORNER, corner)
                 .setValue(LAYERS, Integer.valueOf(1))
                 .setValue(WATERLOGGED, Boolean.valueOf(waterlogged));

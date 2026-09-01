@@ -1,0 +1,66 @@
+{
+  "variants": {
+    "facing=north,type=bottom": {
+      "model": "warframes:block/airframe_half_slab",
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=north,type=top": {
+      "model": "warframes:block/airframe_half_slab",
+      "x": 180,
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=north,type=center": {
+      "model": "warframes:block/airframe_centered_half_slab",
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=south,type=bottom": {
+      "model": "warframes:block/airframe_half_slab",
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=south,type=top": {
+      "model": "warframes:block/airframe_half_slab",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=south,type=center": {
+      "model": "warframes:block/airframe_centered_half_slab",
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=east,type=bottom": {
+      "model": "warframes:block/airframe_half_slab",
+      "y": 0,
+      "uvlock": true
+    },
+    "facing=east,type=top": {
+      "model": "warframes:block/airframe_half_slab",
+      "x": 180,
+      "uvlock": true
+    },
+    "facing=east,type=center": {
+      "model": "warframes:block/airframe_centered_half_slab",
+      "uvlock": true
+    },
+    "facing=west,type=bottom": {
+      "model": "warframes:block/airframe_half_slab",
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=west,type=top": {
+      "model": "warframes:block/airframe_half_slab",
+      "x": 180,
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=west,type=center": {
+      "model": "warframes:block/airframe_centered_half_slab",
+      "y": 180,
+      "uvlock": true
+    }
+  }
+}
