@@ -37,6 +37,9 @@ public class ModCreativeModeTabs {
                     pOutput.accept(ModBlocks.AIRFRAME_HALF_SLAB_WING.get());
                     pOutput.accept(ModBlocks.AIRFRAME_HALF_SLAB_STABILIZER.get());
                     pOutput.accept(ModBlocks.AIRFRAME_VERTICAL_HALF_SLAB_STABILIZER.get());
+
+
+                    pOutput.accept(ModBlocks.MIMIC_TEST_BLOCK.get());
                 })
                 .build());
 

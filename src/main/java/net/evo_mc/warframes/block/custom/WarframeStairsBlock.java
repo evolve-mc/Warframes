@@ -2,15 +2,21 @@ package net.evo_mc.warframes.block.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -20,7 +26,7 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import javax.annotation.Nullable;
 import java.util.function.Supplier;
 
-public class WarframeStairsBlock extends StairBlock {
+public class WarframeStairsBlock extends StairBlock implements WarframeMimicable {
     public static final EnumProperty<WarframeCornerType> VERTICAL =
             EnumProperty.create("vertical", WarframeCornerType.class);
     protected static final VoxelShape VERTICAL_NORTHEAST = Shapes.or(
@@ -119,5 +125,29 @@ public class WarframeStairsBlock extends StairBlock {
                 .setValue(SHAPE, net.minecraft.world.level.block.state.properties.StairsShape.STRAIGHT)
                 .setValue(VERTICAL, corner)
                 .setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
+    }
+
+    @Override
+    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer,
+                                 InteractionHand pHand, BlockHitResult pHitResult) {
+        return mimicUse(pState, pLevel, pPos, pPlayer, pHand, pHitResult);
+    }
+
+    @Override
+    public void playerWillDestroy(Level pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {
+        mimicPlayerWillDestroy(pLevel, pPos, pState, pPlayer);
+        super.playerWillDestroy(pLevel, pPos, pState, pPlayer);
+    }
+
+    @Override
+    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos,
+                         BlockState pNewState, boolean pMovedByPiston) {
+        mimicOnRemove(pState, pLevel, pPos, pNewState, pMovedByPiston);
+        super.onRemove(pState, pLevel, pPos, pNewState, pMovedByPiston);
+    }
+
+    @Override
+    public RenderShape getRenderShape(BlockState pState) {
+        return RenderShape.MODEL;
     }
 }

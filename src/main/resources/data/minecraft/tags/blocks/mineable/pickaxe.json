@@ -14,6 +14,9 @@
     "warframes:airframe_vertical_slab_stabilizer",
     "warframes:airframe_half_slab_wing",
     "warframes:airframe_half_slab_stabilizer",
-    "warframes:airframe_vertical_half_slab_stabilizer"
+    "warframes:airframe_vertical_half_slab_stabilizer",
+
+
+    "warframes:mimic_test_block"
   ]
 }

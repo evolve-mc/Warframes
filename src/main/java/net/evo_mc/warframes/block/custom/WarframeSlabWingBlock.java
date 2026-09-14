@@ -3,11 +3,16 @@ package net.evo_mc.warframes.block.custom;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.FluidTags;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -19,13 +24,14 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.pathfinder.PathComputationType;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
 
-public class WarframeSlabWingBlock extends Block implements SimpleWaterloggedBlock {
+public class WarframeSlabWingBlock extends Block implements SimpleWaterloggedBlock, WarframeMimicable {
     public static final EnumProperty<WarframeSlabWingType> TYPE = EnumProperty.create("type", WarframeSlabWingType.class);
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     protected static final VoxelShape BOTTOM_AABB = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D);
@@ -65,7 +71,7 @@ public class WarframeSlabWingBlock extends Block implements SimpleWaterloggedBlo
         BlockState blockstate = pContext.getLevel().getBlockState(blockpos);
         if (blockstate.is(this) && blockstate.getValue(TYPE)!= WarframeSlabWingType.CENTER) {
             return blockstate.setValue(TYPE, WarframeSlabWingType.DOUBLE).setValue(WATERLOGGED, Boolean.valueOf(false));
-       } else {
+        } else {
             if ((pContext.getClickLocation().y - (double) blockpos.getY() < 0.3D)) {
                 FluidState fluidstate = pContext.getLevel().getFluidState(blockpos);
                 BlockState blockstate1 = this.defaultBlockState().setValue(TYPE, WarframeSlabWingType.CENTER).setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
@@ -131,5 +137,29 @@ public class WarframeSlabWingBlock extends Block implements SimpleWaterloggedBlo
             default:
                 return false;
         }
+    }
+
+    @Override
+    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer,
+                                 InteractionHand pHand, BlockHitResult pHitResult) {
+        return mimicUse(pState, pLevel, pPos, pPlayer, pHand, pHitResult);
+    }
+
+    @Override
+    public void playerWillDestroy(Level pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {
+        mimicPlayerWillDestroy(pLevel, pPos, pState, pPlayer);
+        super.playerWillDestroy(pLevel, pPos, pState, pPlayer);
+    }
+
+    @Override
+    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos,
+                         BlockState pNewState, boolean pMovedByPiston) {
+        mimicOnRemove(pState, pLevel, pPos, pNewState, pMovedByPiston);
+        super.onRemove(pState, pLevel, pPos, pNewState, pMovedByPiston);
+    }
+
+    @Override
+    public RenderShape getRenderShape(BlockState pState) {
+        return RenderShape.MODEL;
     }
 }

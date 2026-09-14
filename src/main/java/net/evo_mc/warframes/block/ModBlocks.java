@@ -23,7 +23,7 @@ public class ModBlocks {
 
 
     public static final RegistryObject<Block> AIRFRAME_BLOCK = registerBlock("airframe_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BASALT).sound(SoundType.NETHERITE_BLOCK).noOcclusion()));
+            () -> new WarframeBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).sound(SoundType.NETHERITE_BLOCK).noOcclusion()));
     public static final RegistryObject<Block> AIRFRAME_SLAB = registerBlock("airframe_slab",
             () -> new WarframeSlabBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).sound(SoundType.NETHERITE_BLOCK).noOcclusion()));
     public static final RegistryObject<Block> AIRFRAME_SLAB_WING = registerBlock("airframe_slab_wing",
@@ -53,6 +53,10 @@ public class ModBlocks {
             () -> new WarframeHalfSlabStabilizerBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).sound(SoundType.NETHERITE_BLOCK).noOcclusion()));
     public static final RegistryObject<Block> AIRFRAME_VERTICAL_HALF_SLAB_STABILIZER = registerBlock("airframe_vertical_half_slab_stabilizer",
             () -> new WarframeVerticalHalfSlabStabilizerBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).sound(SoundType.NETHERITE_BLOCK).noOcclusion()));
+
+    public static final RegistryObject<Block> MIMIC_TEST_BLOCK = registerBlock("mimic_test_block",
+            () -> new MimicTestBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).sound(SoundType.NETHERITE_BLOCK).noOcclusion()));
+
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
