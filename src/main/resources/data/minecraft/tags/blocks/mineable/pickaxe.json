@@ -15,8 +15,16 @@
     "warframes:airframe_half_slab_wing",
     "warframes:airframe_half_slab_stabilizer",
     "warframes:airframe_vertical_half_slab_stabilizer",
-
-
-    "warframes:mimic_test_block"
+    "warframes:airframe_centered_stairs",
+    "warframes:airframe_point",
+    "warframes:airframe_half_stairs",
+    "warframes:airframe_door",
+    "warframes:airframe_trapdoor",
+    "warframes:airframe_ladder",
+    "warframes:airframe_button",
+    "warframes:airframe_lever",
+    "warframes:airframe_chest",
+    "warframes:airframe_control_surface",
+    "warframes:airframe_vertical_control_surface"
   ]
 }

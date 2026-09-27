@@ -1,0 +1,68 @@
+{
+  "variants": {
+    "position=down,axis=x": {
+      "model": "warframes:block/airframe_centered_stairs",
+      "uvlock": true
+    },
+    "position=down,axis=z": {
+      "model": "warframes:block/airframe_centered_stairs",
+      "y": 90,
+      "uvlock": true
+    },
+    "position=up,axis=x": {
+      "model": "warframes:block/airframe_centered_stairs",
+      "x": 180,
+      "uvlock": true
+    },
+    "position=up,axis=z": {
+      "model": "warframes:block/airframe_centered_stairs",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    },
+    "position=north,axis=z": {
+      "model": "warframes:block/airframe_centered_stairs",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "position=north,axis=y": {
+      "model": "warframes:block/airframe_vertical_centered_stairs",
+      "y": 0,
+      "uvlock": true
+    },
+    "position=south,axis=z": {
+      "model": "warframes:block/airframe_centered_stairs",
+      "x": 270,
+      "y": 180,
+      "uvlock": true
+    },
+    "position=south,axis=y": {
+      "model": "warframes:block/airframe_vertical_centered_stairs",
+      "y": 180,
+      "uvlock": true
+    },
+    "position=east,axis=y": {
+      "model": "warframes:block/airframe_vertical_centered_stairs",
+      "y": 90,
+      "uvlock": true
+    },
+    "position=east,axis=x": {
+      "model": "warframes:block/airframe_centered_stairs",
+      "x": 270,
+      "y": 90,
+      "uvlock": true
+    },
+    "position=west,axis=y": {
+      "model": "warframes:block/airframe_vertical_centered_stairs",
+      "y": 270,
+      "uvlock": true
+    },
+    "position=west,axis=x": {
+      "model": "warframes:block/airframe_centered_stairs",
+      "x": 270,
+      "y": 270,
+      "uvlock": true
+    }
+  }
+}

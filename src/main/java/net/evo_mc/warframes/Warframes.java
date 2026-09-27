@@ -5,7 +5,7 @@ import net.evo_mc.warframes.block.ModBlocks;
 import net.evo_mc.warframes.block.custom.WarframeMimicable;
 import net.evo_mc.warframes.block.entity.ModBlockEntities;
 import net.evo_mc.warframes.block.entity.WarframeMimicBlockEntity;
-import net.evo_mc.warframes.block.entity.renderer.WarframeMimicBakedModel;
+import net.evo_mc.warframes.block.entity.renderer.*;
 import net.evo_mc.warframes.item.ModCreativeModeTabs;
 import net.evo_mc.warframes.item.ModItems;
 import net.minecraft.client.Minecraft;
@@ -15,6 +15,7 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.ModelEvent;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.common.MinecraftForge;
@@ -70,7 +71,6 @@ public class Warframes {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             event.enqueueWork(() -> {
-                ItemBlockRenderTypes.setRenderLayer(ModBlocks.MIMIC_TEST_BLOCK.get(), RenderType.cutout());
                 ItemBlockRenderTypes.setRenderLayer(ModBlocks.AIRFRAME_BLOCK.get(), RenderType.cutout());
                 ItemBlockRenderTypes.setRenderLayer(ModBlocks.AIRFRAME_SLAB.get(), RenderType.cutout());
                 ItemBlockRenderTypes.setRenderLayer(ModBlocks.AIRFRAME_SLAB_WING.get(), RenderType.cutout());
@@ -86,6 +86,17 @@ public class Warframes {
                 ItemBlockRenderTypes.setRenderLayer(ModBlocks.AIRFRAME_HALF_SLAB_WING.get(), RenderType.cutout());
                 ItemBlockRenderTypes.setRenderLayer(ModBlocks.AIRFRAME_HALF_SLAB_STABILIZER.get(), RenderType.cutout());
                 ItemBlockRenderTypes.setRenderLayer(ModBlocks.AIRFRAME_VERTICAL_HALF_SLAB_STABILIZER.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ModBlocks.AIRFRAME_CENTERED_STAIRS.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ModBlocks.AIRFRAME_POINT.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ModBlocks.AIRFRAME_HALF_STAIRS.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ModBlocks.AIRFRAME_DOOR.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ModBlocks.AIRFRAME_TRAPDOOR.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ModBlocks.AIRFRAME_LADDER.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ModBlocks.AIRFRAME_BUTTON.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ModBlocks.AIRFRAME_LEVER.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ModBlocks.AIRFRAME_SLAB_WING_LAYER.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ModBlocks.AIRFRAME_SLAB_STABILIZER_LAYER.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ModBlocks.AIRFRAME_VERTICAL_SLAB_STABILIZER_LAYER.get(), RenderType.cutout());
             });
         }
 
@@ -116,10 +127,10 @@ public class Warframes {
                         }
                         return -1;
                     },
-                    ModBlocks.MIMIC_TEST_BLOCK.get(),
                     ModBlocks.AIRFRAME_BLOCK.get(),
                     ModBlocks.AIRFRAME_SLAB.get(),
                     ModBlocks.AIRFRAME_SLAB_WING.get(),
+                    ModBlocks.AIRFRAME_SLAB_WING_LAYER.get(),
                     ModBlocks.AIRFRAME_LAYER.get(),
                     ModBlocks.AIRFRAME_STAIRS.get(),
                     ModBlocks.AIRFRAME_HALF_SLAB.get(),
@@ -128,10 +139,37 @@ public class Warframes {
                     ModBlocks.AIRFRAME_EDGE_SLICE.get(),
                     ModBlocks.AIRFRAME_CENTERED_SLICE.get(),
                     ModBlocks.AIRFRAME_SLAB_STABILIZER.get(),
+                    ModBlocks.AIRFRAME_SLAB_STABILIZER_LAYER.get(),
                     ModBlocks.AIRFRAME_VERTICAL_SLAB_STABILIZER.get(),
+                    ModBlocks.AIRFRAME_VERTICAL_SLAB_STABILIZER_LAYER.get(),
                     ModBlocks.AIRFRAME_HALF_SLAB_WING.get(),
                     ModBlocks.AIRFRAME_HALF_SLAB_STABILIZER.get(),
-                    ModBlocks.AIRFRAME_VERTICAL_HALF_SLAB_STABILIZER.get());
+                    ModBlocks.AIRFRAME_VERTICAL_HALF_SLAB_STABILIZER.get(),
+                    ModBlocks.AIRFRAME_CENTERED_STAIRS.get(),
+                    ModBlocks.AIRFRAME_POINT.get(),
+                    ModBlocks.AIRFRAME_HALF_STAIRS.get(),
+                    ModBlocks.AIRFRAME_DOOR.get(),
+                    ModBlocks.AIRFRAME_TRAPDOOR.get(),
+                    ModBlocks.AIRFRAME_LADDER.get(),
+                    ModBlocks.AIRFRAME_BUTTON.get(),
+                    ModBlocks.AIRFRAME_LEVER.get());
         }
+
+        @SubscribeEvent
+        public static void onRegisterLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+            event.registerLayerDefinition(ModModelLayers.WARFRAME_CHEST_LAYER, ModModelLayers::createSingleBodyLayer);
+        }
+
+        @SubscribeEvent
+        public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
+            event.registerBlockEntityRenderer(ModBlockEntities.WARFRAME_CHEST_BLOCK_ENTITY.get(), WarframeChestRenderer::new);
+            event.registerBlockEntityRenderer(ModBlockEntities.WARFRAME_CONTROL_SURFACE.get(), WarframeControlSurfaceRenderer::new);
+            event.registerBlockEntityRenderer(ModBlockEntities.WARFRAME_VERTICAL_CONTROL_SURFACE.get(), WarframeVerticalControlSurfaceRenderer::new);
+            event.registerBlockEntityRenderer(ModBlockEntities.WARFRAME_AIR_BRAKE.get(), WarframeAirBrakeRenderer::new);
+
+        }
+
     }
+
+
 }

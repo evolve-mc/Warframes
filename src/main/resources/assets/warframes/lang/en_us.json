@@ -16,8 +16,30 @@
   "block.warframes.airframe_half_slab_wing": "Airframe Half Slab Wing",
   "block.warframes.airframe_half_slab_stabilizer": "Airframe Half Slab Stabilizer",
   "block.warframes.airframe_vertical_half_slab_stabilizer": "Airframe Vertical Half Slab Stabilizer",
+  "block.warframes.airframe_centered_stairs": "Airframe Centered Stairs",
+  "block.warframes.airframe_point": "Airframe Point",
+  "block.warframes.airframe_half_stairs": "Airframe Half Stairs",
+  "block.warframes.airframe_door": "Airframe Door",
+  "block.warframes.airframe_trapdoor": "Airframe Trapdoor",
+  "block.warframes.airframe_ladder": "Airframe Ladder",
+  "block.warframes.airframe_button": "Airframe Button",
+  "block.warframes.airframe_lever": "Airframe Lever",
+  "block.warframes.airframe_chest": "Airframe Chest",
+  "container.warframes.airframe_chest": "Airframe Chest",
+  "block.warframes.airframe_control_surface": "Airframe Control Surface",
+  "block.warframes.airframe_vertical_control_surface": "Airframe Vertical Control Surface",
+  "block.warframes.airframe_slab_wing_layer": "Airframe Slab Wing Layer",
+  "block.warframes.airframe_slab_stabilizer_layer": "Airframe Slab Stabilizer Layer",
+  "block.warframes.airframe_vertical_slab_stabilizer_layer": "Airframe Vertical Slab Stabilizer Layer",
+  "block.warframes.airframe_stepped_control_surface": "Airframe Stepped Control Surface",
+  "block.warframes.airframe_half_control_surface": "Airframe Half Control Surface",
+  "block.warframes.airframe_stepped_vertical_control_surface": "Airframe Stepped Vertical Control Surface",
+  "block.warframes.airframe_vertical_half_control_surface": "Airframe Vertical Half Control Surface",
+  "block.warframes.airframe_air_brake": "Airframe Horizontal Air Brake",
 
-  "block.warframes.mimic_test_block": "Mimic Test Block",
+  "tooltip.warframes.asymmetric_aerofoil": "Asymmetric Aerofoil",
+  "tooltip.warframes.symmetric_aerofoil": "Symmetric Aerofoil",
+
 
   "creativetab.warframes_tab": "Warframes"
 }
