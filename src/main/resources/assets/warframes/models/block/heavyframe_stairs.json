@@ -1,0 +1,7 @@
+{
+  "parent": "warframes:block/airframe_stairs",
+  "textures": {
+    "0": "warframes:block/heavyframe_block",
+    "particle": "warframes:block/heavyframe_block"
+  }
+}

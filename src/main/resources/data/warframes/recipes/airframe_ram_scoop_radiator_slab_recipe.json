@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    " b "
+  ],
+  "key": {
+    "a": {
+      "item": "warframes:airframe_block"
+    },
+    "b": {
+      "item": "valkyrien_warium:light_radiator"
+    }
+  },
+  "result": {
+    "item": "warframes:airframe_ram_scoop_radiator_slab",
+    "count": 1
+  }
+}

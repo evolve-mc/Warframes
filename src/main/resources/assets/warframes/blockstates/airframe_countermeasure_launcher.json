@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "warframes:block/airframe_countermeasure_launcher",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "warframes:block/airframe_countermeasure_launcher",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "warframes:block/airframe_countermeasure_launcher"
+    },
+    "facing=south": {
+      "model": "warframes:block/airframe_countermeasure_launcher",
+      "y": 180
+    },
+    "facing=up": {
+      "model": "warframes:block/airframe_countermeasure_launcher",
+      "x": 270
+    },
+    "facing=west": {
+      "model": "warframes:block/airframe_countermeasure_launcher",
+      "y": 270
+    }
+  }
+}

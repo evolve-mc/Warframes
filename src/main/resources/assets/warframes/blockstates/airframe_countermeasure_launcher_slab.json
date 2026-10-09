@@ -1,0 +1,56 @@
+{
+  "variants": {
+    "facing=up,outer=false": {
+      "model": "warframes:block/airframe_countermeasure_launcher_slab"
+    },
+    "facing=down,outer=false": {
+      "model": "warframes:block/airframe_countermeasure_launcher_slab",
+      "x": 180
+    },
+    "facing=north,outer=false": {
+      "model": "warframes:block/airframe_countermeasure_launcher_slab",
+      "x": 90
+    },
+    "facing=east,outer=false": {
+      "model": "warframes:block/airframe_countermeasure_launcher_slab",
+      "x": 90,
+      "y": 90
+    },
+    "facing=south,outer=false": {
+      "model": "warframes:block/airframe_countermeasure_launcher_slab",
+      "x": 90,
+      "y": 180
+    },
+    "facing=west,outer=false": {
+      "model": "warframes:block/airframe_countermeasure_launcher_slab",
+      "x": 90,
+      "y": 270
+    },
+    "facing=down,outer=true": {
+      "model": "warframes:block/airframe_countermeasure_launcher_slab_outer"
+    },
+    "facing=up,outer=true": {
+      "model": "warframes:block/airframe_countermeasure_launcher_slab_outer",
+      "x": 180
+    },
+    "facing=north,outer=true": {
+      "model": "warframes:block/airframe_countermeasure_launcher_slab_outer",
+      "x": 270
+    },
+    "facing=east,outer=true": {
+      "model": "warframes:block/airframe_countermeasure_launcher_slab_outer",
+      "x": 270,
+      "y": 90
+    },
+    "facing=south,outer=true": {
+      "model": "warframes:block/airframe_countermeasure_launcher_slab_outer",
+      "x": 270,
+      "y": 180
+    },
+    "facing=west,outer=true": {
+      "model": "warframes:block/airframe_countermeasure_launcher_slab_outer",
+      "x": 270,
+      "y": 270
+    }
+  }
+}

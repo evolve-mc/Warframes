@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "warframes:airframe_block",
+    "warframes:heavyframe_block"
+  ]
+}

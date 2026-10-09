@@ -1,0 +1,7 @@
+{
+  "parent": "warframes:block/airframe_edge_centered_point_height6",
+  "textures": {
+    "particle": "warframes:block/heavyframe_block",
+    "texture": "warframes:block/heavyframe_block"
+  }
+}

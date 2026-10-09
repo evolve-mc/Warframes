@@ -1,0 +1,7 @@
+{
+  "parent": "warframes:block/airframe_half_door_rh",
+  "textures": {
+    "particle": "warframes:block/heavyframe_block",
+    "texture": "warframes:block/heavyframe_block"
+  }
+}

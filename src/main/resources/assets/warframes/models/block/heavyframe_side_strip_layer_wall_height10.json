@@ -1,0 +1,7 @@
+{
+  "parent": "warframes:block/airframe_side_strip_layer_wall_height10",
+  "textures": {
+    "particle": "warframes:block/heavyframe_block",
+    "texture": "warframes:block/heavyframe_block"
+  }
+}

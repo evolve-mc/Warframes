@@ -2,10 +2,14 @@ package net.evo_mc.warframes.block.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.FluidTags;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -18,6 +22,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
@@ -27,11 +32,16 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.TooltipFlag;
+import java.util.List;
 
 import javax.annotation.Nullable;
 
 public class WarframeVerticalSlabStabilizerBlock extends Block implements SimpleWaterloggedBlock, WarframeMimicable {
-    public static final EnumProperty<WarframeVerticalStabilizerType> TYPE = EnumProperty.create("type", WarframeVerticalStabilizerType.class);
+    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+    public static final EnumProperty<WarframeVerticalSlabPosition> AEROFOIL = EnumProperty.create("aerofoil", WarframeVerticalSlabPosition.class);
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     protected static final VoxelShape WEST_AABB = Block.box(0.0D, 0.0D, 0.0D, 8.0D, 16.0D, 16.0D);
@@ -44,22 +54,39 @@ public class WarframeVerticalSlabStabilizerBlock extends Block implements Simple
     public WarframeVerticalSlabStabilizerBlock(BlockBehaviour.Properties pProperties) {
         super(pProperties);
         this.registerDefaultState(this.defaultBlockState()
-                .setValue(TYPE, WarframeVerticalStabilizerType.NORTH)
+                .setValue(FACING, Direction.NORTH)
+                .setValue(AEROFOIL, WarframeVerticalSlabPosition.CENTER)
                 .setValue(WATERLOGGED, Boolean.valueOf(false)));
     }
 
+    private static Direction rightOf(Direction facing) {
+        return facing.getClockWise();
+    }
+
+    private static WarframeVerticalSlabPosition aerofoilFor(Direction facing, Direction worldSide) {
+        return rightOf(facing) == worldSide ? WarframeVerticalSlabPosition.RIGHT : WarframeVerticalSlabPosition.LEFT;
+    }
+
+    private static Direction worldSideFor(Direction facing, WarframeVerticalSlabPosition aerofoil) {
+        Direction right = rightOf(facing);
+        return aerofoil == WarframeVerticalSlabPosition.RIGHT ? right : right.getOpposite();
+    }
+
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        switch (pState.getValue(TYPE)) {
+        Direction facing = pState.getValue(FACING);
+        WarframeVerticalSlabPosition aerofoil = pState.getValue(AEROFOIL);
+
+        if (aerofoil == WarframeVerticalSlabPosition.CENTER) {
+            return facing.getAxis() == Direction.Axis.Z ? CENTER_X_AABB : CENTER_Z_AABB;
+        }
+
+        switch (worldSideFor(facing, aerofoil)) {
             case WEST:
                 return WEST_AABB;
             case EAST:
                 return EAST_AABB;
-            case CENTER_X:
-                return CENTER_X_AABB;
             case SOUTH:
                 return SOUTH_AABB;
-            case CENTER_Z:
-                return CENTER_Z_AABB;
             case NORTH:
             default:
                 return NORTH_AABB;
@@ -76,29 +103,30 @@ public class WarframeVerticalSlabStabilizerBlock extends Block implements Simple
         FluidState fluidstate = pContext.getLevel().getFluidState(blockpos);
         boolean waterlogged = fluidstate.getType() == Fluids.WATER;
 
-        Direction.Axis facingAxis = pContext.getHorizontalDirection().getAxis();
-        WarframeVerticalStabilizerType type;
+        Direction facing = pContext.getHorizontalDirection().getOpposite();
 
-        if (facingAxis == Direction.Axis.Z) {
+        WarframeVerticalSlabPosition aerofoil;
+        if (facing.getAxis() == Direction.Axis.Z) {
             if (relX < 0.3D) {
-                type = WarframeVerticalStabilizerType.WEST;
+                aerofoil = aerofoilFor(facing, Direction.WEST);
             } else if (relX > 0.7D) {
-                type = WarframeVerticalStabilizerType.EAST;
+                aerofoil = aerofoilFor(facing, Direction.EAST);
             } else {
-                type = WarframeVerticalStabilizerType.CENTER_X;
+                aerofoil = WarframeVerticalSlabPosition.CENTER;
             }
         } else {
             if (relZ < 0.3D) {
-                type = WarframeVerticalStabilizerType.NORTH;
+                aerofoil = aerofoilFor(facing, Direction.NORTH);
             } else if (relZ > 0.7D) {
-                type = WarframeVerticalStabilizerType.SOUTH;
+                aerofoil = aerofoilFor(facing, Direction.SOUTH);
             } else {
-                type = WarframeVerticalStabilizerType.CENTER_Z;
+                aerofoil = WarframeVerticalSlabPosition.CENTER;
             }
         }
 
         return this.defaultBlockState()
-                .setValue(TYPE, type)
+                .setValue(FACING, facing)
+                .setValue(AEROFOIL, aerofoil)
                 .setValue(WATERLOGGED, Boolean.valueOf(waterlogged));
     }
 
@@ -122,7 +150,7 @@ public class WarframeVerticalSlabStabilizerBlock extends Block implements Simple
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(TYPE, WATERLOGGED);
+        pBuilder.add(FACING, AEROFOIL, WATERLOGGED);
     }
 
     public boolean isPathfindable(BlockState pState, BlockGetter pLevel, BlockPos pPos, PathComputationType pType) {
@@ -160,5 +188,31 @@ public class WarframeVerticalSlabStabilizerBlock extends Block implements Simple
     @Override
     public RenderShape getRenderShape(BlockState pState) {
         return RenderShape.MODEL;
+    }
+
+    @Override
+    public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, @Nullable LivingEntity pPlacer, ItemStack pStack) {
+        super.setPlacedBy(pLevel, pPos, pState, pPlacer, pStack);
+        mimicSetPlacedBy(pLevel, pPos, pState, pPlacer, pStack);
+        if (!pLevel.isClientSide()) {
+            pLevel.scheduleTick(pPos, this, 1);
+        }
+    }
+
+    @Override
+    public void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
+        super.tick(pState, pLevel, pPos, pRandom);
+        if (net.minecraftforge.fml.ModList.get().isLoaded("valkyrien_warium")) {
+            net.mcreator.valkyrienwarium.procedures.VerticalWingScriptProcedure.execute(
+                    pLevel, pPos.getX(), pPos.getY(), pPos.getZ(), pState);
+        }
+        pLevel.scheduleTick(pPos, this, 1);
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, @Nullable BlockGetter level, List<Component> tooltip, TooltipFlag flag) {
+        super.appendHoverText(stack, level, tooltip, flag);
+        tooltip.add(Component.translatable("tooltip.warframes.symmetric_aerofoil").withStyle(ChatFormatting.AQUA));
+        tooltip.add(Component.translatable("tooltip.warframes.provides_stabilization").withStyle(ChatFormatting.GRAY));
     }
 }

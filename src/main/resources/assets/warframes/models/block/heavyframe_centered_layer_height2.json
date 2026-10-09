@@ -1,0 +1,7 @@
+{
+  "parent": "warframes:block/airframe_centered_layer_height2",
+  "textures": {
+    "particle": "warframes:block/heavyframe_block",
+    "texture": "warframes:block/heavyframe_block"
+  }
+}

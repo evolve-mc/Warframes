@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "warframes:block/airframe_chest" },
+    "facing=south": { "model": "warframes:block/airframe_chest" },
+    "facing=west": { "model": "warframes:block/airframe_chest" },
+    "facing=east": { "model": "warframes:block/airframe_chest" }
+  }
+}

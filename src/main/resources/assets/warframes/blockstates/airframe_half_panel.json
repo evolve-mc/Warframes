@@ -1,0 +1,302 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "facing": "down",
+        "axis": "x",
+        "negative": "true"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_panel_floor",
+        "x": 180,
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "axis": "x",
+        "positive": "true"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_panel_floor",
+        "x": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "axis": "z",
+        "negative": "true"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_panel_floor",
+        "x": 180,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "axis": "z",
+        "positive": "true"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_panel_floor",
+        "x": 180,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "axis": "x",
+        "negative": "true"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_panel_floor",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "axis": "x",
+        "positive": "true"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_panel_floor",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "axis": "z",
+        "negative": "true"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_panel_floor",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "axis": "z",
+        "positive": "true"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_panel_floor",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "axis": "x",
+        "negative": "true"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_panel",
+        "x": 90,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "axis": "x",
+        "positive": "true"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_panel",
+        "x": 270,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "axis": "y",
+        "negative": "true"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_panel",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "axis": "y",
+        "positive": "true"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_panel",
+        "x": 180,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "axis": "x",
+        "negative": "true"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_panel",
+        "x": 270,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "axis": "x",
+        "positive": "true"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_panel",
+        "x": 90,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "axis": "y",
+        "negative": "true"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_panel",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "axis": "y",
+        "positive": "true"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_panel",
+        "x": 180,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "axis": "y",
+        "negative": "true"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_panel",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "axis": "y",
+        "positive": "true"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_panel",
+        "x": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "axis": "z",
+        "negative": "true"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_panel",
+        "x": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "axis": "z",
+        "positive": "true"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_panel",
+        "x": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "axis": "y",
+        "negative": "true"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_panel",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "axis": "y",
+        "positive": "true"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_panel",
+        "x": 180,
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "axis": "z",
+        "negative": "true"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_panel",
+        "x": 90,
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "axis": "z",
+        "positive": "true"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_panel",
+        "x": 270,
+        "y": 180,
+        "uvlock": true
+      }
+    }
+  ]
+}

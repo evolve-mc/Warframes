@@ -1,0 +1,142 @@
+{
+  "variants": {
+    "orientation=north,side=left,type=bottom": {
+      "model": "warframes:block/airframe_half_stairs_left",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "orientation=north,side=left,type=center": {
+      "model": "warframes:block/airframe_half_stairs_centered",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "orientation=north,side=left,type=top": {
+      "model": "warframes:block/airframe_half_stairs_left",
+      "x": 270,
+      "uvlock": true
+    },
+    "orientation=north,side=right,type=bottom": {
+      "model": "warframes:block/airframe_half_stairs_left",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "orientation=north,side=right,type=center": {
+      "model": "warframes:block/airframe_half_stairs_centered",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "orientation=north,side=right,type=top": {
+      "model": "warframes:block/airframe_half_stairs_left",
+      "x": 270,
+      "y": 270,
+      "uvlock": true
+    },
+    "orientation=south,side=left,type=bottom": {
+      "model": "warframes:block/airframe_half_stairs_left",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "orientation=south,side=left,type=center": {
+      "model": "warframes:block/airframe_half_stairs_centered",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "orientation=south,side=left,type=top": {
+      "model": "warframes:block/airframe_half_stairs_left",
+      "x": 270,
+      "y": 180,
+      "uvlock": true
+    },
+    "orientation=south,side=right,type=bottom": {
+      "model": "warframes:block/airframe_half_stairs_left",
+      "x": 90,
+      "uvlock": true
+    },
+    "orientation=south,side=right,type=center": {
+      "model": "warframes:block/airframe_half_stairs_centered",
+      "x": 90,
+      "uvlock": true
+    },
+    "orientation=south,side=right,type=top": {
+      "model": "warframes:block/airframe_half_stairs_left",
+      "x": 270,
+      "y": 90,
+      "uvlock": true
+    },
+    "orientation=west,side=left,type=bottom": {
+      "model": "warframes:block/airframe_half_stairs_left",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "orientation=west,side=left,type=center": {
+      "model": "warframes:block/airframe_half_stairs_centered",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "orientation=west,side=left,type=top": {
+      "model": "warframes:block/airframe_half_stairs_left",
+      "x": 270,
+      "y": 270,
+      "uvlock": true
+    },
+    "orientation=west,side=right,type=bottom": {
+      "model": "warframes:block/airframe_half_stairs_left",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "orientation=west,side=right,type=center": {
+      "model": "warframes:block/airframe_half_stairs_centered",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "orientation=west,side=right,type=top": {
+      "model": "warframes:block/airframe_half_stairs_left",
+      "x": 270,
+      "y": 180,
+      "uvlock": true
+    },
+    "orientation=east,side=left,type=bottom": {
+      "model": "warframes:block/airframe_half_stairs_left",
+      "x": 90,
+      "uvlock": true
+    },
+    "orientation=east,side=left,type=center": {
+      "model": "warframes:block/airframe_half_stairs_centered",
+      "x": 90,
+      "uvlock": true
+    },
+    "orientation=east,side=left,type=top": {
+      "model": "warframes:block/airframe_half_stairs_left",
+      "x": 270,
+      "y": 90,
+      "uvlock": true
+    },
+    "orientation=east,side=right,type=bottom": {
+      "model": "warframes:block/airframe_half_stairs_left",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "orientation=east,side=right,type=center": {
+      "model": "warframes:block/airframe_half_stairs_centered",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "orientation=east,side=right,type=top": {
+      "model": "warframes:block/airframe_half_stairs_left",
+      "x": 270,
+      "uvlock": true
+    }
+  }
+}

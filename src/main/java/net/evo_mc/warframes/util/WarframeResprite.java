@@ -10,10 +10,6 @@ public final class WarframeResprite {
     }
 
     public static BakedQuad resprite(BakedQuad quad, TextureAtlasSprite newSprite, int tintIndex) {
-        return resprite(quad, newSprite, tintIndex, false);
-    }
-
-    public static BakedQuad resprite(BakedQuad quad, TextureAtlasSprite newSprite, int tintIndex, boolean rotate90) {
         TextureAtlasSprite oldSprite = quad.getSprite();
         int[] original = quad.getVertices();
         int[] vertices = java.util.Arrays.copyOf(original, original.length);
@@ -26,13 +22,6 @@ public final class WarframeResprite {
 
             float uFraction = (u - oldSprite.getU0()) / (oldSprite.getU1() - oldSprite.getU0());
             float vFraction = (v - oldSprite.getV0()) / (oldSprite.getV1() - oldSprite.getV0());
-
-            if (rotate90) {
-                float rotatedU = vFraction;
-                float rotatedV = 1f - uFraction;
-                uFraction = rotatedU;
-                vFraction = rotatedV;
-            }
 
             float newU = newSprite.getU0() + uFraction * (newSprite.getU1() - newSprite.getU0());
             float newV = newSprite.getV0() + vFraction * (newSprite.getV1() - newSprite.getV0());

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a",
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "warframes:airframe_block"
+    }
+  },
+  "result": {
+    "item": "warframes:airframe_door",
+    "count": 1
+  }
+}

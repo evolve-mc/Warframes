@@ -1,0 +1,68 @@
+{
+  "variants": {
+    "position=down_x": {
+      "model": "warframes:block/heavyframe_centered_stairs",
+      "uvlock": true
+    },
+    "position=down_z": {
+      "model": "warframes:block/heavyframe_centered_stairs",
+      "y": 90,
+      "uvlock": true
+    },
+    "position=up_x": {
+      "model": "warframes:block/heavyframe_centered_stairs",
+      "x": 180,
+      "uvlock": true
+    },
+    "position=up_z": {
+      "model": "warframes:block/heavyframe_centered_stairs",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    },
+    "position=north_z": {
+      "model": "warframes:block/heavyframe_centered_stairs",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "position=north_y": {
+      "model": "warframes:block/heavyframe_vertical_centered_stairs",
+      "y": 0,
+      "uvlock": true
+    },
+    "position=south_z": {
+      "model": "warframes:block/heavyframe_centered_stairs",
+      "x": 270,
+      "y": 180,
+      "uvlock": true
+    },
+    "position=south_y": {
+      "model": "warframes:block/heavyframe_vertical_centered_stairs",
+      "y": 180,
+      "uvlock": true
+    },
+    "position=east_y": {
+      "model": "warframes:block/heavyframe_vertical_centered_stairs",
+      "y": 90,
+      "uvlock": true
+    },
+    "position=east_x": {
+      "model": "warframes:block/heavyframe_centered_stairs",
+      "x": 270,
+      "y": 90,
+      "uvlock": true
+    },
+    "position=west_y": {
+      "model": "warframes:block/heavyframe_vertical_centered_stairs",
+      "y": 270,
+      "uvlock": true
+    },
+    "position=west_x": {
+      "model": "warframes:block/heavyframe_centered_stairs",
+      "x": 270,
+      "y": 270,
+      "uvlock": true
+    }
+  }
+}

@@ -1,6 +1,5 @@
 package net.evo_mc.warframes.block.custom;
 
-import net.evo_mc.warframes.item.custom.WrenchItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
@@ -33,8 +32,8 @@ import javax.annotation.Nullable;
 
 public class WarframeCenteredStairsBlock extends Block implements SimpleWaterloggedBlock, WarframeMimicable {
 
-    public static final EnumProperty<Direction> POSITION = EnumProperty.create("position", Direction.class);
-    public static final EnumProperty<Direction.Axis> AXIS = EnumProperty.create("axis", Direction.Axis.class);
+    public static final EnumProperty<WarframeCenteredStairPosition> POSITION =
+            EnumProperty.create("position", WarframeCenteredStairPosition.class);
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     protected static final VoxelShape DOWN_BASE = Block.box(0, 0, 0, 16, 8, 16);
@@ -73,32 +72,26 @@ public class WarframeCenteredStairsBlock extends Block implements SimpleWaterlog
     public WarframeCenteredStairsBlock(BlockBehaviour.Properties pProperties) {
         super(pProperties);
         this.registerDefaultState(this.stateDefinition.any()
-                .setValue(POSITION, Direction.DOWN)
-                .setValue(AXIS, Direction.Axis.X)
+                .setValue(POSITION, WarframeCenteredStairPosition.DOWN_X)
                 .setValue(WATERLOGGED, Boolean.valueOf(false)));
     }
 
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        Direction position = pState.getValue(POSITION);
-        Direction.Axis axis = pState.getValue(AXIS);
-
-        switch (position) {
-            case DOWN:
-                return (axis == Direction.Axis.X) ? DOWN_X : DOWN_Z;
-            case UP:
-                return (axis == Direction.Axis.X) ? UP_X : UP_Z;
-            case NORTH:
-                return (axis == Direction.Axis.Y) ? NORTH_Y : NORTH_Z;
-            case SOUTH:
-                return (axis == Direction.Axis.Y) ? SOUTH_Y : SOUTH_Z;
-            case EAST:
-                return (axis == Direction.Axis.Y) ? EAST_Y : EAST_X;
-            case WEST:
-                return (axis == Direction.Axis.Y) ? WEST_Y : WEST_X;
-            default:
-                return Shapes.block();
-        }
+        return switch (pState.getValue(POSITION)) {
+            case DOWN_X -> DOWN_X;
+            case DOWN_Z -> DOWN_Z;
+            case UP_X -> UP_X;
+            case UP_Z -> UP_Z;
+            case NORTH_Y -> NORTH_Y;
+            case NORTH_Z -> NORTH_Z;
+            case SOUTH_Y -> SOUTH_Y;
+            case SOUTH_Z -> SOUTH_Z;
+            case EAST_Y -> EAST_Y;
+            case EAST_X -> EAST_X;
+            case WEST_Y -> WEST_Y;
+            case WEST_X -> WEST_X;
+        };
     }
 
     @Override
@@ -109,9 +102,9 @@ public class WarframeCenteredStairsBlock extends Block implements SimpleWaterlog
     @Nullable
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-        Direction position = pContext.getClickedFace().getOpposite();
+        Direction side = pContext.getClickedFace().getOpposite();
         Direction clickedFace = pContext.getClickedFace();
-        Direction.Axis excluded = position.getAxis();
+        Direction.Axis excluded = side.getAxis();
 
         Vec3 hit = pContext.getClickLocation();
         BlockPos blockpos = pContext.getClickedPos();
@@ -122,8 +115,7 @@ public class WarframeCenteredStairsBlock extends Block implements SimpleWaterlog
         Direction.Axis axis;
 
         if (excluded == Direction.Axis.Y) {
-            Direction.Axis playerAxis = pContext.getHorizontalDirection().getAxis();
-            axis = playerAxis;
+            axis = pContext.getHorizontalDirection().getAxis();
         } else if (clickedFace == Direction.NORTH || clickedFace == Direction.SOUTH) {
             boolean isVerticalWedge = (relY > relX) == (relY > 1.0D - relX);
             axis = isVerticalWedge ? Direction.Axis.Y : Direction.Axis.Z;
@@ -134,9 +126,19 @@ public class WarframeCenteredStairsBlock extends Block implements SimpleWaterlog
 
         FluidState fluidstate = pContext.getLevel().getFluidState(pContext.getClickedPos());
         return this.defaultBlockState()
-                .setValue(POSITION, position)
-                .setValue(AXIS, axis)
+                .setValue(POSITION, toPosition(side, axis))
                 .setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
+    }
+
+    private static WarframeCenteredStairPosition toPosition(Direction side, Direction.Axis axis) {
+        return switch (side) {
+            case DOWN -> axis == Direction.Axis.X ? WarframeCenteredStairPosition.DOWN_X : WarframeCenteredStairPosition.DOWN_Z;
+            case UP -> axis == Direction.Axis.X ? WarframeCenteredStairPosition.UP_X : WarframeCenteredStairPosition.UP_Z;
+            case NORTH -> axis == Direction.Axis.Y ? WarframeCenteredStairPosition.NORTH_Y : WarframeCenteredStairPosition.NORTH_Z;
+            case SOUTH -> axis == Direction.Axis.Y ? WarframeCenteredStairPosition.SOUTH_Y : WarframeCenteredStairPosition.SOUTH_Z;
+            case EAST -> axis == Direction.Axis.Y ? WarframeCenteredStairPosition.EAST_Y : WarframeCenteredStairPosition.EAST_X;
+            case WEST -> axis == Direction.Axis.Y ? WarframeCenteredStairPosition.WEST_Y : WarframeCenteredStairPosition.WEST_X;
+        };
     }
 
     @Override
@@ -149,7 +151,7 @@ public class WarframeCenteredStairsBlock extends Block implements SimpleWaterlog
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(POSITION, AXIS, WATERLOGGED);
+        pBuilder.add(POSITION, WATERLOGGED);
     }
 
     @Override

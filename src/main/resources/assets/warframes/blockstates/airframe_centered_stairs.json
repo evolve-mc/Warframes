@@ -1,64 +1,64 @@
 {
   "variants": {
-    "position=down,axis=x": {
+    "position=down_x": {
       "model": "warframes:block/airframe_centered_stairs",
       "uvlock": true
     },
-    "position=down,axis=z": {
+    "position=down_z": {
       "model": "warframes:block/airframe_centered_stairs",
       "y": 90,
       "uvlock": true
     },
-    "position=up,axis=x": {
+    "position=up_x": {
       "model": "warframes:block/airframe_centered_stairs",
       "x": 180,
       "uvlock": true
     },
-    "position=up,axis=z": {
+    "position=up_z": {
       "model": "warframes:block/airframe_centered_stairs",
       "x": 180,
       "y": 90,
       "uvlock": true
     },
-    "position=north,axis=z": {
+    "position=north_z": {
       "model": "warframes:block/airframe_centered_stairs",
       "x": 90,
       "y": 180,
       "uvlock": true
     },
-    "position=north,axis=y": {
+    "position=north_y": {
       "model": "warframes:block/airframe_vertical_centered_stairs",
       "y": 0,
       "uvlock": true
     },
-    "position=south,axis=z": {
+    "position=south_z": {
       "model": "warframes:block/airframe_centered_stairs",
       "x": 270,
       "y": 180,
       "uvlock": true
     },
-    "position=south,axis=y": {
+    "position=south_y": {
       "model": "warframes:block/airframe_vertical_centered_stairs",
       "y": 180,
       "uvlock": true
     },
-    "position=east,axis=y": {
+    "position=east_y": {
       "model": "warframes:block/airframe_vertical_centered_stairs",
       "y": 90,
       "uvlock": true
     },
-    "position=east,axis=x": {
+    "position=east_x": {
       "model": "warframes:block/airframe_centered_stairs",
       "x": 270,
       "y": 90,
       "uvlock": true
     },
-    "position=west,axis=y": {
+    "position=west_y": {
       "model": "warframes:block/airframe_vertical_centered_stairs",
       "y": 270,
       "uvlock": true
     },
-    "position=west,axis=x": {
+    "position=west_x": {
       "model": "warframes:block/airframe_centered_stairs",
       "x": 270,
       "y": 270,

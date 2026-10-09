@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a",
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "warframes:heavyframe_block"
+    }
+  },
+  "result": {
+    "item": "warframes:heavyframe_door",
+    "count": 1
+  }
+}

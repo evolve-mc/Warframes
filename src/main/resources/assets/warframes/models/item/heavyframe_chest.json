@@ -1,0 +1,6 @@
+{
+  "parent": "warframes:item/airframe_chest",
+  "textures": {
+    "1": "warframes:block/heavyframe_block"
+  }
+}

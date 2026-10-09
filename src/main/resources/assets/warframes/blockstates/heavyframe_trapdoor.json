@@ -1,0 +1,92 @@
+{
+  "variants": {
+    "facing=north,half=bottom,open=false": {
+      "model": "warframes:block/heavyframe_panel",
+      "uvlock": true
+    },
+    "facing=north,half=bottom,open=true": {
+      "model": "warframes:block/heavyframe_panel",
+      "x": 90,
+      "uvlock": true
+    },
+    "facing=north,half=top,open=false": {
+      "model": "warframes:block/heavyframe_panel",
+      "x": 180,
+      "uvlock": true
+    },
+    "facing=north,half=top,open=true": {
+      "model": "warframes:block/heavyframe_panel",
+      "x": 270,
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=south,half=bottom,open=false": {
+      "model": "warframes:block/heavyframe_panel",
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=south,half=bottom,open=true": {
+      "model": "warframes:block/heavyframe_panel",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=south,half=top,open=false": {
+      "model": "warframes:block/heavyframe_panel",
+      "x": 180,
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=south,half=top,open=true": {
+      "model": "warframes:block/heavyframe_panel",
+      "x": 270,
+      "uvlock": true
+    },
+    "facing=west,half=bottom,open=false": {
+      "model": "warframes:block/heavyframe_panel",
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=west,half=bottom,open=true": {
+      "model": "warframes:block/heavyframe_panel",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=west,half=top,open=false": {
+      "model": "warframes:block/heavyframe_panel",
+      "x": 180,
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=west,half=top,open=true": {
+      "model": "warframes:block/heavyframe_panel",
+      "x": 270,
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=east,half=bottom,open=false": {
+      "model": "warframes:block/heavyframe_panel",
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=east,half=bottom,open=true": {
+      "model": "warframes:block/heavyframe_panel",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=east,half=top,open=false": {
+      "model": "warframes:block/heavyframe_panel",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=east,half=top,open=true": {
+      "model": "warframes:block/heavyframe_panel",
+      "x": 270,
+      "y": 270,
+      "uvlock": true
+    }
+  }
+}

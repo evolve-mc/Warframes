@@ -1,0 +1,7 @@
+{
+  "parent": "warframes:block/airframe_centered_quarter_slab",
+  "textures": {
+    "particle": "warframes:block/heavyframe_block",
+    "texture": "warframes:block/heavyframe_block"
+  }
+}

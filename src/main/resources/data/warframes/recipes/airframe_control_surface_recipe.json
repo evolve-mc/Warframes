@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a a",
+    "bbb"
+  ],
+  "key": {
+    "a": {
+      "tag": "crusty_chunks:mechanicalcomponent"
+    },
+    "b": {
+      "item": "warframes:airframe_block"
+    }
+  },
+  "result": {
+    "item": "warframes:airframe_control_surface",
+    "count": 3
+  }
+}

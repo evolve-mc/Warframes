@@ -1,0 +1,6 @@
+{
+  "parent": "warframes:block/airframe_chest",
+  "textures": {
+    "particle": "warframes:block/heavyframe_block"
+  }
+}

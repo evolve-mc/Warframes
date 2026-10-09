@@ -1,0 +1,149 @@
+{
+  "variants": {
+    "half=bottom,position=northeast": {
+      "model": "warframes:block/heavyframe_quarter_slab",
+      "y": 0,
+      "uvlock": true
+    },
+    "half=center,position=northeast": {
+      "model": "warframes:block/heavyframe_centered_quarter_slab",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=top,position=northeast": {
+      "model": "warframes:block/heavyframe_quarter_slab",
+      "x": 180,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=bottom,position=northwest": {
+      "model": "warframes:block/heavyframe_quarter_slab",
+      "y": 270,
+      "uvlock": true
+    },
+    "half=center,position=northwest": {
+      "model": "warframes:block/heavyframe_centered_quarter_slab",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=top,position=northwest": {
+      "model": "warframes:block/heavyframe_quarter_slab",
+      "x": 180,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=southeast": {
+      "model": "warframes:block/heavyframe_quarter_slab",
+      "y": 90,
+      "uvlock": true
+    },
+    "half=center,position=southeast": {
+      "model": "warframes:block/heavyframe_centered_quarter_slab",
+      "x": 90,
+      "y": 0,
+      "uvlock": true
+    },
+    "half=top,position=southeast": {
+      "model": "warframes:block/heavyframe_quarter_slab",
+      "x": 180,
+      "y": 0,
+      "uvlock": true
+    },
+    "half=bottom,position=southwest": {
+      "model": "warframes:block/heavyframe_quarter_slab",
+      "y": 180,
+      "uvlock": true
+    },
+    "half=center,position=southwest": {
+      "model": "warframes:block/heavyframe_centered_quarter_slab",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "half=top,position=southwest": {
+      "model": "warframes:block/heavyframe_quarter_slab",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    },
+    "half=bottom,position=north": {
+      "model": "warframes:block/heavyframe_centered_quarter_slab",
+      "y": 270,
+      "uvlock": true
+    },
+    "half=center,position=north": {
+      "model": "warframes:block/heavyframe_face_centered_quarter_slab",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=top,position=north": {
+      "model": "warframes:block/heavyframe_centered_quarter_slab",
+      "x": 180,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=bottom,position=south": {
+      "model": "warframes:block/heavyframe_centered_quarter_slab",
+      "y": 90,
+      "uvlock": true
+    },
+    "half=center,position=south": {
+      "model": "warframes:block/heavyframe_face_centered_quarter_slab",
+      "x": 90,
+      "y": 0,
+      "uvlock": true
+    },
+    "half=top,position=south": {
+      "model": "warframes:block/heavyframe_centered_quarter_slab",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    },
+    "half=bottom,position=east": {
+      "model": "warframes:block/heavyframe_centered_quarter_slab",
+      "y": 0,
+      "uvlock": true
+    },
+    "half=center,position=east": {
+      "model": "warframes:block/heavyframe_face_centered_quarter_slab",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=top,position=east": {
+      "model": "warframes:block/heavyframe_centered_quarter_slab",
+      "x": 180,
+      "y": 0,
+      "uvlock": true
+    },
+    "half=bottom,position=west": {
+      "model": "warframes:block/heavyframe_centered_quarter_slab",
+      "y": 180,
+      "uvlock": true
+    },
+    "half=center,position=west": {
+      "model": "warframes:block/heavyframe_face_centered_quarter_slab",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "half=top,position=west": {
+      "model": "warframes:block/heavyframe_centered_quarter_slab",
+      "x": 180,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=center": {
+      "model": "warframes:block/heavyframe_face_centered_quarter_slab",
+      "uvlock": true
+    },
+    "half=top,position=center": {
+      "model": "warframes:block/heavyframe_face_centered_quarter_slab",
+      "x": 180,
+      "uvlock": true
+    }
+  }
+}

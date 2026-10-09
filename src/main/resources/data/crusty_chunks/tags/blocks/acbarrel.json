@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "warframes:airframe_covered_autocannon_barrel",
+    "warframes:heavyframe_covered_autocannon_barrel"
+  ]
+}

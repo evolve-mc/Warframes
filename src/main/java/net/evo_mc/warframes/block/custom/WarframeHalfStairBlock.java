@@ -21,6 +21,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.Half;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
@@ -32,14 +33,9 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import javax.annotation.Nullable;
 
 public class WarframeHalfStairBlock extends Block implements SimpleWaterloggedBlock, WarframeMimicable {
-    public static final EnumProperty<WarframeHalfType> HALF =
-            EnumProperty.create("half", WarframeHalfType.class);
-    public static final EnumProperty<WarframeFacingType> FACING =
-            EnumProperty.create("facing", WarframeFacingType.class);
-    public static final EnumProperty<WarframeCornerType> CORNER =
-            EnumProperty.create("corner", WarframeCornerType.class);
-    public static final EnumProperty<WarframeSideType> SIDE =
-            EnumProperty.create("side", WarframeSideType.class);
+    public static final EnumProperty<Half> HALF = BlockStateProperties.HALF;
+    public static final EnumProperty<WarframeHalfStairPosition> POSITION =
+            EnumProperty.create("position", WarframeHalfStairPosition.class);
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     protected static final VoxelShape NORTHWEST_BOTTOM = Shapes.or(Block.box(0D, 0D, 8D, 8D, 8D, 16D), Block.box(0D, 0D, 0D, 16D, 8D, 8D));
@@ -70,57 +66,28 @@ public class WarframeHalfStairBlock extends Block implements SimpleWaterloggedBl
     public WarframeHalfStairBlock(BlockBehaviour.Properties pProperties) {
         super(pProperties);
         this.registerDefaultState(this.stateDefinition.any()
-                .setValue(HALF, WarframeHalfType.BOTTOM)
-                .setValue(FACING, WarframeFacingType.NORTH)
-                .setValue(CORNER, WarframeCornerType.NONE)
-                .setValue(SIDE, WarframeSideType.LEFT)
+                .setValue(HALF, Half.BOTTOM)
+                .setValue(POSITION, WarframeHalfStairPosition.NORTH_LEFT)
                 .setValue(WATERLOGGED, Boolean.valueOf(false)));
     }
 
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        WarframeHalfType half = pState.getValue(HALF);
-        WarframeFacingType facing = pState.getValue(FACING);
-        WarframeCornerType corner = pState.getValue(CORNER);
-        WarframeSideType side = pState.getValue(SIDE);
-
-        if (facing == WarframeFacingType.CORNER) {
-            switch (corner) {
-                case NORTHWEST:
-                    return half == WarframeHalfType.TOP ? NORTHWEST_TOP : NORTHWEST_BOTTOM;
-                case NORTHEAST:
-                    return half == WarframeHalfType.TOP ? NORTHEAST_TOP : NORTHEAST_BOTTOM;
-                case SOUTHEAST:
-                    return half == WarframeHalfType.TOP ? SOUTHEAST_TOP : SOUTHEAST_BOTTOM;
-                case SOUTHWEST:
-                default:
-                    return half == WarframeHalfType.TOP ? SOUTHWEST_TOP : SOUTHWEST_BOTTOM;
-            }
-        }
-
-        switch (facing) {
-            case NORTH:
-                if (half == WarframeHalfType.TOP) {
-                    return side == WarframeSideType.RIGHT ? NORTH_TOP_RIGHT : NORTH_TOP_LEFT;
-                }
-                return side == WarframeSideType.RIGHT ? NORTH_BOTTOM_RIGHT : NORTH_BOTTOM_LEFT;
-            case SOUTH:
-                if (half == WarframeHalfType.TOP) {
-                    return side == WarframeSideType.RIGHT ? SOUTH_TOP_RIGHT : SOUTH_TOP_LEFT;
-                }
-                return side == WarframeSideType.RIGHT ? SOUTH_BOTTOM_RIGHT : SOUTH_BOTTOM_LEFT;
-            case EAST:
-                if (half == WarframeHalfType.TOP) {
-                    return side == WarframeSideType.RIGHT ? EAST_TOP_RIGHT : EAST_TOP_LEFT;
-                }
-                return side == WarframeSideType.RIGHT ? EAST_BOTTOM_RIGHT : EAST_BOTTOM_LEFT;
-            case WEST:
-            default:
-                if (half == WarframeHalfType.TOP) {
-                    return side == WarframeSideType.RIGHT ? WEST_TOP_RIGHT : WEST_TOP_LEFT;
-                }
-                return side == WarframeSideType.RIGHT ? WEST_BOTTOM_RIGHT : WEST_BOTTOM_LEFT;
-        }
+        boolean top = pState.getValue(HALF) == Half.TOP;
+        return switch (pState.getValue(POSITION)) {
+            case NORTHWEST -> top ? NORTHWEST_TOP : NORTHWEST_BOTTOM;
+            case NORTHEAST -> top ? NORTHEAST_TOP : NORTHEAST_BOTTOM;
+            case SOUTHEAST -> top ? SOUTHEAST_TOP : SOUTHEAST_BOTTOM;
+            case SOUTHWEST -> top ? SOUTHWEST_TOP : SOUTHWEST_BOTTOM;
+            case NORTH_LEFT -> top ? NORTH_TOP_LEFT : NORTH_BOTTOM_LEFT;
+            case NORTH_RIGHT -> top ? NORTH_TOP_RIGHT : NORTH_BOTTOM_RIGHT;
+            case SOUTH_LEFT -> top ? SOUTH_TOP_LEFT : SOUTH_BOTTOM_LEFT;
+            case SOUTH_RIGHT -> top ? SOUTH_TOP_RIGHT : SOUTH_BOTTOM_RIGHT;
+            case EAST_LEFT -> top ? EAST_TOP_LEFT : EAST_BOTTOM_LEFT;
+            case EAST_RIGHT -> top ? EAST_TOP_RIGHT : EAST_BOTTOM_RIGHT;
+            case WEST_LEFT -> top ? WEST_TOP_LEFT : WEST_BOTTOM_LEFT;
+            case WEST_RIGHT -> top ? WEST_TOP_RIGHT : WEST_BOTTOM_RIGHT;
+        };
     }
 
     @Override
@@ -141,107 +108,80 @@ public class WarframeHalfStairBlock extends Block implements SimpleWaterloggedBl
         FluidState fluidstate = pContext.getLevel().getFluidState(blockpos);
         boolean waterlogged = fluidstate.getType() == Fluids.WATER;
 
-        WarframeHalfType half;
-        WarframeFacingType facing;
-        WarframeCornerType corner = WarframeCornerType.NONE;
-        WarframeSideType side = WarframeSideType.NONE;
+        Half half;
+        WarframeHalfStairPosition position;
 
         if (clickedFace == Direction.UP || clickedFace == Direction.DOWN) {
-            half = clickedFace == Direction.DOWN ? WarframeHalfType.TOP : WarframeHalfType.BOTTOM;
-
-            Direction horizontalFacing = pContext.getHorizontalDirection();
-            switch (horizontalFacing) {
-                case SOUTH:
-                    facing = WarframeFacingType.SOUTH;
-                    side = relX > 0.5D ? WarframeSideType.LEFT : WarframeSideType.RIGHT;
-                    break;
-                case EAST:
-                    facing = WarframeFacingType.EAST;
-                    side = relZ > 0.5D ? WarframeSideType.RIGHT : WarframeSideType.LEFT;
-                    break;
-                case WEST:
-                    facing = WarframeFacingType.WEST;
-                    side = relZ > 0.5D ? WarframeSideType.LEFT : WarframeSideType.RIGHT;
-                    break;
-                case NORTH:
-                default:
-                    facing = WarframeFacingType.NORTH;
-                    side = relX > 0.5D ? WarframeSideType.RIGHT : WarframeSideType.LEFT;
-                    break;
-            }
+            half = clickedFace == Direction.DOWN ? Half.TOP : Half.BOTTOM;
+            position = switch (pContext.getHorizontalDirection()) {
+                case SOUTH -> relX > 0.5D ? WarframeHalfStairPosition.SOUTH_LEFT : WarframeHalfStairPosition.SOUTH_RIGHT;
+                case EAST -> relZ > 0.5D ? WarframeHalfStairPosition.EAST_RIGHT : WarframeHalfStairPosition.EAST_LEFT;
+                case WEST -> relZ > 0.5D ? WarframeHalfStairPosition.WEST_LEFT : WarframeHalfStairPosition.WEST_RIGHT;
+                default -> relX > 0.5D ? WarframeHalfStairPosition.NORTH_RIGHT : WarframeHalfStairPosition.NORTH_LEFT;
+            };
         } else {
             double u;
-            WarframeCornerType lowCorner;
-            WarframeCornerType highCorner;
-            WarframeFacingType oppositeFacing;
-            boolean sideFlipped;
+            WarframeHalfStairPosition lowCorner;
+            WarframeHalfStairPosition highCorner;
+            WarframeHalfStairPosition lowSide;
+            WarframeHalfStairPosition highSide;
 
             switch (clickedFace) {
                 case SOUTH:
                     u = relX;
-                    lowCorner = WarframeCornerType.NORTHWEST;
-                    highCorner = WarframeCornerType.NORTHEAST;
-                    oppositeFacing = WarframeFacingType.NORTH;
-                    sideFlipped = false;
+                    lowCorner = WarframeHalfStairPosition.NORTHWEST;
+                    highCorner = WarframeHalfStairPosition.NORTHEAST;
+                    lowSide = WarframeHalfStairPosition.NORTH_LEFT;
+                    highSide = WarframeHalfStairPosition.NORTH_RIGHT;
                     break;
                 case NORTH:
                     u = relX;
-                    lowCorner = WarframeCornerType.SOUTHWEST;
-                    highCorner = WarframeCornerType.SOUTHEAST;
-                    oppositeFacing = WarframeFacingType.SOUTH;
-                    sideFlipped = true;
+                    lowCorner = WarframeHalfStairPosition.SOUTHWEST;
+                    highCorner = WarframeHalfStairPosition.SOUTHEAST;
+                    lowSide = WarframeHalfStairPosition.SOUTH_RIGHT;
+                    highSide = WarframeHalfStairPosition.SOUTH_LEFT;
                     break;
                 case EAST:
                     u = relZ;
-                    lowCorner = WarframeCornerType.NORTHWEST;
-                    highCorner = WarframeCornerType.SOUTHWEST;
-                    oppositeFacing = WarframeFacingType.WEST;
-                    sideFlipped = true;
+                    lowCorner = WarframeHalfStairPosition.NORTHWEST;
+                    highCorner = WarframeHalfStairPosition.SOUTHWEST;
+                    lowSide = WarframeHalfStairPosition.WEST_RIGHT;
+                    highSide = WarframeHalfStairPosition.WEST_LEFT;
                     break;
                 case WEST:
                 default:
                     u = relZ;
-                    lowCorner = WarframeCornerType.NORTHEAST;
-                    highCorner = WarframeCornerType.SOUTHEAST;
-                    oppositeFacing = WarframeFacingType.EAST;
-                    sideFlipped = false;
+                    lowCorner = WarframeHalfStairPosition.NORTHEAST;
+                    highCorner = WarframeHalfStairPosition.SOUTHEAST;
+                    lowSide = WarframeHalfStairPosition.EAST_LEFT;
+                    highSide = WarframeHalfStairPosition.EAST_RIGHT;
                     break;
             }
 
             double v = relY;
-            half = v > 0.5D ? WarframeHalfType.TOP : WarframeHalfType.BOTTOM;
+            half = v > 0.5D ? Half.TOP : Half.BOTTOM;
 
             boolean isLeftRegion = u < v && u < (1.0D - v);
             boolean isRightRegion = u > v && u > (1.0D - v);
 
             if (isLeftRegion) {
-                facing = WarframeFacingType.CORNER;
-                corner = lowCorner;
+                position = lowCorner;
             } else if (isRightRegion) {
-                facing = WarframeFacingType.CORNER;
-                corner = highCorner;
+                position = highCorner;
             } else {
-                facing = oppositeFacing;
-                boolean isLowSide = u < 0.5D;
-                if (isLowSide != sideFlipped) {
-                    side = WarframeSideType.LEFT;
-                } else {
-                    side = WarframeSideType.RIGHT;
-                }
+                position = u < 0.5D ? lowSide : highSide;
             }
         }
 
         return this.defaultBlockState()
                 .setValue(HALF, half)
-                .setValue(FACING, facing)
-                .setValue(CORNER, corner)
-                .setValue(SIDE, side)
+                .setValue(POSITION, position)
                 .setValue(WATERLOGGED, Boolean.valueOf(waterlogged));
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(HALF, FACING, CORNER, SIDE, WATERLOGGED);
+        pBuilder.add(HALF, POSITION, WATERLOGGED);
     }
 
     @Override

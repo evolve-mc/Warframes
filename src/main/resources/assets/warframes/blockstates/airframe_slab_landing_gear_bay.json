@@ -1,0 +1,499 @@
+{
+  "variants": {
+    "facing=north,half=top,open=false": {
+      "model": "warframes:block/airframe_slab_gear_bay_closed_top"
+    },
+    "facing=east,half=top,open=false": {
+      "model": "warframes:block/airframe_slab_gear_bay_closed_top",
+      "y": 90
+    },
+    "facing=south,half=top,open=false": {
+      "model": "warframes:block/airframe_slab_gear_bay_closed_top",
+      "y": 180
+    },
+    "facing=west,half=top,open=false": {
+      "model": "warframes:block/airframe_slab_gear_bay_closed_top",
+      "y": 270
+    },
+    "facing=north,half=center,open=false": {
+      "model": "warframes:block/airframe_slab_gear_bay_closed_center"
+    },
+    "facing=east,half=center,open=false": {
+      "model": "warframes:block/airframe_slab_gear_bay_closed_center",
+      "y": 90
+    },
+    "facing=south,half=center,open=false": {
+      "model": "warframes:block/airframe_slab_gear_bay_closed_center",
+      "y": 180
+    },
+    "facing=west,half=center,open=false": {
+      "model": "warframes:block/airframe_slab_gear_bay_closed_center",
+      "y": 270
+    },
+    "facing=north,half=bottom,open=false": {
+      "model": "warframes:block/airframe_slab_gear_bay_closed_bottom"
+    },
+    "facing=east,half=bottom,open=false": {
+      "model": "warframes:block/airframe_slab_gear_bay_closed_bottom",
+      "y": 90
+    },
+    "facing=south,half=bottom,open=false": {
+      "model": "warframes:block/airframe_slab_gear_bay_closed_bottom",
+      "y": 180
+    },
+    "facing=west,half=bottom,open=false": {
+      "model": "warframes:block/airframe_slab_gear_bay_closed_bottom",
+      "y": 270
+    },
+    "facing=north,half=top,open=true,variant=1": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_top"
+    },
+    "facing=north,half=top,open=true,variant=2": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_top"
+    },
+    "facing=north,half=top,open=true,variant=3": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_top"
+    },
+    "facing=north,half=top,open=true,variant=4": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_top"
+    },
+    "facing=north,half=top,open=true,variant=5": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_top",
+      "y": 180
+    },
+    "facing=north,half=top,open=true,variant=6": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_top"
+    },
+    "facing=north,half=top,open=true,variant=7": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_top",
+      "y": 180
+    },
+    "facing=north,half=top,open=true,variant=8": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_top"
+    },
+    "facing=east,half=top,open=true,variant=1": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_top",
+      "y": 90
+    },
+    "facing=east,half=top,open=true,variant=2": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_top",
+      "y": 90
+    },
+    "facing=east,half=top,open=true,variant=3": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_top",
+      "y": 90
+    },
+    "facing=east,half=top,open=true,variant=4": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_top",
+      "y": 90
+    },
+    "facing=east,half=top,open=true,variant=5": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_top",
+      "y": 270
+    },
+    "facing=east,half=top,open=true,variant=6": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_top",
+      "y": 90
+    },
+    "facing=east,half=top,open=true,variant=7": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_top",
+      "y": 270
+    },
+    "facing=east,half=top,open=true,variant=8": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_top",
+      "y": 90
+    },
+    "facing=south,half=top,open=true,variant=1": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_top",
+      "y": 180
+    },
+    "facing=south,half=top,open=true,variant=2": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_top",
+      "y": 180
+    },
+    "facing=south,half=top,open=true,variant=3": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_top",
+      "y": 180
+    },
+    "facing=south,half=top,open=true,variant=4": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_top",
+      "y": 180
+    },
+    "facing=south,half=top,open=true,variant=5": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_top"
+    },
+    "facing=south,half=top,open=true,variant=6": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_top",
+      "y": 180
+    },
+    "facing=south,half=top,open=true,variant=7": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_top"
+    },
+    "facing=south,half=top,open=true,variant=8": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_top",
+      "y": 180
+    },
+    "facing=west,half=top,open=true,variant=1": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_top",
+      "y": 270
+    },
+    "facing=west,half=top,open=true,variant=2": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_top",
+      "y": 270
+    },
+    "facing=west,half=top,open=true,variant=3": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_top",
+      "y": 270
+    },
+    "facing=west,half=top,open=true,variant=4": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_top",
+      "y": 270
+    },
+    "facing=west,half=top,open=true,variant=5": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_top",
+      "y": 90
+    },
+    "facing=west,half=top,open=true,variant=6": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_top",
+      "y": 270
+    },
+    "facing=west,half=top,open=true,variant=7": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_top",
+      "y": 90
+    },
+    "facing=west,half=top,open=true,variant=8": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_top",
+      "y": 270
+    },
+    "facing=north,half=center,open=true,variant=1": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_center"
+    },
+    "facing=north,half=center,open=true,variant=2": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_center"
+    },
+    "facing=north,half=center,open=true,variant=3": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_center"
+    },
+    "facing=north,half=center,open=true,variant=4": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_center"
+    },
+    "facing=north,half=center,open=true,variant=5": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_center",
+      "y": 180
+    },
+    "facing=north,half=center,open=true,variant=6": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_center"
+    },
+    "facing=north,half=center,open=true,variant=7": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_center",
+      "y": 180
+    },
+    "facing=north,half=center,open=true,variant=8": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_center"
+    },
+    "facing=east,half=center,open=true,variant=1": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_center",
+      "y": 90
+    },
+    "facing=east,half=center,open=true,variant=2": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_center",
+      "y": 90
+    },
+    "facing=east,half=center,open=true,variant=3": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_center",
+      "y": 90
+    },
+    "facing=east,half=center,open=true,variant=4": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_center",
+      "y": 90
+    },
+    "facing=east,half=center,open=true,variant=5": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_center",
+      "y": 270
+    },
+    "facing=east,half=center,open=true,variant=6": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_center",
+      "y": 90
+    },
+    "facing=east,half=center,open=true,variant=7": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_center",
+      "y": 270
+    },
+    "facing=east,half=center,open=true,variant=8": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_center",
+      "y": 90
+    },
+    "facing=south,half=center,open=true,variant=1": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_center",
+      "y": 180
+    },
+    "facing=south,half=center,open=true,variant=2": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_center",
+      "y": 180
+    },
+    "facing=south,half=center,open=true,variant=3": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_center",
+      "y": 180
+    },
+    "facing=south,half=center,open=true,variant=4": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_center",
+      "y": 180
+    },
+    "facing=south,half=center,open=true,variant=5": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_center"
+    },
+    "facing=south,half=center,open=true,variant=6": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_center",
+      "y": 180
+    },
+    "facing=south,half=center,open=true,variant=7": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_center"
+    },
+    "facing=south,half=center,open=true,variant=8": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_center",
+      "y": 180
+    },
+    "facing=west,half=center,open=true,variant=1": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_center",
+      "y": 270
+    },
+    "facing=west,half=center,open=true,variant=2": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_center",
+      "y": 270
+    },
+    "facing=west,half=center,open=true,variant=3": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_center",
+      "y": 270
+    },
+    "facing=west,half=center,open=true,variant=4": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_center",
+      "y": 270
+    },
+    "facing=west,half=center,open=true,variant=5": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_center",
+      "y": 90
+    },
+    "facing=west,half=center,open=true,variant=6": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_center",
+      "y": 270
+    },
+    "facing=west,half=center,open=true,variant=7": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_center",
+      "y": 90
+    },
+    "facing=west,half=center,open=true,variant=8": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_center",
+      "y": 270
+    },
+    "facing=north,half=bottom,open=true,variant=1": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_bottom"
+    },
+    "facing=north,half=bottom,open=true,variant=2": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_bottom"
+    },
+    "facing=north,half=bottom,open=true,variant=3": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_bottom"
+    },
+    "facing=north,half=bottom,open=true,variant=4": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_bottom"
+    },
+    "facing=north,half=bottom,open=true,variant=5": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_bottom",
+      "y": 180
+    },
+    "facing=north,half=bottom,open=true,variant=6": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_bottom"
+    },
+    "facing=north,half=bottom,open=true,variant=7": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_bottom",
+      "y": 180
+    },
+    "facing=north,half=bottom,open=true,variant=8": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_bottom"
+    },
+    "facing=east,half=bottom,open=true,variant=1": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_bottom",
+      "y": 90
+    },
+    "facing=east,half=bottom,open=true,variant=2": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_bottom",
+      "y": 90
+    },
+    "facing=east,half=bottom,open=true,variant=3": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_bottom",
+      "y": 90
+    },
+    "facing=east,half=bottom,open=true,variant=4": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_bottom",
+      "y": 90
+    },
+    "facing=east,half=bottom,open=true,variant=5": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_bottom",
+      "y": 270
+    },
+    "facing=east,half=bottom,open=true,variant=6": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_bottom",
+      "y": 90
+    },
+    "facing=east,half=bottom,open=true,variant=7": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_bottom",
+      "y": 270
+    },
+    "facing=east,half=bottom,open=true,variant=8": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_bottom",
+      "y": 90
+    },
+    "facing=south,half=bottom,open=true,variant=1": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_bottom",
+      "y": 180
+    },
+    "facing=south,half=bottom,open=true,variant=2": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_bottom",
+      "y": 180
+    },
+    "facing=south,half=bottom,open=true,variant=3": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_bottom",
+      "y": 180
+    },
+    "facing=south,half=bottom,open=true,variant=4": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_bottom",
+      "y": 180
+    },
+    "facing=south,half=bottom,open=true,variant=5": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_bottom"
+    },
+    "facing=south,half=bottom,open=true,variant=6": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_bottom",
+      "y": 180
+    },
+    "facing=south,half=bottom,open=true,variant=7": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_bottom"
+    },
+    "facing=south,half=bottom,open=true,variant=8": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_bottom",
+      "y": 180
+    },
+    "facing=west,half=bottom,open=true,variant=1": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_bottom",
+      "y": 270
+    },
+    "facing=west,half=bottom,open=true,variant=2": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_bottom",
+      "y": 270
+    },
+    "facing=west,half=bottom,open=true,variant=3": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_bottom",
+      "y": 270
+    },
+    "facing=west,half=bottom,open=true,variant=4": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_1_2_3_4_bottom",
+      "y": 270
+    },
+    "facing=west,half=bottom,open=true,variant=5": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_bottom",
+      "y": 90
+    },
+    "facing=west,half=bottom,open=true,variant=6": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_bottom",
+      "y": 270
+    },
+    "facing=west,half=bottom,open=true,variant=7": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_bottom",
+      "y": 90
+    },
+    "facing=west,half=bottom,open=true,variant=8": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_bottom",
+      "y": 270
+    },
+    "facing=north,half=top,open=true,variant=9": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_top",
+      "y": 180
+    },
+    "facing=north,half=top,open=true,variant=10": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_top"
+    },
+    "facing=east,half=top,open=true,variant=9": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_top",
+      "y": 270
+    },
+    "facing=east,half=top,open=true,variant=10": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_top",
+      "y": 90
+    },
+    "facing=south,half=top,open=true,variant=9": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_top"
+    },
+    "facing=south,half=top,open=true,variant=10": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_top",
+      "y": 180
+    },
+    "facing=west,half=top,open=true,variant=9": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_top",
+      "y": 90
+    },
+    "facing=west,half=top,open=true,variant=10": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_top",
+      "y": 270
+    },
+    "facing=north,half=center,open=true,variant=9": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_center",
+      "y": 180
+    },
+    "facing=north,half=center,open=true,variant=10": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_center"
+    },
+    "facing=east,half=center,open=true,variant=9": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_center",
+      "y": 270
+    },
+    "facing=east,half=center,open=true,variant=10": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_center",
+      "y": 90
+    },
+    "facing=south,half=center,open=true,variant=9": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_center"
+    },
+    "facing=south,half=center,open=true,variant=10": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_center",
+      "y": 180
+    },
+    "facing=west,half=center,open=true,variant=9": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_center",
+      "y": 90
+    },
+    "facing=west,half=center,open=true,variant=10": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_center",
+      "y": 270
+    },
+    "facing=north,half=bottom,open=true,variant=9": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_bottom",
+      "y": 180
+    },
+    "facing=north,half=bottom,open=true,variant=10": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_bottom"
+    },
+    "facing=east,half=bottom,open=true,variant=9": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_bottom",
+      "y": 270
+    },
+    "facing=east,half=bottom,open=true,variant=10": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_bottom",
+      "y": 90
+    },
+    "facing=south,half=bottom,open=true,variant=9": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_bottom"
+    },
+    "facing=south,half=bottom,open=true,variant=10": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_bottom",
+      "y": 180
+    },
+    "facing=west,half=bottom,open=true,variant=9": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_bottom",
+      "y": 90
+    },
+    "facing=west,half=bottom,open=true,variant=10": {
+      "model": "warframes:block/airframe_slab_gear_bay_open_5_6_7_8_bottom",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,1081 @@
+{
+  "variants": {
+    "half=bottom,position=northeast,layers=1": {
+      "model": "warframes:block/airframe_corner_point_height2",
+      "uvlock": true
+    },
+    "half=center,position=northeast,layers=1": {
+      "model": "warframes:block/airframe_edge_centered_point_height2",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=top,position=northeast,layers=1": {
+      "model": "warframes:block/airframe_corner_point_height2",
+      "x": 180,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=bottom,position=northeast,layers=2": {
+      "model": "warframes:block/airframe_corner_point_height4",
+      "uvlock": true
+    },
+    "half=center,position=northeast,layers=2": {
+      "model": "warframes:block/airframe_edge_centered_point_height4",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=top,position=northeast,layers=2": {
+      "model": "warframes:block/airframe_corner_point_height4",
+      "x": 180,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=bottom,position=northeast,layers=3": {
+      "model": "warframes:block/airframe_corner_point_height6",
+      "uvlock": true
+    },
+    "half=center,position=northeast,layers=3": {
+      "model": "warframes:block/airframe_edge_centered_point_height6",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=top,position=northeast,layers=3": {
+      "model": "warframes:block/airframe_corner_point_height6",
+      "x": 180,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=bottom,position=northeast,layers=4": {
+      "model": "warframes:block/airframe_corner_point_height8",
+      "uvlock": true
+    },
+    "half=center,position=northeast,layers=4": {
+      "model": "warframes:block/airframe_edge_centered_point_height8",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=top,position=northeast,layers=4": {
+      "model": "warframes:block/airframe_corner_point_height8",
+      "x": 180,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=bottom,position=northeast,layers=5": {
+      "model": "warframes:block/airframe_corner_point_height10",
+      "uvlock": true
+    },
+    "half=center,position=northeast,layers=5": {
+      "model": "warframes:block/airframe_edge_centered_point_height10",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=top,position=northeast,layers=5": {
+      "model": "warframes:block/airframe_corner_point_height10",
+      "x": 180,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=bottom,position=northeast,layers=6": {
+      "model": "warframes:block/airframe_corner_point_height12",
+      "uvlock": true
+    },
+    "half=center,position=northeast,layers=6": {
+      "model": "warframes:block/airframe_edge_centered_point_height12",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=top,position=northeast,layers=6": {
+      "model": "warframes:block/airframe_corner_point_height12",
+      "x": 180,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=bottom,position=northeast,layers=7": {
+      "model": "warframes:block/airframe_corner_point_height14",
+      "uvlock": true
+    },
+    "half=center,position=northeast,layers=7": {
+      "model": "warframes:block/airframe_edge_centered_point_height14",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=top,position=northeast,layers=7": {
+      "model": "warframes:block/airframe_corner_point_height14",
+      "x": 180,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=bottom,position=northeast,layers=8": {
+      "model": "warframes:block/airframe_block",
+      "uvlock": true
+    },
+    "half=center,position=northeast,layers=8": {
+      "model": "warframes:block/airframe_block",
+      "uvlock": true
+    },
+    "half=top,position=northeast,layers=8": {
+      "model": "warframes:block/airframe_block",
+      "uvlock": true
+    },
+    "half=bottom,position=northwest,layers=1": {
+      "model": "warframes:block/airframe_corner_point_height2",
+      "y": 270,
+      "uvlock": true
+    },
+    "half=center,position=northwest,layers=1": {
+      "model": "warframes:block/airframe_edge_centered_point_height2",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=top,position=northwest,layers=1": {
+      "model": "warframes:block/airframe_corner_point_height2",
+      "x": 180,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=northwest,layers=2": {
+      "model": "warframes:block/airframe_corner_point_height4",
+      "y": 270,
+      "uvlock": true
+    },
+    "half=center,position=northwest,layers=2": {
+      "model": "warframes:block/airframe_edge_centered_point_height4",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=top,position=northwest,layers=2": {
+      "model": "warframes:block/airframe_corner_point_height4",
+      "x": 180,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=northwest,layers=3": {
+      "model": "warframes:block/airframe_corner_point_height6",
+      "y": 270,
+      "uvlock": true
+    },
+    "half=center,position=northwest,layers=3": {
+      "model": "warframes:block/airframe_edge_centered_point_height6",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=top,position=northwest,layers=3": {
+      "model": "warframes:block/airframe_corner_point_height6",
+      "x": 180,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=northwest,layers=4": {
+      "model": "warframes:block/airframe_corner_point_height8",
+      "y": 270,
+      "uvlock": true
+    },
+    "half=center,position=northwest,layers=4": {
+      "model": "warframes:block/airframe_edge_centered_point_height8",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=top,position=northwest,layers=4": {
+      "model": "warframes:block/airframe_corner_point_height8",
+      "x": 180,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=northwest,layers=5": {
+      "model": "warframes:block/airframe_corner_point_height10",
+      "y": 270,
+      "uvlock": true
+    },
+    "half=center,position=northwest,layers=5": {
+      "model": "warframes:block/airframe_edge_centered_point_height10",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=top,position=northwest,layers=5": {
+      "model": "warframes:block/airframe_corner_point_height10",
+      "x": 180,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=northwest,layers=6": {
+      "model": "warframes:block/airframe_corner_point_height12",
+      "y": 270,
+      "uvlock": true
+    },
+    "half=center,position=northwest,layers=6": {
+      "model": "warframes:block/airframe_edge_centered_point_height12",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=top,position=northwest,layers=6": {
+      "model": "warframes:block/airframe_corner_point_height12",
+      "x": 180,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=northwest,layers=7": {
+      "model": "warframes:block/airframe_corner_point_height14",
+      "y": 270,
+      "uvlock": true
+    },
+    "half=center,position=northwest,layers=7": {
+      "model": "warframes:block/airframe_edge_centered_point_height14",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=top,position=northwest,layers=7": {
+      "model": "warframes:block/airframe_corner_point_height14",
+      "x": 180,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=northwest,layers=8": {
+      "model": "warframes:block/airframe_block",
+      "uvlock": true
+    },
+    "half=center,position=northwest,layers=8": {
+      "model": "warframes:block/airframe_block",
+      "uvlock": true
+    },
+    "half=top,position=northwest,layers=8": {
+      "model": "warframes:block/airframe_block",
+      "uvlock": true
+    },
+    "half=bottom,position=southeast,layers=1": {
+      "model": "warframes:block/airframe_corner_point_height2",
+      "y": 90,
+      "uvlock": true
+    },
+    "half=center,position=southeast,layers=1": {
+      "model": "warframes:block/airframe_edge_centered_point_height2",
+      "x": 90,
+      "uvlock": true
+    },
+    "half=top,position=southeast,layers=1": {
+      "model": "warframes:block/airframe_corner_point_height2",
+      "x": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=southeast,layers=2": {
+      "model": "warframes:block/airframe_corner_point_height4",
+      "y": 90,
+      "uvlock": true
+    },
+    "half=center,position=southeast,layers=2": {
+      "model": "warframes:block/airframe_edge_centered_point_height4",
+      "x": 90,
+      "uvlock": true
+    },
+    "half=top,position=southeast,layers=2": {
+      "model": "warframes:block/airframe_corner_point_height4",
+      "x": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=southeast,layers=3": {
+      "model": "warframes:block/airframe_corner_point_height6",
+      "y": 90,
+      "uvlock": true
+    },
+    "half=center,position=southeast,layers=3": {
+      "model": "warframes:block/airframe_edge_centered_point_height6",
+      "x": 90,
+      "uvlock": true
+    },
+    "half=top,position=southeast,layers=3": {
+      "model": "warframes:block/airframe_corner_point_height6",
+      "x": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=southeast,layers=4": {
+      "model": "warframes:block/airframe_corner_point_height8",
+      "y": 90,
+      "uvlock": true
+    },
+    "half=center,position=southeast,layers=4": {
+      "model": "warframes:block/airframe_edge_centered_point_height8",
+      "x": 90,
+      "uvlock": true
+    },
+    "half=top,position=southeast,layers=4": {
+      "model": "warframes:block/airframe_corner_point_height8",
+      "x": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=southeast,layers=5": {
+      "model": "warframes:block/airframe_corner_point_height10",
+      "y": 90,
+      "uvlock": true
+    },
+    "half=center,position=southeast,layers=5": {
+      "model": "warframes:block/airframe_edge_centered_point_height10",
+      "x": 90,
+      "uvlock": true
+    },
+    "half=top,position=southeast,layers=5": {
+      "model": "warframes:block/airframe_corner_point_height10",
+      "x": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=southeast,layers=6": {
+      "model": "warframes:block/airframe_corner_point_height12",
+      "y": 90,
+      "uvlock": true
+    },
+    "half=center,position=southeast,layers=6": {
+      "model": "warframes:block/airframe_edge_centered_point_height12",
+      "x": 90,
+      "uvlock": true
+    },
+    "half=top,position=southeast,layers=6": {
+      "model": "warframes:block/airframe_corner_point_height12",
+      "x": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=southeast,layers=7": {
+      "model": "warframes:block/airframe_corner_point_height14",
+      "y": 90,
+      "uvlock": true
+    },
+    "half=center,position=southeast,layers=7": {
+      "model": "warframes:block/airframe_edge_centered_point_height14",
+      "x": 90,
+      "uvlock": true
+    },
+    "half=top,position=southeast,layers=7": {
+      "model": "warframes:block/airframe_corner_point_height14",
+      "x": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=southeast,layers=8": {
+      "model": "warframes:block/airframe_block",
+      "uvlock": true
+    },
+    "half=center,position=southeast,layers=8": {
+      "model": "warframes:block/airframe_block",
+      "uvlock": true
+    },
+    "half=top,position=southeast,layers=8": {
+      "model": "warframes:block/airframe_block",
+      "uvlock": true
+    },
+    "half=bottom,position=southwest,layers=1": {
+      "model": "warframes:block/airframe_corner_point_height2",
+      "y": 180,
+      "uvlock": true
+    },
+    "half=center,position=southwest,layers=1": {
+      "model": "warframes:block/airframe_edge_centered_point_height2",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "half=top,position=southwest,layers=1": {
+      "model": "warframes:block/airframe_corner_point_height2",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    },
+    "half=bottom,position=southwest,layers=2": {
+      "model": "warframes:block/airframe_corner_point_height4",
+      "y": 180,
+      "uvlock": true
+    },
+    "half=center,position=southwest,layers=2": {
+      "model": "warframes:block/airframe_edge_centered_point_height4",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "half=top,position=southwest,layers=2": {
+      "model": "warframes:block/airframe_corner_point_height4",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    },
+    "half=bottom,position=southwest,layers=3": {
+      "model": "warframes:block/airframe_corner_point_height6",
+      "y": 180,
+      "uvlock": true
+    },
+    "half=center,position=southwest,layers=3": {
+      "model": "warframes:block/airframe_edge_centered_point_height6",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "half=top,position=southwest,layers=3": {
+      "model": "warframes:block/airframe_corner_point_height6",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    },
+    "half=bottom,position=southwest,layers=4": {
+      "model": "warframes:block/airframe_corner_point_height8",
+      "y": 180,
+      "uvlock": true
+    },
+    "half=center,position=southwest,layers=4": {
+      "model": "warframes:block/airframe_edge_centered_point_height8",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "half=top,position=southwest,layers=4": {
+      "model": "warframes:block/airframe_corner_point_height8",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    },
+    "half=bottom,position=southwest,layers=5": {
+      "model": "warframes:block/airframe_corner_point_height10",
+      "y": 180,
+      "uvlock": true
+    },
+    "half=center,position=southwest,layers=5": {
+      "model": "warframes:block/airframe_edge_centered_point_height10",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "half=top,position=southwest,layers=5": {
+      "model": "warframes:block/airframe_corner_point_height10",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    },
+    "half=bottom,position=southwest,layers=6": {
+      "model": "warframes:block/airframe_corner_point_height12",
+      "y": 180,
+      "uvlock": true
+    },
+    "half=center,position=southwest,layers=6": {
+      "model": "warframes:block/airframe_edge_centered_point_height12",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "half=top,position=southwest,layers=6": {
+      "model": "warframes:block/airframe_corner_point_height12",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    },
+    "half=bottom,position=southwest,layers=7": {
+      "model": "warframes:block/airframe_corner_point_height14",
+      "y": 180,
+      "uvlock": true
+    },
+    "half=center,position=southwest,layers=7": {
+      "model": "warframes:block/airframe_edge_centered_point_height14",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "half=top,position=southwest,layers=7": {
+      "model": "warframes:block/airframe_corner_point_height14",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    },
+    "half=bottom,position=southwest,layers=8": {
+      "model": "warframes:block/airframe_block",
+      "uvlock": true
+    },
+    "half=center,position=southwest,layers=8": {
+      "model": "warframes:block/airframe_block",
+      "uvlock": true
+    },
+    "half=top,position=southwest,layers=8": {
+      "model": "warframes:block/airframe_block",
+      "uvlock": true
+    },
+    "half=bottom,position=north,layers=1": {
+      "model": "warframes:block/airframe_edge_centered_point_height2",
+      "y": 270,
+      "uvlock": true
+    },
+    "half=center,position=north,layers=1": {
+      "model": "warframes:block/airframe_side_centered_point_height2",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=top,position=north,layers=1": {
+      "model": "warframes:block/airframe_edge_centered_point_height2",
+      "x": 180,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=bottom,position=north,layers=2": {
+      "model": "warframes:block/airframe_edge_centered_point_height4",
+      "y": 270,
+      "uvlock": true
+    },
+    "half=center,position=north,layers=2": {
+      "model": "warframes:block/airframe_side_centered_point_height4",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=top,position=north,layers=2": {
+      "model": "warframes:block/airframe_edge_centered_point_height4",
+      "x": 180,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=bottom,position=north,layers=3": {
+      "model": "warframes:block/airframe_edge_centered_point_height6",
+      "y": 270,
+      "uvlock": true
+    },
+    "half=center,position=north,layers=3": {
+      "model": "warframes:block/airframe_side_centered_point_height6",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=top,position=north,layers=3": {
+      "model": "warframes:block/airframe_edge_centered_point_height6",
+      "x": 180,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=bottom,position=north,layers=4": {
+      "model": "warframes:block/airframe_edge_centered_point_height8",
+      "y": 270,
+      "uvlock": true
+    },
+    "half=center,position=north,layers=4": {
+      "model": "warframes:block/airframe_side_centered_point_height8",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=top,position=north,layers=4": {
+      "model": "warframes:block/airframe_edge_centered_point_height8",
+      "x": 180,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=bottom,position=north,layers=5": {
+      "model": "warframes:block/airframe_edge_centered_point_height10",
+      "y": 270,
+      "uvlock": true
+    },
+    "half=center,position=north,layers=5": {
+      "model": "warframes:block/airframe_side_centered_point_height10",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=top,position=north,layers=5": {
+      "model": "warframes:block/airframe_edge_centered_point_height10",
+      "x": 180,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=bottom,position=north,layers=6": {
+      "model": "warframes:block/airframe_edge_centered_point_height12",
+      "y": 270,
+      "uvlock": true
+    },
+    "half=center,position=north,layers=6": {
+      "model": "warframes:block/airframe_side_centered_point_height12",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=top,position=north,layers=6": {
+      "model": "warframes:block/airframe_edge_centered_point_height12",
+      "x": 180,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=bottom,position=north,layers=7": {
+      "model": "warframes:block/airframe_edge_centered_point_height14",
+      "y": 270,
+      "uvlock": true
+    },
+    "half=center,position=north,layers=7": {
+      "model": "warframes:block/airframe_side_centered_point_height14",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=top,position=north,layers=7": {
+      "model": "warframes:block/airframe_edge_centered_point_height14",
+      "x": 180,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=bottom,position=north,layers=8": {
+      "model": "warframes:block/airframe_block",
+      "uvlock": true
+    },
+    "half=center,position=north,layers=8": {
+      "model": "warframes:block/airframe_block",
+      "uvlock": true
+    },
+    "half=top,position=north,layers=8": {
+      "model": "warframes:block/airframe_block",
+      "uvlock": true
+    },
+    "half=bottom,position=south,layers=1": {
+      "model": "warframes:block/airframe_edge_centered_point_height2",
+      "y": 90,
+      "uvlock": true
+    },
+    "half=center,position=south,layers=1": {
+      "model": "warframes:block/airframe_side_centered_point_height2",
+      "x": 90,
+      "uvlock": true
+    },
+    "half=top,position=south,layers=1": {
+      "model": "warframes:block/airframe_edge_centered_point_height2",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    },
+    "half=bottom,position=south,layers=2": {
+      "model": "warframes:block/airframe_edge_centered_point_height4",
+      "y": 90,
+      "uvlock": true
+    },
+    "half=center,position=south,layers=2": {
+      "model": "warframes:block/airframe_side_centered_point_height4",
+      "x": 90,
+      "uvlock": true
+    },
+    "half=top,position=south,layers=2": {
+      "model": "warframes:block/airframe_edge_centered_point_height4",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    },
+    "half=bottom,position=south,layers=3": {
+      "model": "warframes:block/airframe_edge_centered_point_height6",
+      "y": 90,
+      "uvlock": true
+    },
+    "half=center,position=south,layers=3": {
+      "model": "warframes:block/airframe_side_centered_point_height6",
+      "x": 90,
+      "uvlock": true
+    },
+    "half=top,position=south,layers=3": {
+      "model": "warframes:block/airframe_edge_centered_point_height6",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    },
+    "half=bottom,position=south,layers=4": {
+      "model": "warframes:block/airframe_edge_centered_point_height8",
+      "y": 90,
+      "uvlock": true
+    },
+    "half=center,position=south,layers=4": {
+      "model": "warframes:block/airframe_side_centered_point_height8",
+      "x": 90,
+      "uvlock": true
+    },
+    "half=top,position=south,layers=4": {
+      "model": "warframes:block/airframe_edge_centered_point_height8",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    },
+    "half=bottom,position=south,layers=5": {
+      "model": "warframes:block/airframe_edge_centered_point_height10",
+      "y": 90,
+      "uvlock": true
+    },
+    "half=center,position=south,layers=5": {
+      "model": "warframes:block/airframe_side_centered_point_height10",
+      "x": 90,
+      "uvlock": true
+    },
+    "half=top,position=south,layers=5": {
+      "model": "warframes:block/airframe_edge_centered_point_height10",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    },
+    "half=bottom,position=south,layers=6": {
+      "model": "warframes:block/airframe_edge_centered_point_height12",
+      "y": 90,
+      "uvlock": true
+    },
+    "half=center,position=south,layers=6": {
+      "model": "warframes:block/airframe_side_centered_point_height12",
+      "x": 90,
+      "uvlock": true
+    },
+    "half=top,position=south,layers=6": {
+      "model": "warframes:block/airframe_edge_centered_point_height12",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    },
+    "half=bottom,position=south,layers=7": {
+      "model": "warframes:block/airframe_edge_centered_point_height14",
+      "y": 90,
+      "uvlock": true
+    },
+    "half=center,position=south,layers=7": {
+      "model": "warframes:block/airframe_side_centered_point_height14",
+      "x": 90,
+      "uvlock": true
+    },
+    "half=top,position=south,layers=7": {
+      "model": "warframes:block/airframe_edge_centered_point_height14",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    },
+    "half=bottom,position=south,layers=8": {
+      "model": "warframes:block/airframe_block",
+      "uvlock": true
+    },
+    "half=center,position=south,layers=8": {
+      "model": "warframes:block/airframe_block",
+      "uvlock": true
+    },
+    "half=top,position=south,layers=8": {
+      "model": "warframes:block/airframe_block",
+      "uvlock": true
+    },
+    "half=bottom,position=east,layers=1": {
+      "model": "warframes:block/airframe_edge_centered_point_height2",
+      "uvlock": true
+    },
+    "half=center,position=east,layers=1": {
+      "model": "warframes:block/airframe_side_centered_point_height2",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=top,position=east,layers=1": {
+      "model": "warframes:block/airframe_edge_centered_point_height2",
+      "x": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=east,layers=2": {
+      "model": "warframes:block/airframe_edge_centered_point_height4",
+      "uvlock": true
+    },
+    "half=center,position=east,layers=2": {
+      "model": "warframes:block/airframe_side_centered_point_height4",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=top,position=east,layers=2": {
+      "model": "warframes:block/airframe_edge_centered_point_height4",
+      "x": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=east,layers=3": {
+      "model": "warframes:block/airframe_edge_centered_point_height6",
+      "uvlock": true
+    },
+    "half=center,position=east,layers=3": {
+      "model": "warframes:block/airframe_side_centered_point_height6",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=top,position=east,layers=3": {
+      "model": "warframes:block/airframe_edge_centered_point_height6",
+      "x": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=east,layers=4": {
+      "model": "warframes:block/airframe_edge_centered_point_height8",
+      "uvlock": true
+    },
+    "half=center,position=east,layers=4": {
+      "model": "warframes:block/airframe_side_centered_point_height8",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=top,position=east,layers=4": {
+      "model": "warframes:block/airframe_edge_centered_point_height8",
+      "x": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=east,layers=5": {
+      "model": "warframes:block/airframe_edge_centered_point_height10",
+      "uvlock": true
+    },
+    "half=center,position=east,layers=5": {
+      "model": "warframes:block/airframe_side_centered_point_height10",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=top,position=east,layers=5": {
+      "model": "warframes:block/airframe_edge_centered_point_height10",
+      "x": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=east,layers=6": {
+      "model": "warframes:block/airframe_edge_centered_point_height12",
+      "uvlock": true
+    },
+    "half=center,position=east,layers=6": {
+      "model": "warframes:block/airframe_side_centered_point_height12",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=top,position=east,layers=6": {
+      "model": "warframes:block/airframe_edge_centered_point_height12",
+      "x": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=east,layers=7": {
+      "model": "warframes:block/airframe_edge_centered_point_height14",
+      "uvlock": true
+    },
+    "half=center,position=east,layers=7": {
+      "model": "warframes:block/airframe_side_centered_point_height14",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "half=top,position=east,layers=7": {
+      "model": "warframes:block/airframe_edge_centered_point_height14",
+      "x": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=east,layers=8": {
+      "model": "warframes:block/airframe_block",
+      "uvlock": true
+    },
+    "half=center,position=east,layers=8": {
+      "model": "warframes:block/airframe_block",
+      "uvlock": true
+    },
+    "half=top,position=east,layers=8": {
+      "model": "warframes:block/airframe_block",
+      "uvlock": true
+    },
+    "half=bottom,position=west,layers=1": {
+      "model": "warframes:block/airframe_edge_centered_point_height2",
+      "y": 180,
+      "uvlock": true
+    },
+    "half=center,position=west,layers=1": {
+      "model": "warframes:block/airframe_side_centered_point_height2",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "half=top,position=west,layers=1": {
+      "model": "warframes:block/airframe_edge_centered_point_height2",
+      "x": 180,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=west,layers=2": {
+      "model": "warframes:block/airframe_edge_centered_point_height4",
+      "y": 180,
+      "uvlock": true
+    },
+    "half=center,position=west,layers=2": {
+      "model": "warframes:block/airframe_side_centered_point_height4",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "half=top,position=west,layers=2": {
+      "model": "warframes:block/airframe_edge_centered_point_height4",
+      "x": 180,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=west,layers=3": {
+      "model": "warframes:block/airframe_edge_centered_point_height6",
+      "y": 180,
+      "uvlock": true
+    },
+    "half=center,position=west,layers=3": {
+      "model": "warframes:block/airframe_side_centered_point_height6",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "half=top,position=west,layers=3": {
+      "model": "warframes:block/airframe_edge_centered_point_height6",
+      "x": 180,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=west,layers=4": {
+      "model": "warframes:block/airframe_edge_centered_point_height8",
+      "y": 180,
+      "uvlock": true
+    },
+    "half=center,position=west,layers=4": {
+      "model": "warframes:block/airframe_side_centered_point_height8",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "half=top,position=west,layers=4": {
+      "model": "warframes:block/airframe_edge_centered_point_height8",
+      "x": 180,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=west,layers=5": {
+      "model": "warframes:block/airframe_edge_centered_point_height10",
+      "y": 180,
+      "uvlock": true
+    },
+    "half=center,position=west,layers=5": {
+      "model": "warframes:block/airframe_side_centered_point_height10",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "half=top,position=west,layers=5": {
+      "model": "warframes:block/airframe_edge_centered_point_height10",
+      "x": 180,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=west,layers=6": {
+      "model": "warframes:block/airframe_edge_centered_point_height12",
+      "y": 180,
+      "uvlock": true
+    },
+    "half=center,position=west,layers=6": {
+      "model": "warframes:block/airframe_side_centered_point_height12",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "half=top,position=west,layers=6": {
+      "model": "warframes:block/airframe_edge_centered_point_height12",
+      "x": 180,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=west,layers=7": {
+      "model": "warframes:block/airframe_edge_centered_point_height14",
+      "y": 180,
+      "uvlock": true
+    },
+    "half=center,position=west,layers=7": {
+      "model": "warframes:block/airframe_side_centered_point_height14",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "half=top,position=west,layers=7": {
+      "model": "warframes:block/airframe_edge_centered_point_height14",
+      "x": 180,
+      "y": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=west,layers=8": {
+      "model": "warframes:block/airframe_block",
+      "uvlock": true
+    },
+    "half=center,position=west,layers=8": {
+      "model": "warframes:block/airframe_block",
+      "uvlock": true
+    },
+    "half=top,position=west,layers=8": {
+      "model": "warframes:block/airframe_block",
+      "uvlock": true
+    },
+    "half=bottom,position=center,layers=1": {
+      "model": "warframes:block/airframe_side_centered_point_height2",
+      "uvlock": true
+    },
+    "half=top,position=center,layers=1": {
+      "model": "warframes:block/airframe_side_centered_point_height2",
+      "x": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=center,layers=2": {
+      "model": "warframes:block/airframe_side_centered_point_height4",
+      "uvlock": true
+    },
+    "half=top,position=center,layers=2": {
+      "model": "warframes:block/airframe_side_centered_point_height4",
+      "x": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=center,layers=3": {
+      "model": "warframes:block/airframe_side_centered_point_height6",
+      "uvlock": true
+    },
+    "half=top,position=center,layers=3": {
+      "model": "warframes:block/airframe_side_centered_point_height6",
+      "x": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=center,layers=4": {
+      "model": "warframes:block/airframe_side_centered_point_height8",
+      "uvlock": true
+    },
+    "half=top,position=center,layers=4": {
+      "model": "warframes:block/airframe_side_centered_point_height8",
+      "x": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=center,layers=5": {
+      "model": "warframes:block/airframe_side_centered_point_height10",
+      "uvlock": true
+    },
+    "half=top,position=center,layers=5": {
+      "model": "warframes:block/airframe_side_centered_point_height10",
+      "x": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=center,layers=6": {
+      "model": "warframes:block/airframe_side_centered_point_height12",
+      "uvlock": true
+    },
+    "half=top,position=center,layers=6": {
+      "model": "warframes:block/airframe_side_centered_point_height12",
+      "x": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=center,layers=7": {
+      "model": "warframes:block/airframe_side_centered_point_height14",
+      "uvlock": true
+    },
+    "half=top,position=center,layers=7": {
+      "model": "warframes:block/airframe_side_centered_point_height14",
+      "x": 180,
+      "uvlock": true
+    },
+    "half=bottom,position=center,layers=8": {
+      "model": "warframes:block/airframe_block",
+      "uvlock": true
+    },
+    "half=top,position=center,layers=8": {
+      "model": "warframes:block/airframe_block",
+      "uvlock": true
+    }
+  }
+}

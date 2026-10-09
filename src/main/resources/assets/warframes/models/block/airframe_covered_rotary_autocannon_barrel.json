@@ -1,0 +1,146 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "warframes:block/airframe_block",
+		"1": "warframes:block/rotary_autocannon_barrel_opening",
+		"2": "warframes:block/rotary_autocannon_barrel_side",
+		"particle": "warframes:block/airframe_block"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#0"}
+			}
+		},
+		{
+			"name": "barrel_opening",
+			"from": [0, 0, -0.01],
+			"to": [16, 16, -0.01],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, -0.01]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#1"}
+			}
+		},
+		{
+			"name": "barrel_opening",
+			"from": [0, 0, 16.01],
+			"to": [16, 16, 16.01],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 16.01]},
+			"faces": {
+				"south": {"uv": [0, 0, 16, 16], "texture": "#1"}
+			}
+		},
+		{
+			"name": "barrel",
+			"from": [5.25, 5.25, 6.75],
+			"to": [10.75, 10.75, 9.25],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [3, 11, 8, 16], "texture": "#2"},
+				"east": {"uv": [1, 11, 3, 16], "texture": "#2"},
+				"south": {"uv": [10, 11, 15, 16], "texture": "#2"},
+				"west": {"uv": [8, 11, 10, 16], "texture": "#2"},
+				"up": {"uv": [8, 11, 3, 9], "texture": "#2"},
+				"down": {"uv": [13, 9, 8, 11], "texture": "#2"}
+			}
+		},
+		{
+			"name": "barrel",
+			"from": [6.5, 3.5, 0],
+			"to": [9.5, 6.5, 16],
+			"rotation": {"angle": 45, "axis": "z", "origin": [8, 5, 1]},
+			"faces": {
+				"north": {"uv": [0, 3, 3, 6], "texture": "#2"},
+				"east": {"uv": [0, 0, 16, 3], "texture": "#2"},
+				"south": {"uv": [0, 3, 3, 6], "texture": "#2"},
+				"west": {"uv": [0, 0, 16, 3], "texture": "#2"},
+				"up": {"uv": [16, 3, 0, 0], "rotation": 90, "texture": "#2"},
+				"down": {"uv": [0, 3, 16, 0], "rotation": 90, "texture": "#2"}
+			}
+		},
+		{
+			"name": "barrel",
+			"from": [6.5, 9.5, 0],
+			"to": [9.5, 12.5, 16],
+			"rotation": {"angle": 45, "axis": "z", "origin": [8, 11, 1]},
+			"faces": {
+				"north": {"uv": [0, 3, 3, 6], "texture": "#2"},
+				"east": {"uv": [0, 0, 16, 3], "texture": "#2"},
+				"south": {"uv": [0, 3, 3, 6], "texture": "#2"},
+				"west": {"uv": [0, 0, 16, 3], "texture": "#2"},
+				"up": {"uv": [16, 3, 0, 0], "rotation": 90, "texture": "#2"},
+				"down": {"uv": [0, 3, 16, 0], "rotation": 90, "texture": "#2"}
+			}
+		},
+		{
+			"name": "barrel",
+			"from": [9.5, 6.5, 0],
+			"to": [12.5, 9.5, 16],
+			"rotation": {"angle": 45, "axis": "z", "origin": [11, 8, 1]},
+			"faces": {
+				"north": {"uv": [0, 3, 3, 6], "texture": "#2"},
+				"east": {"uv": [0, 0, 16, 3], "texture": "#2"},
+				"south": {"uv": [0, 3, 3, 6], "texture": "#2"},
+				"west": {"uv": [0, 0, 16, 3], "texture": "#2"},
+				"up": {"uv": [16, 3, 0, 0], "rotation": 90, "texture": "#2"},
+				"down": {"uv": [0, 3, 16, 0], "rotation": 90, "texture": "#2"}
+			}
+		},
+		{
+			"name": "barrel",
+			"from": [3.5, 6.5, 0],
+			"to": [6.5, 9.5, 16],
+			"rotation": {"angle": 45, "axis": "z", "origin": [5, 8, 1]},
+			"faces": {
+				"north": {"uv": [0, 3, 3, 6], "texture": "#2"},
+				"east": {"uv": [0, 0, 16, 3], "texture": "#2"},
+				"south": {"uv": [0, 3, 3, 6], "texture": "#2"},
+				"west": {"uv": [0, 0, 16, 3], "texture": "#2"},
+				"up": {"uv": [16, 3, 0, 0], "rotation": 90, "texture": "#2"},
+				"down": {"uv": [0, 3, 16, 0], "rotation": 90, "texture": "#2"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 45, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, -135, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"ground": {
+			"translation": [0, 3, 0],
+			"scale": [0.25, 0.25, 0.25]
+		},
+		"gui": {
+			"rotation": [30, -135, 0],
+			"scale": [0.625, 0.625, 0.625]
+		},
+		"fixed": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"on_shelf": {
+			"rotation": [0, -180, 0]
+		}
+	}
+}

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "warframes:airframe_door",
+    "warframes:airframe_half_door",
+    "warframes:heavyframe_door",
+    "warframes:heavyframe_half_door"
+  ]
+}

@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 8,
-  "ingredient": {
-    "item": "warframes:airframe_block"
-  },
-  "result": "warframes:airframe_point"
-}

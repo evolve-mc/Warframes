@@ -4,7 +4,9 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -23,14 +25,16 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.TooltipFlag;
+import java.util.List;
 
 import javax.annotation.Nullable;
 
 public class WarframeVerticalHalfSlabStabilizerBlock extends Block implements SimpleWaterloggedBlock, WarframeMimicable {
-    public static final EnumProperty<WarframeFacingType> FACING =
-            EnumProperty.create("facing", WarframeFacingType.class);
-    public static final EnumProperty<WarframeCornerType> CORNER =
-            EnumProperty.create("corner", WarframeCornerType.class);
+    public static final EnumProperty<WarframeEdgePosition> FACING =
+            EnumProperty.create("facing", WarframeEdgePosition.class);
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     protected static final VoxelShape NORTH_AABB = Block.box(4.0D, 0.0D, 0.0D, 12.0D, 16.0D, 8.0D);
@@ -46,40 +50,22 @@ public class WarframeVerticalHalfSlabStabilizerBlock extends Block implements Si
     public WarframeVerticalHalfSlabStabilizerBlock(BlockBehaviour.Properties pProperties) {
         super(pProperties);
         this.registerDefaultState(this.stateDefinition.any()
-                .setValue(FACING, WarframeFacingType.NORTH)
-                .setValue(CORNER, WarframeCornerType.NONE)
+                .setValue(FACING, WarframeEdgePosition.NORTH)
                 .setValue(WATERLOGGED, Boolean.valueOf(false)));
     }
 
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        WarframeFacingType facing = pState.getValue(FACING);
-
-        if (facing == WarframeFacingType.CORNER) {
-            switch (pState.getValue(CORNER)) {
-                case NORTHEAST:
-                    return NORTHEAST_AABB;
-                case NORTHWEST:
-                    return NORTHWEST_AABB;
-                case SOUTHEAST:
-                    return SOUTHEAST_AABB;
-                case SOUTHWEST:
-                default:
-                    return SOUTHWEST_AABB;
-            }
-        }
-
-        switch (facing) {
-            case NORTH:
-                return NORTH_AABB;
-            case SOUTH:
-                return SOUTH_AABB;
-            case EAST:
-                return EAST_AABB;
-            case WEST:
-            default:
-                return WEST_AABB;
-        }
+        return switch (pState.getValue(FACING)) {
+            case NORTH -> NORTH_AABB;
+            case SOUTH -> SOUTH_AABB;
+            case EAST -> EAST_AABB;
+            case WEST -> WEST_AABB;
+            case NORTHEAST -> NORTHEAST_AABB;
+            case NORTHWEST -> NORTHWEST_AABB;
+            case SOUTHEAST -> SOUTHEAST_AABB;
+            case SOUTHWEST -> SOUTHWEST_AABB;
+        };
     }
 
     @Nullable
@@ -94,85 +80,43 @@ public class WarframeVerticalHalfSlabStabilizerBlock extends Block implements Si
         FluidState fluidstate = pContext.getLevel().getFluidState(blockpos);
         boolean waterlogged = fluidstate.getType() == Fluids.WATER;
 
+        WarframeEdgePosition facing;
         if (clickedFace == Direction.SOUTH) {
-            if (relX < 0.3D) {
-                return cornerState(WarframeCornerType.NORTHWEST, waterlogged);
-            } else if (relX > 0.7D) {
-                return cornerState(WarframeCornerType.NORTHEAST, waterlogged);
-            } else {
-                return facingState(WarframeFacingType.NORTH, waterlogged);
-            }
+            facing = relX < 0.3D ? WarframeEdgePosition.NORTHWEST
+                    : relX > 0.7D ? WarframeEdgePosition.NORTHEAST
+                    : WarframeEdgePosition.NORTH;
         } else if (clickedFace == Direction.NORTH) {
-            if (relX < 0.3D) {
-                return cornerState(WarframeCornerType.SOUTHWEST, waterlogged);
-            } else if (relX > 0.7D) {
-                return cornerState(WarframeCornerType.SOUTHEAST, waterlogged);
-            } else {
-                return facingState(WarframeFacingType.SOUTH, waterlogged);
-            }
+            facing = relX < 0.3D ? WarframeEdgePosition.SOUTHWEST
+                    : relX > 0.7D ? WarframeEdgePosition.SOUTHEAST
+                    : WarframeEdgePosition.SOUTH;
         } else if (clickedFace == Direction.EAST) {
-            if (relZ < 0.3D) {
-                return cornerState(WarframeCornerType.NORTHWEST, waterlogged);
-            } else if (relZ > 0.7D) {
-                return cornerState(WarframeCornerType.SOUTHWEST, waterlogged);
-            } else {
-                return facingState(WarframeFacingType.WEST, waterlogged);
-            }
+            facing = relZ < 0.3D ? WarframeEdgePosition.NORTHWEST
+                    : relZ > 0.7D ? WarframeEdgePosition.SOUTHWEST
+                    : WarframeEdgePosition.WEST;
         } else if (clickedFace == Direction.WEST) {
-            if (relZ < 0.3D) {
-                return cornerState(WarframeCornerType.NORTHEAST, waterlogged);
-            } else if (relZ > 0.7D) {
-                return cornerState(WarframeCornerType.SOUTHEAST, waterlogged);
-            } else {
-                return facingState(WarframeFacingType.EAST, waterlogged);
-            }
-        }
-
-        boolean nearNorth = relZ < 0.3D;
-        boolean nearSouth = relZ > 0.7D;
-
-        if (nearNorth) {
-            if (relX < 0.3D) {
-                return cornerState(WarframeCornerType.NORTHWEST, waterlogged);
-            } else if (relX > 0.7D) {
-                return cornerState(WarframeCornerType.NORTHEAST, waterlogged);
-            } else {
-                return facingState(WarframeFacingType.NORTH, waterlogged);
-            }
-        } else if (nearSouth) {
-            if (relX < 0.3D) {
-                return cornerState(WarframeCornerType.SOUTHWEST, waterlogged);
-            } else if (relX > 0.7D) {
-                return cornerState(WarframeCornerType.SOUTHEAST, waterlogged);
-            } else {
-                return facingState(WarframeFacingType.SOUTH, waterlogged);
-            }
+            facing = relZ < 0.3D ? WarframeEdgePosition.NORTHEAST
+                    : relZ > 0.7D ? WarframeEdgePosition.SOUTHEAST
+                    : WarframeEdgePosition.EAST;
+        } else if (relZ < 0.3D) {
+            facing = relX < 0.3D ? WarframeEdgePosition.NORTHWEST
+                    : relX > 0.7D ? WarframeEdgePosition.NORTHEAST
+                    : WarframeEdgePosition.NORTH;
+        } else if (relZ > 0.7D) {
+            facing = relX < 0.3D ? WarframeEdgePosition.SOUTHWEST
+                    : relX > 0.7D ? WarframeEdgePosition.SOUTHEAST
+                    : WarframeEdgePosition.SOUTH;
         } else {
-            if (relX < 0.5D) {
-                return facingState(WarframeFacingType.WEST, waterlogged);
-            } else {
-                return facingState(WarframeFacingType.EAST, waterlogged);
-            }
+            facing = relX < 0.5D ? WarframeEdgePosition.WEST : WarframeEdgePosition.EAST;
         }
-    }
 
-    private BlockState cornerState(WarframeCornerType corner, boolean waterlogged) {
-        return this.defaultBlockState()
-                .setValue(FACING, WarframeFacingType.CORNER)
-                .setValue(CORNER, corner)
-                .setValue(WATERLOGGED, Boolean.valueOf(waterlogged));
-    }
-
-    private BlockState facingState(WarframeFacingType facing, boolean waterlogged) {
         return this.defaultBlockState()
                 .setValue(FACING, facing)
-                .setValue(CORNER, WarframeCornerType.NONE)
                 .setValue(WATERLOGGED, Boolean.valueOf(waterlogged));
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(FACING, CORNER, WATERLOGGED);
+        pBuilder.add(FACING, WATERLOGGED);
     }
 
     @Override
@@ -202,5 +146,18 @@ public class WarframeVerticalHalfSlabStabilizerBlock extends Block implements Si
     @Override
     public RenderShape getRenderShape(BlockState pState) {
         return RenderShape.MODEL;
+    }
+
+    @Override
+    public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, @Nullable LivingEntity pPlacer, ItemStack pStack) {
+        super.setPlacedBy(pLevel, pPos, pState, pPlacer, pStack);
+        mimicSetPlacedBy(pLevel, pPos, pState, pPlacer, pStack);
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, @Nullable BlockGetter level, List<Component> tooltip, TooltipFlag flag) {
+        super.appendHoverText(stack, level, tooltip, flag);
+        tooltip.add(Component.translatable("tooltip.warframes.symmetric_aerofoil").withStyle(ChatFormatting.AQUA));
+        tooltip.add(Component.translatable("tooltip.warframes.provides_stabilization").withStyle(ChatFormatting.GRAY));
     }
 }

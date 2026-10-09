@@ -1,0 +1,99 @@
+{
+  "variants": {
+    "facing=north,size=1": {
+      "model": "warframes:block/airframe_air_intake_size1",
+      "uvlock": true
+    },
+    "facing=north,size=2": {
+      "model": "warframes:block/airframe_air_intake_size2",
+      "uvlock": true
+    },
+    "facing=north,size=3": {
+      "model": "warframes:block/airframe_air_intake_size3",
+      "uvlock": true
+    },
+    "facing=north,size=4": {
+      "model": "warframes:block/airframe_air_intake_size4",
+      "uvlock": true
+    },
+    "facing=north,size=5": {
+      "model": "warframes:block/airframe_air_intake_size5",
+      "uvlock": true
+    },
+    "facing=east,size=1": {
+      "model": "warframes:block/airframe_air_intake_size1",
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=east,size=2": {
+      "model": "warframes:block/airframe_air_intake_size2",
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=east,size=3": {
+      "model": "warframes:block/airframe_air_intake_size3",
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=east,size=4": {
+      "model": "warframes:block/airframe_air_intake_size4",
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=east,size=5": {
+      "model": "warframes:block/airframe_air_intake_size5",
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=south,size=1": {
+      "model": "warframes:block/airframe_air_intake_size1",
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=south,size=2": {
+      "model": "warframes:block/airframe_air_intake_size2",
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=south,size=3": {
+      "model": "warframes:block/airframe_air_intake_size3",
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=south,size=4": {
+      "model": "warframes:block/airframe_air_intake_size4",
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=south,size=5": {
+      "model": "warframes:block/airframe_air_intake_size5",
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=west,size=1": {
+      "model": "warframes:block/airframe_air_intake_size1",
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=west,size=2": {
+      "model": "warframes:block/airframe_air_intake_size2",
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=west,size=3": {
+      "model": "warframes:block/airframe_air_intake_size3",
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=west,size=4": {
+      "model": "warframes:block/airframe_air_intake_size4",
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=west,size=5": {
+      "model": "warframes:block/airframe_air_intake_size5",
+      "y": 270,
+      "uvlock": true
+    }
+  }
+}

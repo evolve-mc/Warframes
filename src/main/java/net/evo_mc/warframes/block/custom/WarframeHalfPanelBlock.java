@@ -1,0 +1,273 @@
+package net.evo_mc.warframes.block.custom;
+
+import net.evo_mc.warframes.block.entity.WarframeHalfLayerBlockEntity;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.SimpleWaterloggedBlock;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
+
+import javax.annotation.Nullable;
+import java.util.Map;
+
+public class WarframeHalfPanelBlock extends Block implements WarframeMultiMimicable, SimpleWaterloggedBlock {
+    public static final int NEGATIVE_HALF = 0;
+    public static final int POSITIVE_HALF = 1;
+    public static final double THICKNESS = 3.0D;
+
+    public static final DirectionProperty FACING = BlockStateProperties.FACING;
+    public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.AXIS;
+    public static final BooleanProperty NEGATIVE = BooleanProperty.create("negative");
+    public static final BooleanProperty POSITIVE = BooleanProperty.create("positive");
+    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+
+    private final Map<BlockState, VoxelShape> shapesCache;
+
+    public WarframeHalfPanelBlock(BlockBehaviour.Properties pProperties) {
+        super(pProperties);
+        this.registerDefaultState(this.stateDefinition.any()
+                .setValue(FACING, Direction.UP)
+                .setValue(AXIS, Direction.Axis.X)
+                .setValue(NEGATIVE, false)
+                .setValue(POSITIVE, false)
+                .setValue(WATERLOGGED, false));
+        this.shapesCache = this.getShapeForEachState(WarframeHalfPanelBlock::calculateShape);
+    }
+
+    public static BooleanProperty getHalfProperty(int half) {
+        return half == NEGATIVE_HALF ? NEGATIVE : POSITIVE;
+    }
+
+    public static boolean hasHalf(BlockState state, int half) {
+        return state.getValue(getHalfProperty(half));
+    }
+
+    public static Direction getHalfDirection(BlockState state, int half) {
+        return Direction.fromAxisAndDirection(state.getValue(AXIS),
+                half == NEGATIVE_HALF ? Direction.AxisDirection.NEGATIVE : Direction.AxisDirection.POSITIVE);
+    }
+
+    private static int getHalfIndex(Direction halfDirection) {
+        return halfDirection.getAxisDirection() == Direction.AxisDirection.NEGATIVE ? NEGATIVE_HALF : POSITIVE_HALF;
+    }
+
+    private static VoxelShape calculateShape(BlockState state) {
+        Direction attached = state.getValue(FACING).getOpposite();
+        if (attached.getAxis() == state.getValue(AXIS)) {
+            return Shapes.empty();
+        }
+        VoxelShape shape = Shapes.empty();
+        for (int half = 0; half < 2; half++) {
+            if (hasHalf(state, half)) {
+                shape = Shapes.or(shape, halfBox(attached, getHalfDirection(state, half)));
+            }
+        }
+        return shape;
+    }
+
+    private static VoxelShape halfBox(Direction attached, Direction half) {
+        double[] min = {0.0D, 0.0D, 0.0D};
+        double[] max = {16.0D, 16.0D, 16.0D};
+        int attachedIndex = attached.getAxis().ordinal();
+        if (attached.getAxisDirection() == Direction.AxisDirection.POSITIVE) {
+            min[attachedIndex] = 16.0D - THICKNESS;
+        } else {
+            max[attachedIndex] = THICKNESS;
+        }
+        int halfIndex = half.getAxis().ordinal();
+        if (half.getAxisDirection() == Direction.AxisDirection.POSITIVE) {
+            min[halfIndex] = 8.0D;
+        } else {
+            max[halfIndex] = 8.0D;
+        }
+        return Block.box(min[0], min[1], min[2], max[0], max[1], max[2]);
+    }
+
+    @Override
+    public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+        return this.shapesCache.get(pState);
+    }
+
+    private static Direction getClickedHalf(Direction face, Vec3 relative) {
+        return switch (face.getAxis()) {
+            case Y -> pickHalf(relative.x, relative.z, Direction.Axis.X, Direction.Axis.Z);
+            case Z -> pickHalf(relative.x, relative.y, Direction.Axis.X, Direction.Axis.Y);
+            case X -> pickHalf(relative.z, relative.y, Direction.Axis.Z, Direction.Axis.Y);
+        };
+    }
+
+    private static Direction pickHalf(double first, double second, Direction.Axis firstAxis, Direction.Axis secondAxis) {
+        double firstOffset = first - 0.5D;
+        double secondOffset = second - 0.5D;
+        if (Math.abs(firstOffset) >= Math.abs(secondOffset)) {
+            return Direction.fromAxisAndDirection(firstAxis,
+                    firstOffset >= 0.0D ? Direction.AxisDirection.POSITIVE : Direction.AxisDirection.NEGATIVE);
+        }
+        return Direction.fromAxisAndDirection(secondAxis,
+                secondOffset >= 0.0D ? Direction.AxisDirection.POSITIVE : Direction.AxisDirection.NEGATIVE);
+    }
+
+    private static Vec3 stepInside(Vec3 click, Direction face) {
+        return click.subtract(face.getStepX() * 0.001D, face.getStepY() * 0.001D, face.getStepZ() * 0.001D);
+    }
+
+    private static int getHitHalf(BlockState state, BlockPos pos, Vec3 click, Direction face) {
+        Vec3 inside = stepInside(click, face);
+        double coordinate = state.getValue(AXIS).choose(
+                inside.x - pos.getX(), inside.y - pos.getY(), inside.z - pos.getZ());
+        return coordinate < 0.5D ? NEGATIVE_HALF : POSITIVE_HALF;
+    }
+
+    @Override
+    public boolean canBeReplaced(BlockState pState, BlockPlaceContext pUseContext) {
+        if (!pUseContext.getItemInHand().is(this.asItem())) {
+            return false;
+        }
+        Level level = pUseContext.getLevel();
+        Direction face = pUseContext.getClickedFace();
+        Vec3 click = pUseContext.getClickLocation();
+        BlockPos hitPos = BlockPos.containing(stepInside(click, face));
+
+        if (level.getBlockState(hitPos) == pState) {
+            return false;
+        }
+
+        if (face != pState.getValue(FACING)) {
+            return false;
+        }
+        BlockPos targetPos = hitPos.relative(face);
+        Direction half = getClickedHalf(face, click.subtract(targetPos.getX(), targetPos.getY(), targetPos.getZ()));
+        return half.getAxis() == pState.getValue(AXIS) && !hasHalf(pState, getHalfIndex(half));
+    }
+
+    @Nullable
+    @Override
+    public BlockState getStateForPlacement(BlockPlaceContext pContext) {
+        Level level = pContext.getLevel();
+        BlockPos pos = pContext.getClickedPos();
+        BlockState existing = level.getBlockState(pos);
+        Direction face = pContext.getClickedFace();
+        Vec3 click = pContext.getClickLocation();
+
+        if (!existing.is(this)) {
+            Direction half = getClickedHalf(face, click.subtract(pos.getX(), pos.getY(), pos.getZ()));
+            return this.defaultBlockState()
+                    .setValue(FACING, face)
+                    .setValue(AXIS, half.getAxis())
+                    .setValue(getHalfProperty(getHalfIndex(half)), true)
+                    .setValue(WATERLOGGED, level.getFluidState(pos).getType() == Fluids.WATER);
+        }
+
+        if (pContext.replacingClickedOnBlock()) {
+            return null;
+        }
+
+        if (face != existing.getValue(FACING)) {
+            return null;
+        }
+        Direction half = getClickedHalf(face, click.subtract(pos.getX(), pos.getY(), pos.getZ()));
+        if (half.getAxis() != existing.getValue(AXIS)) {
+            return null;
+        }
+        int halfIndex = getHalfIndex(half);
+        if (hasHalf(existing, halfIndex)) {
+            return null;
+        }
+        return existing.setValue(getHalfProperty(halfIndex), true);
+    }
+
+    @Override
+    public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
+        return true;
+    }
+
+    @Override
+    public BlockState updateShape(BlockState pState, Direction pDirection, BlockState pNeighborState,
+                                  LevelAccessor pLevel, BlockPos pPos, BlockPos pNeighborPos) {
+        if (pState.getValue(WATERLOGGED)) {
+            pLevel.scheduleTick(pPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
+        }
+        return pState;
+    }
+
+    @Override
+    public FluidState getFluidState(BlockState pState) {
+        return pState.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(pState);
+    }
+
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
+        pBuilder.add(FACING, AXIS, NEGATIVE, POSITIVE, WATERLOGGED);
+    }
+
+    @Nullable
+    @Override
+    public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
+        return new WarframeHalfLayerBlockEntity(pPos, pState);
+    }
+
+    @Override
+    public int getMimicSlotPresence(BlockState state, int slot) {
+        return hasHalf(state, slot) ? 1 : 0;
+    }
+
+    @Override
+    public int getMimicSlotForHit(BlockState state, BlockPos pos, BlockHitResult hitResult) {
+        return getHitHalf(state, pos, hitResult.getLocation(), hitResult.getDirection());
+    }
+
+    @Override
+    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer,
+                                 InteractionHand pHand, BlockHitResult pHitResult) {
+        return multiMimicUse(pState, pLevel, pPos, pPlayer, pHand, pHitResult);
+    }
+
+    @Override
+    public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, @Nullable LivingEntity pPlacer, ItemStack pStack) {
+        super.setPlacedBy(pLevel, pPos, pState, pPlacer, pStack);
+        multiMimicSetPlacedBy(pLevel, pPos, pState, pPlacer);
+    }
+
+    @Override
+    public void playerWillDestroy(Level pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {
+        multiMimicPlayerWillDestroy(pLevel, pPos, pPlayer);
+        super.playerWillDestroy(pLevel, pPos, pState, pPlayer);
+    }
+
+    @Override
+    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos,
+                         BlockState pNewState, boolean pMovedByPiston) {
+        multiMimicOnRemove(pState, pLevel, pPos, pNewState);
+        super.onRemove(pState, pLevel, pPos, pNewState, pMovedByPiston);
+    }
+
+    @Override
+    public RenderShape getRenderShape(BlockState pState) {
+        return RenderShape.MODEL;
+    }
+}

@@ -1,53 +1,72 @@
 {
   "variants": {
-    "type=bottom": {
-      "model": "warframes:block/airframe_slab"
-    },
-    "type=top": {
-      "model": "warframes:block/airframe_slab",
-      "x": 180,
-      "uvlock": true
-    },
-    "type=center_y": {
-      "model": "warframes:block/airframe_slab_center"
-    },
-    "type=west": {
-      "model": "warframes:block/airframe_slab",
-      "x": 90,
-      "y": 90,
-      "uvlock": true
-    },
-    "type=east": {
+    "facing=north,aerofoil=right": {
       "model": "warframes:block/airframe_slab",
       "x": 90,
       "y": 270,
       "uvlock": true
     },
-    "type=center_x": {
+    "facing=north,aerofoil=left": {
+      "model": "warframes:block/airframe_slab",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=north,aerofoil=center": {
       "model": "warframes:block/airframe_slab_center",
       "x": 90,
       "y": 90,
       "uvlock": true
     },
-    "type=north": {
+    "facing=south,aerofoil=right": {
+      "model": "warframes:block/airframe_slab",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=south,aerofoil=left": {
+      "model": "warframes:block/airframe_slab",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=south,aerofoil=center": {
+      "model": "warframes:block/airframe_slab_center",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=east,aerofoil=right": {
+      "model": "warframes:block/airframe_slab",
+      "x": 90,
+      "uvlock": true
+    },
+    "facing=east,aerofoil=left": {
       "model": "warframes:block/airframe_slab",
       "x": 90,
       "y": 180,
       "uvlock": true
     },
-    "type=south": {
+    "facing=east,aerofoil=center": {
+      "model": "warframes:block/airframe_slab_center",
+      "x": 90,
+      "uvlock": true
+    },
+    "facing=west,aerofoil=right": {
+      "model": "warframes:block/airframe_slab",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=west,aerofoil=left": {
       "model": "warframes:block/airframe_slab",
       "x": 90,
       "uvlock": true
     },
-    "type=center_z": {
+    "facing=west,aerofoil=center": {
       "model": "warframes:block/airframe_slab_center",
       "x": 90,
-      "y": 0,
       "uvlock": true
-    },
-    "type=double": {
-      "model": "warframes:block/airframe_block"
     }
   }
 }

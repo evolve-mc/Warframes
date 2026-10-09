@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a",
+    "b"
+  ],
+  "key": {
+    "a": {
+      "item": "warframes:heavyframe_block"
+    },
+    "b": {
+      "item": "crusty_chunks:rac_barrel"
+    }
+  },
+  "result": {
+    "item": "warframes:heavyframe_covered_rotary_autocannon_barrel",
+    "count": 1
+  }
+}

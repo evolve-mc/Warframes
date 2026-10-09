@@ -1,0 +1,454 @@
+{
+  "variants": {
+    "facing=north,half=top,variant=1": {
+      "model": "warframes:block/landing_wheel_1"
+    },
+    "facing=north,half=top,variant=2": {
+      "model": "warframes:block/landing_wheel_2"
+    },
+    "facing=north,half=top,variant=3": {
+      "model": "warframes:block/landing_wheel_3"
+    },
+    "facing=north,half=top,variant=4": {
+      "model": "warframes:block/landing_wheel_4"
+    },
+    "facing=north,half=top,variant=5": {
+      "model": "warframes:block/landing_wheel_5_6"
+    },
+    "facing=north,half=top,variant=6": {
+      "model": "warframes:block/landing_wheel_5_6",
+      "y": 180
+    },
+    "facing=north,half=top,variant=7": {
+      "model": "warframes:block/landing_wheel_7_8"
+    },
+    "facing=north,half=top,variant=8": {
+      "model": "warframes:block/landing_wheel_7_8",
+      "y": 180
+    },
+    "facing=east,half=top,variant=1": {
+      "model": "warframes:block/landing_wheel_1",
+      "y": 90
+    },
+    "facing=east,half=top,variant=2": {
+      "model": "warframes:block/landing_wheel_2",
+      "y": 90
+    },
+    "facing=east,half=top,variant=3": {
+      "model": "warframes:block/landing_wheel_3",
+      "y": 90
+    },
+    "facing=east,half=top,variant=4": {
+      "model": "warframes:block/landing_wheel_4",
+      "y": 90
+    },
+    "facing=east,half=top,variant=5": {
+      "model": "warframes:block/landing_wheel_5_6",
+      "y": 90
+    },
+    "facing=east,half=top,variant=6": {
+      "model": "warframes:block/landing_wheel_5_6",
+      "y": 270
+    },
+    "facing=east,half=top,variant=7": {
+      "model": "warframes:block/landing_wheel_7_8",
+      "y": 90
+    },
+    "facing=east,half=top,variant=8": {
+      "model": "warframes:block/landing_wheel_7_8",
+      "y": 270
+    },
+    "facing=south,half=top,variant=1": {
+      "model": "warframes:block/landing_wheel_1",
+      "y": 180
+    },
+    "facing=south,half=top,variant=2": {
+      "model": "warframes:block/landing_wheel_2",
+      "y": 180
+    },
+    "facing=south,half=top,variant=3": {
+      "model": "warframes:block/landing_wheel_3",
+      "y": 180
+    },
+    "facing=south,half=top,variant=4": {
+      "model": "warframes:block/landing_wheel_4",
+      "y": 180
+    },
+    "facing=south,half=top,variant=5": {
+      "model": "warframes:block/landing_wheel_5_6",
+      "y": 180
+    },
+    "facing=south,half=top,variant=6": {
+      "model": "warframes:block/landing_wheel_5_6"
+    },
+    "facing=south,half=top,variant=7": {
+      "model": "warframes:block/landing_wheel_7_8",
+      "y": 180
+    },
+    "facing=south,half=top,variant=8": {
+      "model": "warframes:block/landing_wheel_7_8"
+    },
+    "facing=west,half=top,variant=1": {
+      "model": "warframes:block/landing_wheel_1",
+      "y": 270
+    },
+    "facing=west,half=top,variant=2": {
+      "model": "warframes:block/landing_wheel_2",
+      "y": 270
+    },
+    "facing=west,half=top,variant=3": {
+      "model": "warframes:block/landing_wheel_3",
+      "y": 270
+    },
+    "facing=west,half=top,variant=4": {
+      "model": "warframes:block/landing_wheel_4",
+      "y": 270
+    },
+    "facing=west,half=top,variant=5": {
+      "model": "warframes:block/landing_wheel_5_6",
+      "y": 270
+    },
+    "facing=west,half=top,variant=6": {
+      "model": "warframes:block/landing_wheel_5_6",
+      "y": 90
+    },
+    "facing=west,half=top,variant=7": {
+      "model": "warframes:block/landing_wheel_7_8",
+      "y": 270
+    },
+    "facing=west,half=top,variant=8": {
+      "model": "warframes:block/landing_wheel_7_8",
+      "y": 90
+    },
+    "facing=north,half=center,variant=1": {
+      "model": "warframes:block/landing_wheel_1_short"
+    },
+    "facing=north,half=center,variant=2": {
+      "model": "warframes:block/landing_wheel_2_short"
+    },
+    "facing=north,half=center,variant=3": {
+      "model": "warframes:block/landing_wheel_3_short"
+    },
+    "facing=north,half=center,variant=4": {
+      "model": "warframes:block/landing_wheel_4_short"
+    },
+    "facing=north,half=center,variant=5": {
+      "model": "warframes:block/landing_wheel_5_6_short"
+    },
+    "facing=north,half=center,variant=6": {
+      "model": "warframes:block/landing_wheel_5_6_short",
+      "y": 180
+    },
+    "facing=north,half=center,variant=7": {
+      "model": "warframes:block/landing_wheel_7_8_short"
+    },
+    "facing=north,half=center,variant=8": {
+      "model": "warframes:block/landing_wheel_7_8_short",
+      "y": 180
+    },
+    "facing=east,half=center,variant=1": {
+      "model": "warframes:block/landing_wheel_1_short",
+      "y": 90
+    },
+    "facing=east,half=center,variant=2": {
+      "model": "warframes:block/landing_wheel_2_short",
+      "y": 90
+    },
+    "facing=east,half=center,variant=3": {
+      "model": "warframes:block/landing_wheel_3_short",
+      "y": 90
+    },
+    "facing=east,half=center,variant=4": {
+      "model": "warframes:block/landing_wheel_4_short",
+      "y": 90
+    },
+    "facing=east,half=center,variant=5": {
+      "model": "warframes:block/landing_wheel_5_6_short",
+      "y": 90
+    },
+    "facing=east,half=center,variant=6": {
+      "model": "warframes:block/landing_wheel_5_6_short",
+      "y": 270
+    },
+    "facing=east,half=center,variant=7": {
+      "model": "warframes:block/landing_wheel_7_8_short",
+      "y": 90
+    },
+    "facing=east,half=center,variant=8": {
+      "model": "warframes:block/landing_wheel_7_8_short",
+      "y": 270
+    },
+    "facing=south,half=center,variant=1": {
+      "model": "warframes:block/landing_wheel_1_short",
+      "y": 180
+    },
+    "facing=south,half=center,variant=2": {
+      "model": "warframes:block/landing_wheel_2_short",
+      "y": 180
+    },
+    "facing=south,half=center,variant=3": {
+      "model": "warframes:block/landing_wheel_3_short",
+      "y": 180
+    },
+    "facing=south,half=center,variant=4": {
+      "model": "warframes:block/landing_wheel_4_short",
+      "y": 180
+    },
+    "facing=south,half=center,variant=5": {
+      "model": "warframes:block/landing_wheel_5_6_short",
+      "y": 180
+    },
+    "facing=south,half=center,variant=6": {
+      "model": "warframes:block/landing_wheel_5_6_short"
+    },
+    "facing=south,half=center,variant=7": {
+      "model": "warframes:block/landing_wheel_7_8_short",
+      "y": 180
+    },
+    "facing=south,half=center,variant=8": {
+      "model": "warframes:block/landing_wheel_7_8_short"
+    },
+    "facing=west,half=center,variant=1": {
+      "model": "warframes:block/landing_wheel_1_short",
+      "y": 270
+    },
+    "facing=west,half=center,variant=2": {
+      "model": "warframes:block/landing_wheel_2_short",
+      "y": 270
+    },
+    "facing=west,half=center,variant=3": {
+      "model": "warframes:block/landing_wheel_3_short",
+      "y": 270
+    },
+    "facing=west,half=center,variant=4": {
+      "model": "warframes:block/landing_wheel_4_short",
+      "y": 270
+    },
+    "facing=west,half=center,variant=5": {
+      "model": "warframes:block/landing_wheel_5_6_short",
+      "y": 270
+    },
+    "facing=west,half=center,variant=6": {
+      "model": "warframes:block/landing_wheel_5_6_short",
+      "y": 90
+    },
+    "facing=west,half=center,variant=7": {
+      "model": "warframes:block/landing_wheel_7_8_short",
+      "y": 270
+    },
+    "facing=west,half=center,variant=8": {
+      "model": "warframes:block/landing_wheel_7_8_short",
+      "y": 90
+    },
+    "facing=north,half=bottom,variant=1": {
+      "model": "warframes:block/landing_wheel_1_short"
+    },
+    "facing=north,half=bottom,variant=2": {
+      "model": "warframes:block/landing_wheel_2_short"
+    },
+    "facing=north,half=bottom,variant=3": {
+      "model": "warframes:block/landing_wheel_3_short"
+    },
+    "facing=north,half=bottom,variant=4": {
+      "model": "warframes:block/landing_wheel_4_short"
+    },
+    "facing=north,half=bottom,variant=5": {
+      "model": "warframes:block/landing_wheel_5_6_short"
+    },
+    "facing=north,half=bottom,variant=6": {
+      "model": "warframes:block/landing_wheel_5_6_short",
+      "y": 180
+    },
+    "facing=north,half=bottom,variant=7": {
+      "model": "warframes:block/landing_wheel_7_8_short"
+    },
+    "facing=north,half=bottom,variant=8": {
+      "model": "warframes:block/landing_wheel_7_8_short",
+      "y": 180
+    },
+    "facing=east,half=bottom,variant=1": {
+      "model": "warframes:block/landing_wheel_1_short",
+      "y": 90
+    },
+    "facing=east,half=bottom,variant=2": {
+      "model": "warframes:block/landing_wheel_2_short",
+      "y": 90
+    },
+    "facing=east,half=bottom,variant=3": {
+      "model": "warframes:block/landing_wheel_3_short",
+      "y": 90
+    },
+    "facing=east,half=bottom,variant=4": {
+      "model": "warframes:block/landing_wheel_4_short",
+      "y": 90
+    },
+    "facing=east,half=bottom,variant=5": {
+      "model": "warframes:block/landing_wheel_5_6_short",
+      "y": 90
+    },
+    "facing=east,half=bottom,variant=6": {
+      "model": "warframes:block/landing_wheel_5_6_short",
+      "y": 270
+    },
+    "facing=east,half=bottom,variant=7": {
+      "model": "warframes:block/landing_wheel_7_8_short",
+      "y": 90
+    },
+    "facing=east,half=bottom,variant=8": {
+      "model": "warframes:block/landing_wheel_7_8_short",
+      "y": 270
+    },
+    "facing=south,half=bottom,variant=1": {
+      "model": "warframes:block/landing_wheel_1_short",
+      "y": 180
+    },
+    "facing=south,half=bottom,variant=2": {
+      "model": "warframes:block/landing_wheel_2_short",
+      "y": 180
+    },
+    "facing=south,half=bottom,variant=3": {
+      "model": "warframes:block/landing_wheel_3_short",
+      "y": 180
+    },
+    "facing=south,half=bottom,variant=4": {
+      "model": "warframes:block/landing_wheel_4_short",
+      "y": 180
+    },
+    "facing=south,half=bottom,variant=5": {
+      "model": "warframes:block/landing_wheel_5_6_short",
+      "y": 180
+    },
+    "facing=south,half=bottom,variant=6": {
+      "model": "warframes:block/landing_wheel_5_6_short"
+    },
+    "facing=south,half=bottom,variant=7": {
+      "model": "warframes:block/landing_wheel_7_8_short",
+      "y": 180
+    },
+    "facing=south,half=bottom,variant=8": {
+      "model": "warframes:block/landing_wheel_7_8_short"
+    },
+    "facing=west,half=bottom,variant=1": {
+      "model": "warframes:block/landing_wheel_1_short",
+      "y": 270
+    },
+    "facing=west,half=bottom,variant=2": {
+      "model": "warframes:block/landing_wheel_2_short",
+      "y": 270
+    },
+    "facing=west,half=bottom,variant=3": {
+      "model": "warframes:block/landing_wheel_3_short",
+      "y": 270
+    },
+    "facing=west,half=bottom,variant=4": {
+      "model": "warframes:block/landing_wheel_4_short",
+      "y": 270
+    },
+    "facing=west,half=bottom,variant=5": {
+      "model": "warframes:block/landing_wheel_5_6_short",
+      "y": 270
+    },
+    "facing=west,half=bottom,variant=6": {
+      "model": "warframes:block/landing_wheel_5_6_short",
+      "y": 90
+    },
+    "facing=west,half=bottom,variant=7": {
+      "model": "warframes:block/landing_wheel_7_8_short",
+      "y": 270
+    },
+    "facing=west,half=bottom,variant=8": {
+      "model": "warframes:block/landing_wheel_7_8_short",
+      "y": 90
+    },
+    "facing=north,half=top,variant=9": {
+      "model": "warframes:block/landing_wheel_9_10"
+    },
+    "facing=north,half=top,variant=10": {
+      "model": "warframes:block/landing_wheel_9_10",
+      "y": 180
+    },
+    "facing=east,half=top,variant=9": {
+      "model": "warframes:block/landing_wheel_9_10",
+      "y": 90
+    },
+    "facing=east,half=top,variant=10": {
+      "model": "warframes:block/landing_wheel_9_10",
+      "y": 270
+    },
+    "facing=south,half=top,variant=9": {
+      "model": "warframes:block/landing_wheel_9_10",
+      "y": 180
+    },
+    "facing=south,half=top,variant=10": {
+      "model": "warframes:block/landing_wheel_9_10"
+    },
+    "facing=west,half=top,variant=9": {
+      "model": "warframes:block/landing_wheel_9_10",
+      "y": 270
+    },
+    "facing=west,half=top,variant=10": {
+      "model": "warframes:block/landing_wheel_9_10",
+      "y": 90
+    },
+    "facing=north,half=center,variant=9": {
+      "model": "warframes:block/landing_wheel_9_10_short"
+    },
+    "facing=north,half=center,variant=10": {
+      "model": "warframes:block/landing_wheel_9_10_short",
+      "y": 180
+    },
+    "facing=east,half=center,variant=9": {
+      "model": "warframes:block/landing_wheel_9_10_short",
+      "y": 90
+    },
+    "facing=east,half=center,variant=10": {
+      "model": "warframes:block/landing_wheel_9_10_short",
+      "y": 270
+    },
+    "facing=south,half=center,variant=9": {
+      "model": "warframes:block/landing_wheel_9_10_short",
+      "y": 180
+    },
+    "facing=south,half=center,variant=10": {
+      "model": "warframes:block/landing_wheel_9_10_short"
+    },
+    "facing=west,half=center,variant=9": {
+      "model": "warframes:block/landing_wheel_9_10_short",
+      "y": 270
+    },
+    "facing=west,half=center,variant=10": {
+      "model": "warframes:block/landing_wheel_9_10_short",
+      "y": 90
+    },
+    "facing=north,half=bottom,variant=9": {
+      "model": "warframes:block/landing_wheel_9_10_short"
+    },
+    "facing=north,half=bottom,variant=10": {
+      "model": "warframes:block/landing_wheel_9_10_short",
+      "y": 180
+    },
+    "facing=east,half=bottom,variant=9": {
+      "model": "warframes:block/landing_wheel_9_10_short",
+      "y": 90
+    },
+    "facing=east,half=bottom,variant=10": {
+      "model": "warframes:block/landing_wheel_9_10_short",
+      "y": 270
+    },
+    "facing=south,half=bottom,variant=9": {
+      "model": "warframes:block/landing_wheel_9_10_short",
+      "y": 180
+    },
+    "facing=south,half=bottom,variant=10": {
+      "model": "warframes:block/landing_wheel_9_10_short"
+    },
+    "facing=west,half=bottom,variant=9": {
+      "model": "warframes:block/landing_wheel_9_10_short",
+      "y": 270
+    },
+    "facing=west,half=bottom,variant=10": {
+      "model": "warframes:block/landing_wheel_9_10_short",
+      "y": 90
+    }
+  }
+}

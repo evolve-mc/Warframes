@@ -4,12 +4,13 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -17,7 +18,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.Half;
 import net.minecraft.world.level.material.FluidState;
@@ -30,11 +30,9 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import javax.annotation.Nullable;
 
 public class WarframeHalfSlabBlock extends Block implements SimpleWaterloggedBlock, WarframeMimicable {
-    public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+    public static final EnumProperty<WarframeEdgePosition> POSITION = EnumProperty.create("position", WarframeEdgePosition.class);
     public static final EnumProperty<Half> HALF = BlockStateProperties.HALF;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-    public static final EnumProperty<WarframeCornerType> VERTICAL =
-            EnumProperty.create("vertical", WarframeCornerType.class);
 
     protected static final VoxelShape NORTH_TOP = Block.box(0.0D, 8.0D, 0.0D, 16.0D, 16.0D, 8.0D);
     protected static final VoxelShape NORTH_BOTTOM = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 8.0D);
@@ -44,50 +42,32 @@ public class WarframeHalfSlabBlock extends Block implements SimpleWaterloggedBlo
     protected static final VoxelShape EAST_BOTTOM = Block.box(8.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D);
     protected static final VoxelShape WEST_TOP = Block.box(0.0D, 8.0D, 0.0D, 8.0D, 16.0D, 16.0D);
     protected static final VoxelShape WEST_BOTTOM = Block.box(0.0D, 0.0D, 0.0D, 8.0D, 8.0D, 16.0D);
-    protected static final VoxelShape VERTICAL_NORTHEAST = Block.box(0.0D, 0.0D, 8.0D, 8.0D, 16.0D, 16.0D);
-    protected static final VoxelShape VERTICAL_NORTHWEST = Block.box(8.0D, 0.0D, 8.0D, 16.0D, 16.0D, 16.0D);
-    protected static final VoxelShape VERTICAL_SOUTHEAST = Block.box(0.0D, 0.0D, 0.0D, 8.0D, 16.0D, 8.0D);
-    protected static final VoxelShape VERTICAL_SOUTHWEST = Block.box(8.0D, 0.0D, 0.0D, 16.0D, 16.0D, 8.0D);
+    protected static final VoxelShape NORTHEAST_PILLAR = Block.box(8.0D, 0.0D, 0.0D, 16.0D, 16.0D, 8.0D);
+    protected static final VoxelShape NORTHWEST_PILLAR = Block.box(0.0D, 0.0D, 0.0D, 8.0D, 16.0D, 8.0D);
+    protected static final VoxelShape SOUTHEAST_PILLAR = Block.box(8.0D, 0.0D, 8.0D, 16.0D, 16.0D, 16.0D);
+    protected static final VoxelShape SOUTHWEST_PILLAR = Block.box(0.0D, 0.0D, 8.0D, 8.0D, 16.0D, 16.0D);
 
     public WarframeHalfSlabBlock(BlockBehaviour.Properties pProperties) {
         super(pProperties);
         this.registerDefaultState(this.stateDefinition.any()
-                .setValue(FACING, Direction.NORTH)
+                .setValue(POSITION, WarframeEdgePosition.NORTH)
                 .setValue(HALF, Half.BOTTOM)
-                .setValue(VERTICAL, WarframeCornerType.NONE)
                 .setValue(WATERLOGGED, Boolean.valueOf(false)));
     }
 
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        WarframeCornerType vertical = pState.getValue(VERTICAL);
-        switch (vertical) {
-            case NORTHEAST:
-                return VERTICAL_NORTHEAST;
-            case NORTHWEST:
-                return VERTICAL_NORTHWEST;
-            case SOUTHEAST:
-                return VERTICAL_SOUTHEAST;
-            case SOUTHWEST:
-                return VERTICAL_SOUTHWEST;
-            default:
-                return getSideShape(pState.getValue(FACING), pState.getValue(HALF));
-        }
-    }
-
-    private VoxelShape getSideShape(Direction facing, Half half) {
-        boolean isTop = half == Half.TOP;
-        switch (facing) {
-            case NORTH:
-                return isTop ? NORTH_TOP : NORTH_BOTTOM;
-            case SOUTH:
-                return isTop ? SOUTH_TOP : SOUTH_BOTTOM;
-            case EAST:
-                return isTop ? EAST_TOP : EAST_BOTTOM;
-            case WEST:
-            default:
-                return isTop ? WEST_TOP : WEST_BOTTOM;
-        }
+        boolean isTop = pState.getValue(HALF) == Half.TOP;
+        return switch (pState.getValue(POSITION)) {
+            case NORTH -> isTop ? NORTH_TOP : NORTH_BOTTOM;
+            case SOUTH -> isTop ? SOUTH_TOP : SOUTH_BOTTOM;
+            case EAST -> isTop ? EAST_TOP : EAST_BOTTOM;
+            case WEST -> isTop ? WEST_TOP : WEST_BOTTOM;
+            case NORTHEAST -> NORTHEAST_PILLAR;
+            case NORTHWEST -> NORTHWEST_PILLAR;
+            case SOUTHEAST -> SOUTHEAST_PILLAR;
+            case SOUTHWEST -> SOUTHWEST_PILLAR;
+        };
     }
 
     @Nullable
@@ -97,59 +77,64 @@ public class WarframeHalfSlabBlock extends Block implements SimpleWaterloggedBlo
         BlockPos blockpos = pContext.getClickedPos();
         Vec3 hit = pContext.getClickLocation();
         double relX = hit.x - (double) blockpos.getX();
+        double relY = hit.y - (double) blockpos.getY();
         double relZ = hit.z - (double) blockpos.getZ();
 
+        FluidState fluidstate = pContext.getLevel().getFluidState(blockpos);
+        boolean waterlogged = fluidstate.getType() == Fluids.WATER;
+
         if (clickedFace == Direction.NORTH) {
-            if (relX < 0.2D) {
-                return verticalState(pContext, WarframeCornerType.NORTHEAST);
-            } else if (relX > 0.8D) {
-                return verticalState(pContext, WarframeCornerType.NORTHWEST);
+            if (relX < 0.33D) {
+                return cornerState(WarframeEdgePosition.SOUTHWEST, waterlogged);
+            } else if (relX > 0.67D) {
+                return cornerState(WarframeEdgePosition.SOUTHEAST, waterlogged);
             }
         } else if (clickedFace == Direction.EAST) {
-            if (relZ < 0.2D) {
-                return verticalState(pContext, WarframeCornerType.SOUTHEAST);
-            } else if (relZ > 0.8D) {
-                return verticalState(pContext, WarframeCornerType.NORTHEAST);
+            if (relZ < 0.33D) {
+                return cornerState(WarframeEdgePosition.NORTHWEST, waterlogged);
+            } else if (relZ > 0.67D) {
+                return cornerState(WarframeEdgePosition.SOUTHWEST, waterlogged);
             }
         } else if (clickedFace == Direction.SOUTH) {
-            if (relX > 0.8D) {
-                return verticalState(pContext, WarframeCornerType.SOUTHWEST);
-            } else if (relX < 0.2D) {
-                return verticalState(pContext, WarframeCornerType.SOUTHEAST);
+            if (relX > 0.67D) {
+                return cornerState(WarframeEdgePosition.NORTHEAST, waterlogged);
+            } else if (relX < 0.33D) {
+                return cornerState(WarframeEdgePosition.NORTHWEST, waterlogged);
             }
         } else if (clickedFace == Direction.WEST) {
-            if (relZ > 0.8D) {
-                return verticalState(pContext, WarframeCornerType.NORTHWEST);
-            } else if (relZ < 0.2D) {
-                return verticalState(pContext, WarframeCornerType.SOUTHWEST);
+            if (relZ > 0.67D) {
+                return cornerState(WarframeEdgePosition.SOUTHEAST, waterlogged);
+            } else if (relZ < 0.33D) {
+                return cornerState(WarframeEdgePosition.NORTHEAST, waterlogged);
             }
         }
 
-        Direction facing = pContext.getHorizontalDirection();
-        boolean isTop = clickedFace == Direction.DOWN
-                || (clickedFace != Direction.UP && hit.y - (double) blockpos.getY() > 0.5D);
-        Half half = isTop ? Half.TOP : Half.BOTTOM;
+        WarframeEdgePosition position = switch (pContext.getHorizontalDirection()) {
+            case SOUTH -> WarframeEdgePosition.SOUTH;
+            case EAST -> WarframeEdgePosition.EAST;
+            case WEST -> WarframeEdgePosition.WEST;
+            default -> WarframeEdgePosition.NORTH;
+        };
 
-        FluidState fluidstate = pContext.getLevel().getFluidState(blockpos);
+        boolean isTop = clickedFace == Direction.DOWN
+                || (clickedFace != Direction.UP && relY > 0.5D);
+
         return this.defaultBlockState()
-                .setValue(FACING, facing)
-                .setValue(HALF, half)
-                .setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER))
-                .setValue(VERTICAL, WarframeCornerType.NONE);
+                .setValue(POSITION, position)
+                .setValue(HALF, isTop ? Half.TOP : Half.BOTTOM)
+                .setValue(WATERLOGGED, Boolean.valueOf(waterlogged));
     }
 
-    private BlockState verticalState(BlockPlaceContext pContext, WarframeCornerType corner) {
-        FluidState fluidstate = pContext.getLevel().getFluidState(pContext.getClickedPos());
+    private BlockState cornerState(WarframeEdgePosition corner, boolean waterlogged) {
         return this.defaultBlockState()
-                .setValue(FACING, Direction.NORTH)
+                .setValue(POSITION, corner)
                 .setValue(HALF, Half.BOTTOM)
-                .setValue(VERTICAL, corner)
-                .setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
+                .setValue(WATERLOGGED, Boolean.valueOf(waterlogged));
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(FACING, HALF, VERTICAL, WATERLOGGED);
+        pBuilder.add(POSITION, HALF, WATERLOGGED);
     }
 
     @Override
@@ -179,5 +164,11 @@ public class WarframeHalfSlabBlock extends Block implements SimpleWaterloggedBlo
     @Override
     public RenderShape getRenderShape(BlockState pState) {
         return RenderShape.MODEL;
+    }
+
+    @Override
+    public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, @Nullable LivingEntity pPlacer, ItemStack pStack) {
+        super.setPlacedBy(pLevel, pPos, pState, pPlacer, pStack);
+        mimicSetPlacedBy(pLevel, pPos, pState, pPlacer, pStack);
     }
 }

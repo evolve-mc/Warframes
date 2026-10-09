@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "warframes:block/airframe_covered_autocannon_barrel"
+    },
+    "facing=east": {
+      "model": "warframes:block/airframe_covered_autocannon_barrel",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "warframes:block/airframe_covered_autocannon_barrel",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "warframes:block/airframe_covered_autocannon_barrel",
+      "y": 270
+    }
+  }
+}

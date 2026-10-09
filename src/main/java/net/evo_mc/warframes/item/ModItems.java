@@ -12,10 +12,10 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, Warframes.MOD_ID);
 
-
-
-public static final RegistryObject<Item> WRENCH = ITEMS.register("wrench",
-        () -> new WrenchItem(new Item.Properties()));
+    public static final RegistryObject<Item> WARFRAMES_ICON = ITEMS.register("warframes_icon",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> WRENCH = ITEMS.register("wrench",
+            () -> new WrenchItem(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

@@ -1,0 +1,49 @@
+{
+  "variants": {
+    "facing=north,animation=0": {
+      "model": "warframes:block/airframe_horizontal_air_brake"
+    },
+    "facing=north,animation=1": {
+      "model": "warframes:block/airframe_horizontal_air_brake"
+    },
+    "facing=north,animation=2": {
+      "model": "warframes:block/airframe_horizontal_air_brake"
+    },
+    "facing=south,animation=0": {
+      "model": "warframes:block/airframe_horizontal_air_brake",
+      "y": 180
+    },
+    "facing=south,animation=1": {
+      "model": "warframes:block/airframe_horizontal_air_brake",
+      "y": 180
+    },
+    "facing=south,animation=2": {
+      "model": "warframes:block/airframe_horizontal_air_brake",
+      "y": 180
+    },
+    "facing=west,animation=0": {
+      "model": "warframes:block/airframe_horizontal_air_brake",
+      "y": 270
+    },
+    "facing=west,animation=1": {
+      "model": "warframes:block/airframe_horizontal_air_brake",
+      "y": 270
+    },
+    "facing=west,animation=2": {
+      "model": "warframes:block/airframe_horizontal_air_brake",
+      "y": 270
+    },
+    "facing=east,animation=0": {
+      "model": "warframes:block/airframe_horizontal_air_brake",
+      "y": 90
+    },
+    "facing=east,animation=1": {
+      "model": "warframes:block/airframe_horizontal_air_brake",
+      "y": 90
+    },
+    "facing=east,animation=2": {
+      "model": "warframes:block/airframe_horizontal_air_brake",
+      "y": 90
+    }
+  }
+}

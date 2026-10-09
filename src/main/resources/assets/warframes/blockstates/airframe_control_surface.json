@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=north,animation=0": { "model": "warframes:block/airframe_control_surface" },
+    "facing=north,animation=1": { "model": "warframes:block/airframe_control_surface" },
+    "facing=north,animation=2": { "model": "warframes:block/airframe_control_surface" },
+    "facing=north,animation=3": { "model": "warframes:block/airframe_control_surface" },
+    "facing=north,animation=4": { "model": "warframes:block/airframe_control_surface" },
+
+    "facing=south,animation=0": { "model": "warframes:block/airframe_control_surface", "y": 180 },
+    "facing=south,animation=1": { "model": "warframes:block/airframe_control_surface", "y": 180 },
+    "facing=south,animation=2": { "model": "warframes:block/airframe_control_surface", "y": 180 },
+    "facing=south,animation=3": { "model": "warframes:block/airframe_control_surface", "y": 180 },
+    "facing=south,animation=4": { "model": "warframes:block/airframe_control_surface", "y": 180 },
+
+    "facing=west,animation=0": { "model": "warframes:block/airframe_control_surface", "y": 270 },
+    "facing=west,animation=1": { "model": "warframes:block/airframe_control_surface", "y": 270 },
+    "facing=west,animation=2": { "model": "warframes:block/airframe_control_surface", "y": 270 },
+    "facing=west,animation=3": { "model": "warframes:block/airframe_control_surface", "y": 270 },
+    "facing=west,animation=4": { "model": "warframes:block/airframe_control_surface", "y": 270 },
+
+    "facing=east,animation=0": { "model": "warframes:block/airframe_control_surface", "y": 90 },
+    "facing=east,animation=1": { "model": "warframes:block/airframe_control_surface", "y": 90 },
+    "facing=east,animation=2": { "model": "warframes:block/airframe_control_surface", "y": 90 },
+    "facing=east,animation=3": { "model": "warframes:block/airframe_control_surface", "y": 90 },
+    "facing=east,animation=4": { "model": "warframes:block/airframe_control_surface", "y": 90 }
+  }
+}

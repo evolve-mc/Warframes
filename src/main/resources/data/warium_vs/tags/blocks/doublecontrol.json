@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "warframes:airframe_control_surface",
+    "warframes:airframe_stepped_control_surface",
+    "warframes:airframe_half_control_surface",
+    "warframes:airframe_vertical_control_surface",
+    "warframes:airframe_vertical_stepped_control_surface",
+    "warframes:airframe_vertical_half_control_surface",
+    "warframes:airframe_horizontal_air_brake",
+    "warframes:airframe_vertical_air_brake"
+  ]
+}

@@ -1,0 +1,438 @@
+[
+  {
+    "block": "warframes:airframe_block",
+    "mass": 25.0,
+    "priority": 301
+  },
+  {
+    "block": "warframes:airframe_slab",
+    "mass": 25.0,
+    "priority": 302
+  },
+  {
+    "block": "warframes:airframe_slab_wing",
+    "mass": 25.0,
+    "priority": 303
+  },
+  {
+    "block": "warframes:airframe_layer",
+    "mass": 25.0,
+    "priority": 304
+  },
+  {
+    "block": "warframes:airframe_stairs",
+    "mass": 25.0,
+    "priority": 305
+  },
+  {
+    "block": "warframes:airframe_half_slab",
+    "mass": 25.0,
+    "priority": 306
+  },
+  {
+    "block": "warframes:airframe_quarter_slab",
+    "mass": 25.0,
+    "priority": 307
+  },
+  {
+    "block": "warframes:airframe_centered_layer",
+    "mass": 25.0,
+    "priority": 308
+  },
+  {
+    "block": "warframes:airframe_edge_strip_layer",
+    "mass": 25.0,
+    "priority": 309
+  },
+  {
+    "block": "warframes:airframe_core_strip_layer",
+    "mass": 25.0,
+    "priority": 310
+  },
+  {
+    "block": "warframes:airframe_slab_stabilizer",
+    "mass": 25.0,
+    "priority": 311
+  },
+  {
+    "block": "warframes:airframe_vertical_slab_stabilizer",
+    "mass": 25.0,
+    "priority": 312
+  },
+  {
+    "block": "warframes:airframe_half_slab_wing",
+    "mass": 25.0,
+    "priority": 313
+  },
+  {
+    "block": "warframes:airframe_half_slab_stabilizer",
+    "mass": 25.0,
+    "priority": 314
+  },
+  {
+    "block": "warframes:airframe_vertical_half_slab_stabilizer",
+    "mass": 25.0,
+    "priority": 315
+  },
+  {
+    "block": "warframes:airframe_centered_stairs",
+    "mass": 25.0,
+    "priority": 316
+  },
+  {
+    "block": "warframes:airframe_point_layer",
+    "mass": 25.0,
+    "priority": 317
+  },
+  {
+    "block": "warframes:airframe_half_stairs",
+    "mass": 25.0,
+    "priority": 318
+  },
+  {
+    "block": "warframes:airframe_door",
+    "mass": 25.0,
+    "priority": 319
+  },
+  {
+    "block": "warframes:airframe_trapdoor",
+    "mass": 25.0,
+    "priority": 320
+  },
+  {
+    "block": "warframes:airframe_ladder",
+    "mass": 25.0,
+    "priority": 321
+  },
+  {
+    "block": "warframes:airframe_button",
+    "mass": 2.5,
+    "priority": 322
+  },
+  {
+    "block": "warframes:airframe_lever",
+    "mass": 10.0,
+    "priority": 323
+  },
+  {
+    "block": "warframes:airframe_chest",
+    "mass": 100.0,
+    "priority": 324
+  },
+  {
+    "block": "warframes:airframe_control_surface",
+    "mass": 25.0,
+    "priority": 325
+  },
+  {
+    "block": "warframes:airframe_vertical_control_surface",
+    "mass": 25.0,
+    "priority": 329
+  },
+  {
+    "block": "warframes:airframe_slab_wing_layer",
+    "mass": 25.0,
+    "priority": 332
+  },
+  {
+    "block": "warframes:airframe_slab_stabilizer_layer",
+    "mass": 25.0,
+    "priority": 333
+  },
+  {
+    "block": "warframes:airframe_vertical_slab_stabilizer_layer",
+    "mass": 25.0,
+    "priority": 334
+  },
+  {
+    "block": "warframes:airframe_stepped_control_surface",
+    "mass": 25.0,
+    "priority": 335
+  },
+  {
+    "block": "warframes:airframe_half_control_surface",
+    "mass": 25.0,
+    "priority": 336
+  },
+  {
+    "block": "warframes:airframe_vertical_stepped_control_surface",
+    "mass": 25.0,
+    "priority": 337
+  },
+  {
+    "block": "warframes:airframe_vertical_half_control_surface",
+    "mass": 25.0,
+    "priority": 338
+  },
+  {
+    "block": "warframes:airframe_horizontal_air_brake",
+    "mass": 25.0,
+    "priority": 339
+  },
+  {
+    "block": "warframes:airframe_vertical_air_brake",
+    "mass": 25.0,
+    "priority": 340
+  },
+  {
+    "block": "warframes:airframe_panel",
+    "mass": 25.0,
+    "priority": 341
+  },
+  {
+    "block": "warframes:airframe_nose_cone",
+    "mass": 25.0,
+    "priority": 342
+  },
+  {
+    "block": "warframes:airframe_stepped_pyramid",
+    "mass": 25.0,
+    "priority": 343
+  },
+  {
+    "block": "warframes:airframe_board",
+    "mass": 25.0,
+    "priority": 344
+  },
+  {
+    "block": "warframes:airframe_half_layer",
+    "mass": 25.0,
+    "priority": 345
+  },
+  {
+    "block": "warframes:airframe_half_panel",
+    "mass": 25.0,
+    "priority": 346
+  },
+  {
+    "block": "warframes:airframe_side_strip_layer",
+    "mass": 25.0,
+    "priority": 347
+  },
+  {
+    "block": "warframes:airframe_stepped_slab_wing",
+    "mass": 25.0,
+    "priority": 348
+  },
+  {
+    "block": "warframes:airframe_stepped_slab_stabilizer",
+    "mass": 25.0,
+    "priority": 349
+  },
+  {
+    "block": "warframes:airframe_vertical_stepped_slab_stabilizer",
+    "mass": 25.0,
+    "priority": 350
+  },
+  {
+    "block": "warframes:airframe_half_door",
+    "mass": 25.0,
+    "priority": 351
+  },
+  {
+    "block": "warframes:airframe_countermeasure_launcher",
+    "mass": 50.0,
+    "priority": 352
+  },
+  {
+    "block": "warframes:airframe_countermeasure_launcher_slab",
+    "mass": 50.0,
+    "priority": 352
+  },
+  {
+    "block": "warframes:airframe_slab_landing_gear_bay",
+    "mass": 100.0,
+    "priority": 353
+  },
+  {
+    "block": "warframes:airframe_slim_landing_gear_bay",
+    "mass": 100.0,
+    "priority": 354
+  },
+  {
+    "block": "warframes:airframe_landing_wheel",
+    "mass": 0.0,
+    "friction": 0.01,
+    "priority": 355
+  },
+  {
+    "block": "warframes:airframe_landing_gear_bay",
+    "mass": 100.0,
+    "priority": 356
+  },
+  {
+    "block": "warframes:airframe_landing_strut",
+    "mass": 50.0,
+    "priority": 357
+  },
+  {
+    "block": "warframes:airframe_ram_scoop_radiator",
+    "mass": 250.0,
+    "priority": 358
+  },
+  {
+    "block": "warframes:airframe_ram_scoop_radiator_slab",
+    "mass": 200.0,
+    "priority": 359
+  },
+  {
+    "block": "warframes:airframe_covered_autocannon_barrel",
+    "mass": 30.0,
+    "priority": 360
+  },
+  {
+    "block": "warframes:airframe_covered_rotary_autocannon_barrel",
+    "mass": 105.0,
+    "priority": 361
+  },
+  {
+    "block": "warframes:airframe_air_intake",
+    "mass": 25.0,
+    "priority": 362
+  },
+  {
+    "block": "warframes:airframe_compressor_intake_cowl",
+    "mass": 25.0,
+    "priority": 363
+  },
+  {
+    "block": "warframes:heavyframe_block",
+    "mass": 700.0,
+    "priority": 364
+  },
+  {
+    "block": "warframes:heavyframe_slab",
+    "mass": 700.0,
+    "priority": 365
+  },
+  {
+    "block": "warframes:heavyframe_half_slab",
+    "mass": 700.0,
+    "priority": 366
+  },
+  {
+    "block": "warframes:heavyframe_quarter_slab",
+    "mass": 700.0,
+    "priority": 367
+  },
+  {
+    "block": "warframes:heavyframe_stairs",
+    "mass": 700.0,
+    "priority": 368
+  },
+  {
+    "block": "warframes:heavyframe_half_stairs",
+    "mass": 700.0,
+    "priority": 369
+  },
+  {
+    "block": "warframes:heavyframe_panel",
+    "mass": 700.0,
+    "priority": 370
+  },
+  {
+    "block": "warframes:heavyframe_half_panel",
+    "mass": 700.0,
+    "priority": 371
+  },
+  {
+    "block": "warframes:heavyframe_board",
+    "mass": 700.0,
+    "priority": 372
+  },
+  {
+    "block": "warframes:heavyframe_centered_stairs",
+    "mass": 700.0,
+    "priority": 373
+  },
+  {
+    "block": "warframes:heavyframe_stepped_pyramid",
+    "mass": 700.0,
+    "priority": 374
+  },
+  {
+    "block": "warframes:heavyframe_nose_cone",
+    "mass": 700.0,
+    "priority": 375
+  },
+  {
+    "block": "warframes:heavyframe_layer",
+    "mass": 700.0,
+    "priority": 376
+  },
+  {
+    "block": "warframes:heavyframe_centered_layer",
+    "mass": 700.0,
+    "priority": 377
+  },
+  {
+    "block": "warframes:heavyframe_half_layer",
+    "mass": 700.0,
+    "priority": 378
+  },
+  {
+    "block": "warframes:heavyframe_edge_strip_layer",
+    "mass": 700.0,
+    "priority": 379
+  },
+  {
+    "block": "warframes:heavyframe_side_strip_layer",
+    "mass": 700.0,
+    "priority": 380
+  },
+  {
+    "block": "warframes:heavyframe_core_strip_layer",
+    "mass": 700.0,
+    "priority": 381
+  },
+  {
+    "block": "warframes:heavyframe_point_layer",
+    "mass": 700.0,
+    "priority": 382
+  },
+  {
+    "block": "warframes:heavyframe_trapdoor",
+    "mass": 700.0,
+    "priority": 383
+  },
+  {
+    "block": "warframes:heavyframe_door",
+    "mass": 500.0,
+    "priority": 384
+  },
+  {
+    "block": "warframes:heavyframe_half_door",
+    "mass": 250.0,
+    "priority": 385
+  },
+  {
+    "block": "warframes:heavyframe_ladder",
+    "mass": 50.0,
+    "priority": 386
+  },
+  {
+    "block": "warframes:heavyframe_button",
+    "mass": 5.0,
+    "priority": 387
+  },
+  {
+    "block": "warframes:heavyframe_lever",
+    "mass": 20.0,
+    "priority": 388
+  },
+  {
+    "block": "warframes:heavyframe_chest",
+    "mass": 1000.0,
+    "priority": 389
+  },
+  {
+    "block": "warframes:heavyframe_covered_autocannon_barrel",
+    "mass": 725.0,
+    "priority": 390
+  },
+  {
+    "block": "warframes:heavyframe_covered_rotary_autocannon_barrel",
+    "mass": 775.0,
+    "priority": 391
+  }
+]

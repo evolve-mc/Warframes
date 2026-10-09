@@ -1,0 +1,72 @@
+{
+  "variants": {
+    "position=north,half=bottom": {
+      "model": "warframes:block/heavyframe_half_slab",
+      "y": 270,
+      "uvlock": true
+    },
+    "position=north,half=top": {
+      "model": "warframes:block/heavyframe_half_slab",
+      "x": 180,
+      "y": 270,
+      "uvlock": true
+    },
+    "position=south,half=bottom": {
+      "model": "warframes:block/heavyframe_half_slab",
+      "y": 90,
+      "uvlock": true
+    },
+    "position=south,half=top": {
+      "model": "warframes:block/heavyframe_half_slab",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    },
+    "position=east,half=bottom": {
+      "model": "warframes:block/heavyframe_half_slab",
+      "y": 0,
+      "uvlock": true
+    },
+    "position=east,half=top": {
+      "model": "warframes:block/heavyframe_half_slab",
+      "x": 180,
+      "y": 0,
+      "uvlock": true
+    },
+    "position=west,half=bottom": {
+      "model": "warframes:block/heavyframe_half_slab",
+      "y": 180,
+      "uvlock": true
+    },
+    "position=west,half=top": {
+      "model": "warframes:block/heavyframe_half_slab",
+      "x": 180,
+      "y": 180,
+      "uvlock": true
+    },
+    "position=northeast": {
+      "model": "warframes:block/heavyframe_half_slab",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "position=northwest": {
+      "model": "warframes:block/heavyframe_half_slab",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "position=southeast": {
+      "model": "warframes:block/heavyframe_half_slab",
+      "x": 90,
+      "y": 0,
+      "uvlock": true
+    },
+    "position=southwest": {
+      "model": "warframes:block/heavyframe_half_slab",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    }
+  }
+}

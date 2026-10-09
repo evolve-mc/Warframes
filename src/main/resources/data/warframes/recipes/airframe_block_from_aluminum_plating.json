@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "crusty_chunks:aluminum_plating"
+  },
+  "result": "warframes:airframe_block"
+}

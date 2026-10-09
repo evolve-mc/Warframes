@@ -1,10 +1,15 @@
 package net.evo_mc.warframes.block.custom;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -27,11 +32,12 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
 public class WarframeHalfSlabStabilizerBlock extends Block implements SimpleWaterloggedBlock, WarframeMimicable {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
-    public static final EnumProperty<WarframeHalfSlabWingType> TYPE =
-            EnumProperty.create("type", WarframeHalfSlabWingType.class);
+    public static final EnumProperty<WarframeHorizontalSlabPosition> TYPE =
+            EnumProperty.create("type", WarframeHorizontalSlabPosition.class);
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     protected static final VoxelShape NORTH_TOP = Block.box(0.0D, 8.0D, 0.0D, 16.0D, 16.0D, 8.0D);
@@ -51,23 +57,23 @@ public class WarframeHalfSlabStabilizerBlock extends Block implements SimpleWate
         super(pProperties);
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(FACING, Direction.NORTH)
-                .setValue(TYPE, WarframeHalfSlabWingType.BOTTOM)
+                .setValue(TYPE, WarframeHorizontalSlabPosition.BOTTOM)
                 .setValue(WATERLOGGED, Boolean.valueOf(false)));
     }
 
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        WarframeHalfSlabWingType type = pState.getValue(TYPE);
+        WarframeHorizontalSlabPosition type = pState.getValue(TYPE);
         switch (pState.getValue(FACING)) {
             case NORTH:
-                return type == WarframeHalfSlabWingType.TOP ? NORTH_TOP : type == WarframeHalfSlabWingType.CENTER ? NORTH_CENTER : NORTH_BOTTOM;
+                return type == WarframeHorizontalSlabPosition.TOP ? NORTH_TOP : type == WarframeHorizontalSlabPosition.CENTER ? NORTH_CENTER : NORTH_BOTTOM;
             case SOUTH:
-                return type == WarframeHalfSlabWingType.TOP ? SOUTH_TOP : type == WarframeHalfSlabWingType.CENTER ? SOUTH_CENTER : SOUTH_BOTTOM;
+                return type == WarframeHorizontalSlabPosition.TOP ? SOUTH_TOP : type == WarframeHorizontalSlabPosition.CENTER ? SOUTH_CENTER : SOUTH_BOTTOM;
             case EAST:
-                return type == WarframeHalfSlabWingType.TOP ? EAST_TOP : type == WarframeHalfSlabWingType.CENTER ? EAST_CENTER : EAST_BOTTOM;
+                return type == WarframeHorizontalSlabPosition.TOP ? EAST_TOP : type == WarframeHorizontalSlabPosition.CENTER ? EAST_CENTER : EAST_BOTTOM;
             case WEST:
             default:
-                return type == WarframeHalfSlabWingType.TOP ? WEST_TOP : type == WarframeHalfSlabWingType.CENTER ? WEST_CENTER : WEST_BOTTOM;
+                return type == WarframeHorizontalSlabPosition.TOP ? WEST_TOP : type == WarframeHorizontalSlabPosition.CENTER ? WEST_CENTER : WEST_BOTTOM;
         }
     }
 
@@ -82,13 +88,13 @@ public class WarframeHalfSlabStabilizerBlock extends Block implements SimpleWate
         boolean waterlogged = fluidstate.getType() == Fluids.WATER;
 
         Direction facing = pContext.getHorizontalDirection();
-        WarframeHalfSlabWingType type;
+        WarframeHorizontalSlabPosition type;
         if (relY < 0.3D) {
-            type = WarframeHalfSlabWingType.BOTTOM;
+            type = WarframeHorizontalSlabPosition.BOTTOM;
         } else if (relY > 0.7D) {
-            type = WarframeHalfSlabWingType.TOP;
+            type = WarframeHorizontalSlabPosition.TOP;
         } else {
-            type = WarframeHalfSlabWingType.CENTER;
+            type = WarframeHorizontalSlabPosition.CENTER;
         }
 
         return this.defaultBlockState()
@@ -129,5 +135,18 @@ public class WarframeHalfSlabStabilizerBlock extends Block implements SimpleWate
     @Override
     public RenderShape getRenderShape(BlockState pState) {
         return RenderShape.MODEL;
+    }
+
+    @Override
+    public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, @Nullable LivingEntity pPlacer, ItemStack pStack) {
+        super.setPlacedBy(pLevel, pPos, pState, pPlacer, pStack);
+        mimicSetPlacedBy(pLevel, pPos, pState, pPlacer, pStack);
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, @Nullable BlockGetter level, List<Component> tooltip, TooltipFlag flag) {
+        super.appendHoverText(stack, level, tooltip, flag);
+        tooltip.add(Component.translatable("tooltip.warframes.symmetric_aerofoil").withStyle(ChatFormatting.AQUA));
+        tooltip.add(Component.translatable("tooltip.warframes.provides_stabilization").withStyle(ChatFormatting.GRAY));
     }
 }

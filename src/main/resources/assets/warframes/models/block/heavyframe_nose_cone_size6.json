@@ -1,0 +1,7 @@
+{
+  "parent": "warframes:block/airframe_nose_cone_size6",
+  "textures": {
+    "0": "warframes:block/heavyframe_block",
+    "particle": "warframes:block/heavyframe_block"
+  }
+}

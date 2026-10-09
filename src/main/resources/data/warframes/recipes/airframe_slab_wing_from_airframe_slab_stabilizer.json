@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "warframes:airframe_slab_stabilizer"
+    }
+  },
+  "result": {
+    "item": "warframes:airframe_slab_wing",
+    "count": 1
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 16,
+  "ingredient": {
+    "item": "warframes:airframe_block"
+  },
+  "result": "warframes:airframe_vertical_slab_stabilizer_layer"
+}

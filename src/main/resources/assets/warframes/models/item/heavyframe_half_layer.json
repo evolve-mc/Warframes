@@ -1,0 +1,7 @@
+{
+  "parent": "warframes:item/airframe_half_layer",
+  "textures": {
+    "0": "warframes:block/heavyframe_block",
+    "particle": "warframes:block/heavyframe_block"
+  }
+}

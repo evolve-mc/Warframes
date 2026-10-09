@@ -1,0 +1,92 @@
+{
+  "variants": {
+    "facing=north,position=bottom": {
+      "model": "warframes:block/airframe_ram_scoop_radiator_slab",
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=north,position=top": {
+      "model": "warframes:block/airframe_ram_scoop_radiator_slab",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=north,position=left": {
+      "model": "warframes:block/airframe_ram_scoop_radiator_slab",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=north,position=right": {
+      "model": "warframes:block/airframe_ram_scoop_radiator_slab",
+      "x": 270,
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=east,position=bottom": {
+      "model": "warframes:block/airframe_ram_scoop_radiator_slab",
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=east,position=top": {
+      "model": "warframes:block/airframe_ram_scoop_radiator_slab",
+      "x": 180,
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=east,position=left": {
+      "model": "warframes:block/airframe_ram_scoop_radiator_slab",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=east,position=right": {
+      "model": "warframes:block/airframe_ram_scoop_radiator_slab",
+      "x": 270,
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=south,position=bottom": {
+      "model": "warframes:block/airframe_ram_scoop_radiator_slab",
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=south,position=top": {
+      "model": "warframes:block/airframe_ram_scoop_radiator_slab",
+      "x": 180,
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=south,position=left": {
+      "model": "warframes:block/airframe_ram_scoop_radiator_slab",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=south,position=right": {
+      "model": "warframes:block/airframe_ram_scoop_radiator_slab",
+      "x": 270,
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=west,position=bottom": {
+      "model": "warframes:block/airframe_ram_scoop_radiator_slab",
+      "uvlock": true
+    },
+    "facing=west,position=top": {
+      "model": "warframes:block/airframe_ram_scoop_radiator_slab",
+      "x": 180,
+      "uvlock": true
+    },
+    "facing=west,position=left": {
+      "model": "warframes:block/airframe_ram_scoop_radiator_slab",
+      "x": 90,
+      "uvlock": true
+    },
+    "facing=west,position=right": {
+      "model": "warframes:block/airframe_ram_scoop_radiator_slab",
+      "x": 270,
+      "uvlock": true
+    }
+  }
+}

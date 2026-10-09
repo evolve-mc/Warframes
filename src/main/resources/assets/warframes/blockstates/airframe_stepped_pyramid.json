@@ -1,0 +1,36 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "warframes:block/airframe_stepped_pyramid",
+      "x": 180,
+      "uvlock": true
+    },
+    "facing=up": {
+      "model": "warframes:block/airframe_stepped_pyramid",
+      "uvlock": true
+    },
+    "facing=north": {
+      "model": "warframes:block/airframe_stepped_pyramid",
+      "x": 90,
+      "uvlock": true
+    },
+    "facing=south": {
+      "model": "warframes:block/airframe_stepped_pyramid",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=west": {
+      "model": "warframes:block/airframe_stepped_pyramid",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=east": {
+      "model": "warframes:block/airframe_stepped_pyramid",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    }
+  }
+}

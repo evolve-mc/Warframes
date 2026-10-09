@@ -1,0 +1,7 @@
+{
+  "parent": "warframes:block/airframe_corner_point_height8",
+  "textures": {
+    "particle": "warframes:block/heavyframe_block",
+    "texture": "warframes:block/heavyframe_block"
+  }
+}

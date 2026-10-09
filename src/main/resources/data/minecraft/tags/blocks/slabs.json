@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "warframes:airframe_slab",
+    "warframes:airframe_half_slab",
+    "warframes:airframe_quarter_slab",
+    "warframes:airframe_slab_wing",
+    "warframes:airframe_half_slab_wing",
+    "warframes:airframe_stepped_slab_wing",
+    "warframes:airframe_slab_wing_layer",
+    "warframes:airframe_slab_stabilizer",
+    "warframes:airframe_half_slab_stabilizer",
+    "warframes:airframe_stepped_slab_stabilizer",
+    "warframes:airframe_slab_stabilizer_layer",
+    "warframes:airframe_countermeasure_launcher_slab",
+    "warframes:airframe_slab_landing_gear_bay",
+    "warframes:heavyframe_slab",
+    "warframes:heavyframe_half_slab",
+    "warframes:heavyframe_quarter_slab"
+  ]
+}

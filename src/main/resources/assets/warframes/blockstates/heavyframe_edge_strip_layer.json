@@ -1,0 +1,712 @@
+{
+  "variants": {
+    "position=north,half=bottom,layers=1": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height2",
+      "y": 270,
+      "uvlock": true
+    },
+    "position=north,half=bottom,layers=2": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height4",
+      "y": 270,
+      "uvlock": true
+    },
+    "position=north,half=bottom,layers=3": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height6",
+      "y": 270,
+      "uvlock": true
+    },
+    "position=north,half=bottom,layers=4": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height8",
+      "y": 270,
+      "uvlock": true
+    },
+    "position=north,half=bottom,layers=5": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height10",
+      "y": 270,
+      "uvlock": true
+    },
+    "position=north,half=bottom,layers=6": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height12",
+      "y": 270,
+      "uvlock": true
+    },
+    "position=north,half=bottom,layers=7": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height14",
+      "y": 270,
+      "uvlock": true
+    },
+    "position=north,half=bottom,layers=8": {
+      "model": "warframes:block/heavyframe_block",
+      "uvlock": true
+    },
+    "position=north,half=top,layers=1": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height2",
+      "x": 180,
+      "y": 270,
+      "uvlock": true
+    },
+    "position=north,half=top,layers=2": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height4",
+      "x": 180,
+      "y": 270,
+      "uvlock": true
+    },
+    "position=north,half=top,layers=3": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height6",
+      "x": 180,
+      "y": 270,
+      "uvlock": true
+    },
+    "position=north,half=top,layers=4": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height8",
+      "x": 180,
+      "y": 270,
+      "uvlock": true
+    },
+    "position=north,half=top,layers=5": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height10",
+      "x": 180,
+      "y": 270,
+      "uvlock": true
+    },
+    "position=north,half=top,layers=6": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height12",
+      "x": 180,
+      "y": 270,
+      "uvlock": true
+    },
+    "position=north,half=top,layers=7": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height14",
+      "x": 180,
+      "y": 270,
+      "uvlock": true
+    },
+    "position=north,half=top,layers=8": {
+      "model": "warframes:block/heavyframe_block",
+      "uvlock": true
+    },
+    "position=south,half=bottom,layers=1": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height2",
+      "y": 90,
+      "uvlock": true
+    },
+    "position=south,half=bottom,layers=2": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height4",
+      "y": 90,
+      "uvlock": true
+    },
+    "position=south,half=bottom,layers=3": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height6",
+      "y": 90,
+      "uvlock": true
+    },
+    "position=south,half=bottom,layers=4": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height8",
+      "y": 90,
+      "uvlock": true
+    },
+    "position=south,half=bottom,layers=5": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height10",
+      "y": 90,
+      "uvlock": true
+    },
+    "position=south,half=bottom,layers=6": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height12",
+      "y": 90,
+      "uvlock": true
+    },
+    "position=south,half=bottom,layers=7": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height14",
+      "y": 90,
+      "uvlock": true
+    },
+    "position=south,half=bottom,layers=8": {
+      "model": "warframes:block/heavyframe_block",
+      "uvlock": true
+    },
+    "position=south,half=top,layers=1": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height2",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    },
+    "position=south,half=top,layers=2": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height4",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    },
+    "position=south,half=top,layers=3": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height6",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    },
+    "position=south,half=top,layers=4": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height8",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    },
+    "position=south,half=top,layers=5": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height10",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    },
+    "position=south,half=top,layers=6": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height12",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    },
+    "position=south,half=top,layers=7": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height14",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    },
+    "position=south,half=top,layers=8": {
+      "model": "warframes:block/heavyframe_block",
+      "uvlock": true
+    },
+    "position=east,half=bottom,layers=1": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height2",
+      "y": 0,
+      "uvlock": true
+    },
+    "position=east,half=bottom,layers=2": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height4",
+      "y": 0,
+      "uvlock": true
+    },
+    "position=east,half=bottom,layers=3": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height6",
+      "y": 0,
+      "uvlock": true
+    },
+    "position=east,half=bottom,layers=4": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height8",
+      "y": 0,
+      "uvlock": true
+    },
+    "position=east,half=bottom,layers=5": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height10",
+      "y": 0,
+      "uvlock": true
+    },
+    "position=east,half=bottom,layers=6": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height12",
+      "y": 0,
+      "uvlock": true
+    },
+    "position=east,half=bottom,layers=7": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height14",
+      "y": 0,
+      "uvlock": true
+    },
+    "position=east,half=bottom,layers=8": {
+      "model": "warframes:block/heavyframe_block",
+      "uvlock": true
+    },
+    "position=east,half=top,layers=1": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height2",
+      "x": 180,
+      "y": 0,
+      "uvlock": true
+    },
+    "position=east,half=top,layers=2": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height4",
+      "x": 180,
+      "y": 0,
+      "uvlock": true
+    },
+    "position=east,half=top,layers=3": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height6",
+      "x": 180,
+      "y": 0,
+      "uvlock": true
+    },
+    "position=east,half=top,layers=4": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height8",
+      "x": 180,
+      "y": 0,
+      "uvlock": true
+    },
+    "position=east,half=top,layers=5": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height10",
+      "x": 180,
+      "y": 0,
+      "uvlock": true
+    },
+    "position=east,half=top,layers=6": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height12",
+      "x": 180,
+      "y": 0,
+      "uvlock": true
+    },
+    "position=east,half=top,layers=7": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height14",
+      "x": 180,
+      "y": 0,
+      "uvlock": true
+    },
+    "position=east,half=top,layers=8": {
+      "model": "warframes:block/heavyframe_block",
+      "uvlock": true
+    },
+    "position=west,half=bottom,layers=1": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height2",
+      "y": 180,
+      "uvlock": true
+    },
+    "position=west,half=bottom,layers=2": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height4",
+      "y": 180,
+      "uvlock": true
+    },
+    "position=west,half=bottom,layers=3": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height6",
+      "y": 180,
+      "uvlock": true
+    },
+    "position=west,half=bottom,layers=4": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height8",
+      "y": 180,
+      "uvlock": true
+    },
+    "position=west,half=bottom,layers=5": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height10",
+      "y": 180,
+      "uvlock": true
+    },
+    "position=west,half=bottom,layers=6": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height12",
+      "y": 180,
+      "uvlock": true
+    },
+    "position=west,half=bottom,layers=7": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height14",
+      "y": 180,
+      "uvlock": true
+    },
+    "position=west,half=bottom,layers=8": {
+      "model": "warframes:block/heavyframe_block",
+      "uvlock": true
+    },
+    "position=west,half=top,layers=1": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height2",
+      "x": 180,
+      "y": 180,
+      "uvlock": true
+    },
+    "position=west,half=top,layers=2": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height4",
+      "x": 180,
+      "y": 180,
+      "uvlock": true
+    },
+    "position=west,half=top,layers=3": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height6",
+      "x": 180,
+      "y": 180,
+      "uvlock": true
+    },
+    "position=west,half=top,layers=4": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height8",
+      "x": 180,
+      "y": 180,
+      "uvlock": true
+    },
+    "position=west,half=top,layers=5": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height10",
+      "x": 180,
+      "y": 180,
+      "uvlock": true
+    },
+    "position=west,half=top,layers=6": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height12",
+      "x": 180,
+      "y": 180,
+      "uvlock": true
+    },
+    "position=west,half=top,layers=7": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height14",
+      "x": 180,
+      "y": 180,
+      "uvlock": true
+    },
+    "position=west,half=top,layers=8": {
+      "model": "warframes:block/heavyframe_block",
+      "uvlock": true
+    },
+    "position=northeast,half=bottom,layers=1": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height2",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "position=northeast,half=bottom,layers=2": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height4",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "position=northeast,half=bottom,layers=3": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height6",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "position=northeast,half=bottom,layers=4": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height8",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "position=northeast,half=bottom,layers=5": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height10",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "position=northeast,half=bottom,layers=6": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height12",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "position=northeast,half=bottom,layers=7": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height14",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "position=northeast,half=bottom,layers=8": {
+      "model": "warframes:block/heavyframe_block",
+      "uvlock": true
+    },
+    "position=northeast,half=top,layers=1": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height2",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "position=northeast,half=top,layers=2": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height4",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "position=northeast,half=top,layers=3": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height6",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "position=northeast,half=top,layers=4": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height8",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "position=northeast,half=top,layers=5": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height10",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "position=northeast,half=top,layers=6": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height12",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "position=northeast,half=top,layers=7": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height14",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    },
+    "position=northeast,half=top,layers=8": {
+      "model": "warframes:block/heavyframe_block",
+      "uvlock": true
+    },
+    "position=northwest,half=bottom,layers=1": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height2",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "position=northwest,half=bottom,layers=2": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height4",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "position=northwest,half=bottom,layers=3": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height6",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "position=northwest,half=bottom,layers=4": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height8",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "position=northwest,half=bottom,layers=5": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height10",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "position=northwest,half=bottom,layers=6": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height12",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "position=northwest,half=bottom,layers=7": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height14",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "position=northwest,half=bottom,layers=8": {
+      "model": "warframes:block/heavyframe_block",
+      "uvlock": true
+    },
+    "position=northwest,half=top,layers=1": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height2",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "position=northwest,half=top,layers=2": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height4",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "position=northwest,half=top,layers=3": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height6",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "position=northwest,half=top,layers=4": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height8",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "position=northwest,half=top,layers=5": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height10",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "position=northwest,half=top,layers=6": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height12",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "position=northwest,half=top,layers=7": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height14",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "position=northwest,half=top,layers=8": {
+      "model": "warframes:block/heavyframe_block",
+      "uvlock": true
+    },
+    "position=southeast,half=bottom,layers=1": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height2",
+      "x": 90,
+      "y": 0,
+      "uvlock": true
+    },
+    "position=southeast,half=bottom,layers=2": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height4",
+      "x": 90,
+      "y": 0,
+      "uvlock": true
+    },
+    "position=southeast,half=bottom,layers=3": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height6",
+      "x": 90,
+      "y": 0,
+      "uvlock": true
+    },
+    "position=southeast,half=bottom,layers=4": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height8",
+      "x": 90,
+      "y": 0,
+      "uvlock": true
+    },
+    "position=southeast,half=bottom,layers=5": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height10",
+      "x": 90,
+      "y": 0,
+      "uvlock": true
+    },
+    "position=southeast,half=bottom,layers=6": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height12",
+      "x": 90,
+      "y": 0,
+      "uvlock": true
+    },
+    "position=southeast,half=bottom,layers=7": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height14",
+      "x": 90,
+      "y": 0,
+      "uvlock": true
+    },
+    "position=southeast,half=bottom,layers=8": {
+      "model": "warframes:block/heavyframe_block",
+      "uvlock": true
+    },
+    "position=southeast,half=top,layers=1": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height2",
+      "x": 90,
+      "y": 0,
+      "uvlock": true
+    },
+    "position=southeast,half=top,layers=2": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height4",
+      "x": 90,
+      "y": 0,
+      "uvlock": true
+    },
+    "position=southeast,half=top,layers=3": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height6",
+      "x": 90,
+      "y": 0,
+      "uvlock": true
+    },
+    "position=southeast,half=top,layers=4": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height8",
+      "x": 90,
+      "y": 0,
+      "uvlock": true
+    },
+    "position=southeast,half=top,layers=5": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height10",
+      "x": 90,
+      "y": 0,
+      "uvlock": true
+    },
+    "position=southeast,half=top,layers=6": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height12",
+      "x": 90,
+      "y": 0,
+      "uvlock": true
+    },
+    "position=southeast,half=top,layers=7": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height14",
+      "x": 90,
+      "y": 0,
+      "uvlock": true
+    },
+    "position=southeast,half=top,layers=8": {
+      "model": "warframes:block/heavyframe_block",
+      "uvlock": true
+    },
+    "position=southwest,half=bottom,layers=1": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height2",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "position=southwest,half=bottom,layers=2": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height4",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "position=southwest,half=bottom,layers=3": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height6",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "position=southwest,half=bottom,layers=4": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height8",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "position=southwest,half=bottom,layers=5": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height10",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "position=southwest,half=bottom,layers=6": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height12",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "position=southwest,half=bottom,layers=7": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height14",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "position=southwest,half=bottom,layers=8": {
+      "model": "warframes:block/heavyframe_block",
+      "uvlock": true
+    },
+    "position=southwest,half=top,layers=1": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height2",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "position=southwest,half=top,layers=2": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height4",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "position=southwest,half=top,layers=3": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height6",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "position=southwest,half=top,layers=4": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height8",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "position=southwest,half=top,layers=5": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height10",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "position=southwest,half=top,layers=6": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height12",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "position=southwest,half=top,layers=7": {
+      "model": "warframes:block/heavyframe_edge_strip_layer_height14",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "position=southwest,half=top,layers=8": {
+      "model": "warframes:block/heavyframe_block",
+      "uvlock": true
+    }
+  }
+}

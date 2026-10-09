@@ -1,0 +1,130 @@
+{
+  "variants": {
+    "aerofoil=left,facing=north,step=bottom": {
+      "model": "warframes:block/airframe_half_stairs_right",
+      "y": 90,
+      "uvlock": true
+    },
+    "aerofoil=left,facing=north,step=top": {
+      "model": "warframes:block/airframe_half_stairs_left",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    },
+    "aerofoil=center,facing=north,step=bottom": {
+      "model": "warframes:block/airframe_half_stairs_centered",
+      "y": 90,
+      "uvlock": true
+    },
+    "aerofoil=center,facing=north,step=top": {
+      "model": "warframes:block/airframe_half_stairs_centered",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    },
+    "aerofoil=right,facing=north,step=bottom": {
+      "model": "warframes:block/airframe_half_stairs_left",
+      "y": 90,
+      "uvlock": true
+    },
+    "aerofoil=right,facing=north,step=top": {
+      "model": "warframes:block/airframe_half_stairs_right",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
+    },
+    "aerofoil=left,facing=south,step=bottom": {
+      "model": "warframes:block/airframe_half_stairs_right",
+      "y": 270,
+      "uvlock": true
+    },
+    "aerofoil=left,facing=south,step=top": {
+      "model": "warframes:block/airframe_half_stairs_left",
+      "x": 180,
+      "y": 270,
+      "uvlock": true
+    },
+    "aerofoil=center,facing=south,step=bottom": {
+      "model": "warframes:block/airframe_half_stairs_centered",
+      "y": 270,
+      "uvlock": true
+    },
+    "aerofoil=center,facing=south,step=top": {
+      "model": "warframes:block/airframe_half_stairs_centered",
+      "x": 180,
+      "y": 270,
+      "uvlock": true
+    },
+    "aerofoil=right,facing=south,step=bottom": {
+      "model": "warframes:block/airframe_half_stairs_left",
+      "y": 270,
+      "uvlock": true
+    },
+    "aerofoil=right,facing=south,step=top": {
+      "model": "warframes:block/airframe_half_stairs_right",
+      "x": 180,
+      "y": 270,
+      "uvlock": true
+    },
+    "aerofoil=left,facing=west,step=bottom": {
+      "model": "warframes:block/airframe_half_stairs_right",
+      "uvlock": true
+    },
+    "aerofoil=left,facing=west,step=top": {
+      "model": "warframes:block/airframe_half_stairs_left",
+      "x": 180,
+      "uvlock": true
+    },
+    "aerofoil=center,facing=west,step=bottom": {
+      "model": "warframes:block/airframe_half_stairs_centered",
+      "uvlock": true
+    },
+    "aerofoil=center,facing=west,step=top": {
+      "model": "warframes:block/airframe_half_stairs_centered",
+      "x": 180,
+      "uvlock": true
+    },
+    "aerofoil=right,facing=west,step=bottom": {
+      "model": "warframes:block/airframe_half_stairs_left",
+      "uvlock": true
+    },
+    "aerofoil=right,facing=west,step=top": {
+      "model": "warframes:block/airframe_half_stairs_right",
+      "x": 180,
+      "uvlock": true
+    },
+    "aerofoil=left,facing=east,step=bottom": {
+      "model": "warframes:block/airframe_half_stairs_right",
+      "y": 180,
+      "uvlock": true
+    },
+    "aerofoil=left,facing=east,step=top": {
+      "model": "warframes:block/airframe_half_stairs_left",
+      "x": 180,
+      "y": 180,
+      "uvlock": true
+    },
+    "aerofoil=center,facing=east,step=bottom": {
+      "model": "warframes:block/airframe_half_stairs_centered",
+      "y": 180,
+      "uvlock": true
+    },
+    "aerofoil=center,facing=east,step=top": {
+      "model": "warframes:block/airframe_half_stairs_centered",
+      "x": 180,
+      "y": 180,
+      "uvlock": true
+    },
+    "aerofoil=right,facing=east,step=bottom": {
+      "model": "warframes:block/airframe_half_stairs_left",
+      "y": 180,
+      "uvlock": true
+    },
+    "aerofoil=right,facing=east,step=top": {
+      "model": "warframes:block/airframe_half_stairs_right",
+      "x": 180,
+      "y": 180,
+      "uvlock": true
+    }
+  }
+}

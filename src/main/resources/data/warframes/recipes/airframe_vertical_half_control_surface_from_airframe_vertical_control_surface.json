@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "warframes:airframe_vertical_control_surface"
+  },
+  "result": "warframes:airframe_vertical_half_control_surface"
+}

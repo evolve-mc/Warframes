@@ -1,0 +1,38 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "warframes:block/heavyframe_slab"
+    },
+    "type=top": {
+      "model": "warframes:block/heavyframe_slab",
+      "x": 180,
+      "uvlock": true
+    },
+    "type=double": {
+      "model": "warframes:block/heavyframe_block"
+    },
+    "type=north": {
+      "model": "warframes:block/heavyframe_slab",
+      "x": 90,
+      "uvlock": true
+    },
+    "type=east": {
+      "model": "warframes:block/heavyframe_slab",
+      "x": 90,
+      "y": 90,
+      "uvlock": true
+    },
+    "type=south": {
+      "model": "warframes:block/heavyframe_slab",
+      "x": 90,
+      "y": 180,
+      "uvlock": true
+    },
+    "type=west": {
+      "model": "warframes:block/heavyframe_slab",
+      "x": 90,
+      "y": 270,
+      "uvlock": true
+    }
+  }
+}

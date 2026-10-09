@@ -1,0 +1,7 @@
+{
+  "parent": "warframes:block/airframe_door_bottom_seamless_rh",
+  "textures": {
+    "particle": "warframes:block/heavyframe_block",
+    "texture": "warframes:block/heavyframe_block"
+  }
+}

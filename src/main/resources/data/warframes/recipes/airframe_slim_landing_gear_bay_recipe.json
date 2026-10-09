@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a",
+    "b",
+    "c"
+  ],
+  "key": {
+    "a": {
+      "item": "valkyrien_warium:hydraulic_component"
+    },
+    "b": {
+      "item": "warframes:airframe_block"
+    },
+    "c": {
+      "item": "valkyrien_warium:wheel_component"
+    }
+  },
+  "result": {
+    "item": "warframes:airframe_slim_landing_gear_bay",
+    "count": 1
+  }
+}

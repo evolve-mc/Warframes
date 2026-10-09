@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "warframes:airframe_panel",
+    "warframes:airframe_layer",
+    "warframes:airframe_stairs",
+    "warframes:airframe_half_layer",
+    "warframes:airframe_edge_strip_layer",
+    "warframes:airframe_side_strip_layer",
+    "warframes:airframe_board"
+  ]
+}

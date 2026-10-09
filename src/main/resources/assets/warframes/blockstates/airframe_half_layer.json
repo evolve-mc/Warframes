@@ -1,0 +1,2158 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "facing": "down",
+        "axis": "x",
+        "negative_layers": "1"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height2",
+        "x": 180,
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "axis": "x",
+        "negative_layers": "2"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height4",
+        "x": 180,
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "axis": "x",
+        "negative_layers": "3"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height6",
+        "x": 180,
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "axis": "x",
+        "negative_layers": "4"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height8",
+        "x": 180,
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "axis": "x",
+        "negative_layers": "5"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height10",
+        "x": 180,
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "axis": "x",
+        "negative_layers": "6"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height12",
+        "x": 180,
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "axis": "x",
+        "negative_layers": "7"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height14",
+        "x": 180,
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "axis": "x",
+        "positive_layers": "1"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height2",
+        "x": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "axis": "x",
+        "positive_layers": "2"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height4",
+        "x": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "axis": "x",
+        "positive_layers": "3"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height6",
+        "x": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "axis": "x",
+        "positive_layers": "4"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height8",
+        "x": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "axis": "x",
+        "positive_layers": "5"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height10",
+        "x": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "axis": "x",
+        "positive_layers": "6"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height12",
+        "x": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "axis": "x",
+        "positive_layers": "7"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height14",
+        "x": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "axis": "z",
+        "negative_layers": "1"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height2",
+        "x": 180,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "axis": "z",
+        "negative_layers": "2"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height4",
+        "x": 180,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "axis": "z",
+        "negative_layers": "3"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height6",
+        "x": 180,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "axis": "z",
+        "negative_layers": "4"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height8",
+        "x": 180,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "axis": "z",
+        "negative_layers": "5"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height10",
+        "x": 180,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "axis": "z",
+        "negative_layers": "6"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height12",
+        "x": 180,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "axis": "z",
+        "negative_layers": "7"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height14",
+        "x": 180,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "axis": "z",
+        "positive_layers": "1"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height2",
+        "x": 180,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "axis": "z",
+        "positive_layers": "2"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height4",
+        "x": 180,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "axis": "z",
+        "positive_layers": "3"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height6",
+        "x": 180,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "axis": "z",
+        "positive_layers": "4"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height8",
+        "x": 180,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "axis": "z",
+        "positive_layers": "5"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height10",
+        "x": 180,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "axis": "z",
+        "positive_layers": "6"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height12",
+        "x": 180,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "axis": "z",
+        "positive_layers": "7"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height14",
+        "x": 180,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "axis": "x",
+        "negative_layers": "1"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height2",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "axis": "x",
+        "negative_layers": "2"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height4",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "axis": "x",
+        "negative_layers": "3"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height6",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "axis": "x",
+        "negative_layers": "4"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height8",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "axis": "x",
+        "negative_layers": "5"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height10",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "axis": "x",
+        "negative_layers": "6"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height12",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "axis": "x",
+        "negative_layers": "7"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height14",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "axis": "x",
+        "positive_layers": "1"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height2",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "axis": "x",
+        "positive_layers": "2"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height4",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "axis": "x",
+        "positive_layers": "3"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height6",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "axis": "x",
+        "positive_layers": "4"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height8",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "axis": "x",
+        "positive_layers": "5"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height10",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "axis": "x",
+        "positive_layers": "6"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height12",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "axis": "x",
+        "positive_layers": "7"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height14",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "axis": "z",
+        "negative_layers": "1"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height2",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "axis": "z",
+        "negative_layers": "2"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height4",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "axis": "z",
+        "negative_layers": "3"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height6",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "axis": "z",
+        "negative_layers": "4"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height8",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "axis": "z",
+        "negative_layers": "5"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height10",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "axis": "z",
+        "negative_layers": "6"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height12",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "axis": "z",
+        "negative_layers": "7"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height14",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "axis": "z",
+        "positive_layers": "1"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height2",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "axis": "z",
+        "positive_layers": "2"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height4",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "axis": "z",
+        "positive_layers": "3"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height6",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "axis": "z",
+        "positive_layers": "4"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height8",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "axis": "z",
+        "positive_layers": "5"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height10",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "axis": "z",
+        "positive_layers": "6"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height12",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "axis": "z",
+        "positive_layers": "7"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_floor_height14",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "axis": "x",
+        "negative_layers": "1"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height2",
+        "x": 90,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "axis": "x",
+        "negative_layers": "2"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height4",
+        "x": 90,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "axis": "x",
+        "negative_layers": "3"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height6",
+        "x": 90,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "axis": "x",
+        "negative_layers": "4"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height8",
+        "x": 90,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "axis": "x",
+        "negative_layers": "5"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height10",
+        "x": 90,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "axis": "x",
+        "negative_layers": "6"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height12",
+        "x": 90,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "axis": "x",
+        "negative_layers": "7"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height14",
+        "x": 90,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "axis": "x",
+        "positive_layers": "1"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height2",
+        "x": 270,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "axis": "x",
+        "positive_layers": "2"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height4",
+        "x": 270,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "axis": "x",
+        "positive_layers": "3"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height6",
+        "x": 270,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "axis": "x",
+        "positive_layers": "4"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height8",
+        "x": 270,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "axis": "x",
+        "positive_layers": "5"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height10",
+        "x": 270,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "axis": "x",
+        "positive_layers": "6"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height12",
+        "x": 270,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "axis": "x",
+        "positive_layers": "7"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height14",
+        "x": 270,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "axis": "y",
+        "negative_layers": "1"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height2",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "axis": "y",
+        "negative_layers": "2"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height4",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "axis": "y",
+        "negative_layers": "3"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height6",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "axis": "y",
+        "negative_layers": "4"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height8",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "axis": "y",
+        "negative_layers": "5"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height10",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "axis": "y",
+        "negative_layers": "6"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height12",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "axis": "y",
+        "negative_layers": "7"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height14",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "axis": "y",
+        "positive_layers": "1"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height2",
+        "x": 180,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "axis": "y",
+        "positive_layers": "2"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height4",
+        "x": 180,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "axis": "y",
+        "positive_layers": "3"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height6",
+        "x": 180,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "axis": "y",
+        "positive_layers": "4"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height8",
+        "x": 180,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "axis": "y",
+        "positive_layers": "5"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height10",
+        "x": 180,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "axis": "y",
+        "positive_layers": "6"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height12",
+        "x": 180,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "axis": "y",
+        "positive_layers": "7"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height14",
+        "x": 180,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "axis": "x",
+        "negative_layers": "1"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height2",
+        "x": 270,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "axis": "x",
+        "negative_layers": "2"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height4",
+        "x": 270,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "axis": "x",
+        "negative_layers": "3"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height6",
+        "x": 270,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "axis": "x",
+        "negative_layers": "4"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height8",
+        "x": 270,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "axis": "x",
+        "negative_layers": "5"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height10",
+        "x": 270,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "axis": "x",
+        "negative_layers": "6"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height12",
+        "x": 270,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "axis": "x",
+        "negative_layers": "7"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height14",
+        "x": 270,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "axis": "x",
+        "positive_layers": "1"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height2",
+        "x": 90,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "axis": "x",
+        "positive_layers": "2"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height4",
+        "x": 90,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "axis": "x",
+        "positive_layers": "3"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height6",
+        "x": 90,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "axis": "x",
+        "positive_layers": "4"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height8",
+        "x": 90,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "axis": "x",
+        "positive_layers": "5"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height10",
+        "x": 90,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "axis": "x",
+        "positive_layers": "6"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height12",
+        "x": 90,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "axis": "x",
+        "positive_layers": "7"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height14",
+        "x": 90,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "axis": "y",
+        "negative_layers": "1"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height2",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "axis": "y",
+        "negative_layers": "2"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height4",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "axis": "y",
+        "negative_layers": "3"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height6",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "axis": "y",
+        "negative_layers": "4"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height8",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "axis": "y",
+        "negative_layers": "5"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height10",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "axis": "y",
+        "negative_layers": "6"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height12",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "axis": "y",
+        "negative_layers": "7"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height14",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "axis": "y",
+        "positive_layers": "1"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height2",
+        "x": 180,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "axis": "y",
+        "positive_layers": "2"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height4",
+        "x": 180,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "axis": "y",
+        "positive_layers": "3"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height6",
+        "x": 180,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "axis": "y",
+        "positive_layers": "4"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height8",
+        "x": 180,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "axis": "y",
+        "positive_layers": "5"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height10",
+        "x": 180,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "axis": "y",
+        "positive_layers": "6"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height12",
+        "x": 180,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "axis": "y",
+        "positive_layers": "7"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height14",
+        "x": 180,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "axis": "y",
+        "negative_layers": "1"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height2",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "axis": "y",
+        "negative_layers": "2"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height4",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "axis": "y",
+        "negative_layers": "3"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height6",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "axis": "y",
+        "negative_layers": "4"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height8",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "axis": "y",
+        "negative_layers": "5"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height10",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "axis": "y",
+        "negative_layers": "6"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height12",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "axis": "y",
+        "negative_layers": "7"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height14",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "axis": "y",
+        "positive_layers": "1"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height2",
+        "x": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "axis": "y",
+        "positive_layers": "2"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height4",
+        "x": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "axis": "y",
+        "positive_layers": "3"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height6",
+        "x": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "axis": "y",
+        "positive_layers": "4"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height8",
+        "x": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "axis": "y",
+        "positive_layers": "5"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height10",
+        "x": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "axis": "y",
+        "positive_layers": "6"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height12",
+        "x": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "axis": "y",
+        "positive_layers": "7"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height14",
+        "x": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "axis": "z",
+        "negative_layers": "1"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height2",
+        "x": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "axis": "z",
+        "negative_layers": "2"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height4",
+        "x": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "axis": "z",
+        "negative_layers": "3"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height6",
+        "x": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "axis": "z",
+        "negative_layers": "4"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height8",
+        "x": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "axis": "z",
+        "negative_layers": "5"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height10",
+        "x": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "axis": "z",
+        "negative_layers": "6"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height12",
+        "x": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "axis": "z",
+        "negative_layers": "7"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height14",
+        "x": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "axis": "z",
+        "positive_layers": "1"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height2",
+        "x": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "axis": "z",
+        "positive_layers": "2"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height4",
+        "x": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "axis": "z",
+        "positive_layers": "3"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height6",
+        "x": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "axis": "z",
+        "positive_layers": "4"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height8",
+        "x": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "axis": "z",
+        "positive_layers": "5"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height10",
+        "x": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "axis": "z",
+        "positive_layers": "6"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height12",
+        "x": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "axis": "z",
+        "positive_layers": "7"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height14",
+        "x": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "axis": "y",
+        "negative_layers": "1"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height2",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "axis": "y",
+        "negative_layers": "2"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height4",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "axis": "y",
+        "negative_layers": "3"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height6",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "axis": "y",
+        "negative_layers": "4"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height8",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "axis": "y",
+        "negative_layers": "5"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height10",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "axis": "y",
+        "negative_layers": "6"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height12",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "axis": "y",
+        "negative_layers": "7"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height14",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "axis": "y",
+        "positive_layers": "1"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height2",
+        "x": 180,
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "axis": "y",
+        "positive_layers": "2"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height4",
+        "x": 180,
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "axis": "y",
+        "positive_layers": "3"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height6",
+        "x": 180,
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "axis": "y",
+        "positive_layers": "4"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height8",
+        "x": 180,
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "axis": "y",
+        "positive_layers": "5"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height10",
+        "x": 180,
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "axis": "y",
+        "positive_layers": "6"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height12",
+        "x": 180,
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "axis": "y",
+        "positive_layers": "7"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height14",
+        "x": 180,
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "axis": "z",
+        "negative_layers": "1"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height2",
+        "x": 90,
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "axis": "z",
+        "negative_layers": "2"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height4",
+        "x": 90,
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "axis": "z",
+        "negative_layers": "3"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height6",
+        "x": 90,
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "axis": "z",
+        "negative_layers": "4"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height8",
+        "x": 90,
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "axis": "z",
+        "negative_layers": "5"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height10",
+        "x": 90,
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "axis": "z",
+        "negative_layers": "6"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height12",
+        "x": 90,
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "axis": "z",
+        "negative_layers": "7"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height14",
+        "x": 90,
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "axis": "z",
+        "positive_layers": "1"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height2",
+        "x": 270,
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "axis": "z",
+        "positive_layers": "2"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height4",
+        "x": 270,
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "axis": "z",
+        "positive_layers": "3"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height6",
+        "x": 270,
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "axis": "z",
+        "positive_layers": "4"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height8",
+        "x": 270,
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "axis": "z",
+        "positive_layers": "5"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height10",
+        "x": 270,
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "axis": "z",
+        "positive_layers": "6"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height12",
+        "x": 270,
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "axis": "z",
+        "positive_layers": "7"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_half_layer_height14",
+        "x": 270,
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "axis": "x",
+        "negative_layers": "8"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_slab",
+        "x": 90,
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "axis": "x",
+        "positive_layers": "8"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_slab",
+        "x": 90,
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "axis": "y",
+        "negative_layers": "8"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_slab",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "axis": "y",
+        "positive_layers": "8"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_slab",
+        "x": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "axis": "z",
+        "negative_layers": "8"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_slab",
+        "x": 90,
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "axis": "z",
+        "positive_layers": "8"
+      },
+      "apply": {
+        "model": "warframes:block/airframe_slab",
+        "x": 90,
+        "uvlock": true
+      }
+    }
+  ]
+}

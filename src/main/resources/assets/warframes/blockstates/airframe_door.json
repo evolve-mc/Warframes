@@ -1,0 +1,308 @@
+{
+  "variants": {
+    "facing=east,half=lower,hinge=left,open=false,seamed=false": {
+      "model": "warframes:block/airframe_door_bottom",
+      "uvlock": true
+    },
+    "facing=east,half=lower,hinge=left,open=false,seamed=true": {
+      "model": "warframes:block/airframe_door_bottom_seamless",
+      "uvlock": true
+    },
+    "facing=east,half=lower,hinge=left,open=true,seamed=false": {
+      "model": "warframes:block/airframe_door_bottom_rh",
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=east,half=lower,hinge=left,open=true,seamed=true": {
+      "model": "warframes:block/airframe_door_bottom_seamless_rh",
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=east,half=lower,hinge=right,open=false,seamed=false": {
+      "model": "warframes:block/airframe_door_bottom_rh",
+      "uvlock": true
+    },
+    "facing=east,half=lower,hinge=right,open=false,seamed=true": {
+      "model": "warframes:block/airframe_door_bottom_seamless_rh",
+      "uvlock": true
+    },
+    "facing=east,half=lower,hinge=right,open=true,seamed=false": {
+      "model": "warframes:block/airframe_door_bottom",
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=east,half=lower,hinge=right,open=true,seamed=true": {
+      "model": "warframes:block/airframe_door_bottom_seamless",
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=east,half=upper,hinge=left,open=false,seamed=false": {
+      "model": "warframes:block/airframe_door_top",
+      "uvlock": true
+    },
+    "facing=east,half=upper,hinge=left,open=false,seamed=true": {
+      "model": "warframes:block/airframe_door_top_seamless",
+      "uvlock": true
+    },
+    "facing=east,half=upper,hinge=left,open=true,seamed=false": {
+      "model": "warframes:block/airframe_door_top_rh",
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=east,half=upper,hinge=left,open=true,seamed=true": {
+      "model": "warframes:block/airframe_door_top_seamless_rh",
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=east,half=upper,hinge=right,open=false,seamed=false": {
+      "model": "warframes:block/airframe_door_top_rh",
+      "uvlock": true
+    },
+    "facing=east,half=upper,hinge=right,open=false,seamed=true": {
+      "model": "warframes:block/airframe_door_top_seamless_rh",
+      "uvlock": true
+    },
+    "facing=east,half=upper,hinge=right,open=true,seamed=false": {
+      "model": "warframes:block/airframe_door_top",
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=east,half=upper,hinge=right,open=true,seamed=true": {
+      "model": "warframes:block/airframe_door_top_seamless",
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=south,half=lower,hinge=left,open=false,seamed=false": {
+      "model": "warframes:block/airframe_door_bottom",
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=south,half=lower,hinge=left,open=false,seamed=true": {
+      "model": "warframes:block/airframe_door_bottom_seamless",
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=south,half=lower,hinge=left,open=true,seamed=false": {
+      "model": "warframes:block/airframe_door_bottom_rh",
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=south,half=lower,hinge=left,open=true,seamed=true": {
+      "model": "warframes:block/airframe_door_bottom_seamless_rh",
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=south,half=lower,hinge=right,open=false,seamed=false": {
+      "model": "warframes:block/airframe_door_bottom_rh",
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=south,half=lower,hinge=right,open=false,seamed=true": {
+      "model": "warframes:block/airframe_door_bottom_seamless_rh",
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=south,half=lower,hinge=right,open=true,seamed=false": {
+      "model": "warframes:block/airframe_door_bottom",
+      "uvlock": true
+    },
+    "facing=south,half=lower,hinge=right,open=true,seamed=true": {
+      "model": "warframes:block/airframe_door_bottom_seamless",
+      "uvlock": true
+    },
+    "facing=south,half=upper,hinge=left,open=false,seamed=false": {
+      "model": "warframes:block/airframe_door_top",
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=south,half=upper,hinge=left,open=false,seamed=true": {
+      "model": "warframes:block/airframe_door_top_seamless",
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=south,half=upper,hinge=left,open=true,seamed=false": {
+      "model": "warframes:block/airframe_door_top_rh",
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=south,half=upper,hinge=left,open=true,seamed=true": {
+      "model": "warframes:block/airframe_door_top_seamless_rh",
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=south,half=upper,hinge=right,open=false,seamed=false": {
+      "model": "warframes:block/airframe_door_top_rh",
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=south,half=upper,hinge=right,open=false,seamed=true": {
+      "model": "warframes:block/airframe_door_top_seamless_rh",
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=south,half=upper,hinge=right,open=true,seamed=false": {
+      "model": "warframes:block/airframe_door_top",
+      "uvlock": true
+    },
+    "facing=south,half=upper,hinge=right,open=true,seamed=true": {
+      "model": "warframes:block/airframe_door_top_seamless",
+      "uvlock": true
+    },
+    "facing=west,half=lower,hinge=left,open=false,seamed=false": {
+      "model": "warframes:block/airframe_door_bottom",
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=west,half=lower,hinge=left,open=false,seamed=true": {
+      "model": "warframes:block/airframe_door_bottom_seamless",
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=west,half=lower,hinge=left,open=true,seamed=false": {
+      "model": "warframes:block/airframe_door_bottom_rh",
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=west,half=lower,hinge=left,open=true,seamed=true": {
+      "model": "warframes:block/airframe_door_bottom_seamless_rh",
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=west,half=lower,hinge=right,open=false,seamed=false": {
+      "model": "warframes:block/airframe_door_bottom_rh",
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=west,half=lower,hinge=right,open=false,seamed=true": {
+      "model": "warframes:block/airframe_door_bottom_seamless_rh",
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=west,half=lower,hinge=right,open=true,seamed=false": {
+      "model": "warframes:block/airframe_door_bottom",
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=west,half=lower,hinge=right,open=true,seamed=true": {
+      "model": "warframes:block/airframe_door_bottom_seamless",
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=west,half=upper,hinge=left,open=false,seamed=false": {
+      "model": "warframes:block/airframe_door_top",
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=west,half=upper,hinge=left,open=false,seamed=true": {
+      "model": "warframes:block/airframe_door_top_seamless",
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=west,half=upper,hinge=left,open=true,seamed=false": {
+      "model": "warframes:block/airframe_door_top_rh",
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=west,half=upper,hinge=left,open=true,seamed=true": {
+      "model": "warframes:block/airframe_door_top_seamless_rh",
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=west,half=upper,hinge=right,open=false,seamed=false": {
+      "model": "warframes:block/airframe_door_top_rh",
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=west,half=upper,hinge=right,open=false,seamed=true": {
+      "model": "warframes:block/airframe_door_top_seamless_rh",
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=west,half=upper,hinge=right,open=true,seamed=false": {
+      "model": "warframes:block/airframe_door_top",
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=west,half=upper,hinge=right,open=true,seamed=true": {
+      "model": "warframes:block/airframe_door_top_seamless",
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=north,half=lower,hinge=left,open=false,seamed=false": {
+      "model": "warframes:block/airframe_door_bottom",
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=north,half=lower,hinge=left,open=false,seamed=true": {
+      "model": "warframes:block/airframe_door_bottom_seamless",
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=north,half=lower,hinge=left,open=true,seamed=false": {
+      "model": "warframes:block/airframe_door_bottom_rh",
+      "uvlock": true
+    },
+    "facing=north,half=lower,hinge=left,open=true,seamed=true": {
+      "model": "warframes:block/airframe_door_bottom_seamless_rh",
+      "uvlock": true
+    },
+    "facing=north,half=lower,hinge=right,open=false,seamed=false": {
+      "model": "warframes:block/airframe_door_bottom_rh",
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=north,half=lower,hinge=right,open=false,seamed=true": {
+      "model": "warframes:block/airframe_door_bottom_seamless_rh",
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=north,half=lower,hinge=right,open=true,seamed=false": {
+      "model": "warframes:block/airframe_door_bottom",
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=north,half=lower,hinge=right,open=true,seamed=true": {
+      "model": "warframes:block/airframe_door_bottom_seamless",
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=north,half=upper,hinge=left,open=false,seamed=false": {
+      "model": "warframes:block/airframe_door_top",
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=north,half=upper,hinge=left,open=false,seamed=true": {
+      "model": "warframes:block/airframe_door_top_seamless",
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=north,half=upper,hinge=left,open=true,seamed=false": {
+      "model": "warframes:block/airframe_door_top_rh",
+      "uvlock": true
+    },
+    "facing=north,half=upper,hinge=left,open=true,seamed=true": {
+      "model": "warframes:block/airframe_door_top_seamless_rh",
+      "uvlock": true
+    },
+    "facing=north,half=upper,hinge=right,open=false,seamed=false": {
+      "model": "warframes:block/airframe_door_top_rh",
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=north,half=upper,hinge=right,open=false,seamed=true": {
+      "model": "warframes:block/airframe_door_top_seamless_rh",
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=north,half=upper,hinge=right,open=true,seamed=false": {
+      "model": "warframes:block/airframe_door_top",
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=north,half=upper,hinge=right,open=true,seamed=true": {
+      "model": "warframes:block/airframe_door_top_seamless",
+      "y": 180,
+      "uvlock": true
+    }
+  }
+}
