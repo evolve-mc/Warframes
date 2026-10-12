@@ -434,5 +434,10 @@
     "block": "warframes:heavyframe_covered_rotary_autocannon_barrel",
     "mass": 775.0,
     "priority": 391
+  },
+  {
+    "block": "warframes:airframe_bomb_bay_door",
+    "mass": 100.0,
+    "priority": 392
   }
 ]

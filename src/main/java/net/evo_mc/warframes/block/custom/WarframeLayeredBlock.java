@@ -14,15 +14,11 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RenderShape;
-import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -30,18 +26,16 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import javax.annotation.Nullable;
 import java.util.Map;
 
-public abstract class WarframeLayeredBlock extends Block implements SimpleWaterloggedBlock, WarframeMimicable, WarframeLayered {
+public abstract class WarframeLayeredBlock extends Block implements WarframeMimicable, WarframeLayered {
     public static final int MAX_LAYERS = 8;
     public static final IntegerProperty LAYERS = BlockStateProperties.LAYERS;
-    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     private final Map<BlockState, VoxelShape> shapesCache;
 
     protected WarframeLayeredBlock(BlockBehaviour.Properties pProperties) {
         super(pProperties);
         this.registerDefaultState(this.stateDefinition.any()
-                .setValue(LAYERS, 1)
-                .setValue(WATERLOGGED, false));
+                .setValue(LAYERS, 1));
         this.shapesCache = this.getShapeForEachState(this::calculateShape);
     }
 
@@ -78,33 +72,24 @@ public abstract class WarframeLayeredBlock extends Block implements SimpleWaterl
             int layers = existing.getValue(LAYERS);
             return layers < MAX_LAYERS ? existing.setValue(LAYERS, layers + 1) : null;
         }
-        boolean waterlogged = pContext.getLevel().getFluidState(pos).getType() == Fluids.WATER;
         return getPlacementOrientation(pContext, this.defaultBlockState()
-                .setValue(LAYERS, 1)
-                .setValue(WATERLOGGED, waterlogged));
+                .setValue(LAYERS, 1));
     }
 
     @Override
     public BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos) {
-        if (pState.getValue(WATERLOGGED)) {
-            pLevel.scheduleTick(pCurrentPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
-        }
         return !pState.canSurvive(pLevel, pCurrentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
     }
 
-    @Override
-    public FluidState getFluidState(BlockState pState) {
-        return pState.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(pState);
-    }
+
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(LAYERS, WATERLOGGED);
+        pBuilder.add(LAYERS);
     }
 
     @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer,
-                                 InteractionHand pHand, BlockHitResult pHitResult) {
+    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHitResult) {
         return mimicUse(pState, pLevel, pPos, pPlayer, pHand, pHitResult);
     }
 

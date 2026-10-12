@@ -15,7 +15,6 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RenderShape;
-import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -24,8 +23,6 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
-import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -35,7 +32,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import javax.annotation.Nullable;
 import java.util.Map;
 
-public class WarframeHalfPanelBlock extends Block implements WarframeMultiMimicable, SimpleWaterloggedBlock {
+public class WarframeHalfPanelBlock extends Block implements WarframeMultiMimicable {
     public static final int NEGATIVE_HALF = 0;
     public static final int POSITIVE_HALF = 1;
     public static final double THICKNESS = 3.0D;
@@ -44,7 +41,7 @@ public class WarframeHalfPanelBlock extends Block implements WarframeMultiMimica
     public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.AXIS;
     public static final BooleanProperty NEGATIVE = BooleanProperty.create("negative");
     public static final BooleanProperty POSITIVE = BooleanProperty.create("positive");
-    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+
 
     private final Map<BlockState, VoxelShape> shapesCache;
 
@@ -54,8 +51,7 @@ public class WarframeHalfPanelBlock extends Block implements WarframeMultiMimica
                 .setValue(FACING, Direction.UP)
                 .setValue(AXIS, Direction.Axis.X)
                 .setValue(NEGATIVE, false)
-                .setValue(POSITIVE, false)
-                .setValue(WATERLOGGED, false));
+                .setValue(POSITIVE, false));
         this.shapesCache = this.getShapeForEachState(WarframeHalfPanelBlock::calculateShape);
     }
 
@@ -179,8 +175,7 @@ public class WarframeHalfPanelBlock extends Block implements WarframeMultiMimica
             return this.defaultBlockState()
                     .setValue(FACING, face)
                     .setValue(AXIS, half.getAxis())
-                    .setValue(getHalfProperty(getHalfIndex(half)), true)
-                    .setValue(WATERLOGGED, level.getFluidState(pos).getType() == Fluids.WATER);
+                    .setValue(getHalfProperty(getHalfIndex(half)), true);
         }
 
         if (pContext.replacingClickedOnBlock()) {
@@ -209,20 +204,15 @@ public class WarframeHalfPanelBlock extends Block implements WarframeMultiMimica
     @Override
     public BlockState updateShape(BlockState pState, Direction pDirection, BlockState pNeighborState,
                                   LevelAccessor pLevel, BlockPos pPos, BlockPos pNeighborPos) {
-        if (pState.getValue(WATERLOGGED)) {
-            pLevel.scheduleTick(pPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
-        }
+
         return pState;
     }
 
-    @Override
-    public FluidState getFluidState(BlockState pState) {
-        return pState.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(pState);
-    }
+
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(FACING, AXIS, NEGATIVE, POSITIVE, WATERLOGGED);
+        pBuilder.add(FACING, AXIS, NEGATIVE, POSITIVE);
     }
 
     @Nullable

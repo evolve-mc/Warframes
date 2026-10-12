@@ -14,16 +14,12 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RenderShape;
-import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.Half;
-import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -32,11 +28,11 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
 
-public class WarframeHalfStairBlock extends Block implements SimpleWaterloggedBlock, WarframeMimicable {
+public class WarframeHalfStairBlock extends Block implements WarframeMimicable {
     public static final EnumProperty<Half> HALF = BlockStateProperties.HALF;
     public static final EnumProperty<WarframeHalfStairPosition> POSITION =
             EnumProperty.create("position", WarframeHalfStairPosition.class);
-    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+
 
     protected static final VoxelShape NORTHWEST_BOTTOM = Shapes.or(Block.box(0D, 0D, 8D, 8D, 8D, 16D), Block.box(0D, 0D, 0D, 16D, 8D, 8D));
     protected static final VoxelShape NORTHWEST_TOP = Shapes.or(Block.box(0D, 8D, 8D, 8D, 16D, 16D), Block.box(0D, 8D, 0D, 16D, 16D, 8D));
@@ -67,8 +63,7 @@ public class WarframeHalfStairBlock extends Block implements SimpleWaterloggedBl
         super(pProperties);
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(HALF, Half.BOTTOM)
-                .setValue(POSITION, WarframeHalfStairPosition.NORTH_LEFT)
-                .setValue(WATERLOGGED, Boolean.valueOf(false)));
+                .setValue(POSITION, WarframeHalfStairPosition.NORTH_LEFT));
     }
 
     @Override
@@ -105,8 +100,7 @@ public class WarframeHalfStairBlock extends Block implements SimpleWaterloggedBl
         double relY = hit.y - (double) blockpos.getY();
         double relZ = hit.z - (double) blockpos.getZ();
 
-        FluidState fluidstate = pContext.getLevel().getFluidState(blockpos);
-        boolean waterlogged = fluidstate.getType() == Fluids.WATER;
+
 
         Half half;
         WarframeHalfStairPosition position;
@@ -175,31 +169,24 @@ public class WarframeHalfStairBlock extends Block implements SimpleWaterloggedBl
 
         return this.defaultBlockState()
                 .setValue(HALF, half)
-                .setValue(POSITION, position)
-                .setValue(WATERLOGGED, Boolean.valueOf(waterlogged));
+                .setValue(POSITION, position);
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(HALF, POSITION, WATERLOGGED);
+        pBuilder.add(HALF, POSITION);
     }
 
-    @Override
-    public FluidState getFluidState(BlockState pState) {
-        return pState.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(pState);
-    }
+
 
     @Override
     public BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos) {
-        if (pState.getValue(WATERLOGGED)) {
-            pLevel.scheduleTick(pCurrentPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
-        }
+
         return !pState.canSurvive(pLevel, pCurrentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
     }
 
     @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer,
-                                 InteractionHand pHand, BlockHitResult pHitResult) {
+    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHitResult) {
         return mimicUse(pState, pLevel, pPos, pPlayer, pHand, pHitResult);
     }
 
@@ -210,9 +197,7 @@ public class WarframeHalfStairBlock extends Block implements SimpleWaterloggedBl
     }
 
     @Override
-    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos,
-                         BlockState pNewState, boolean pMovedByPiston) {
-        mimicOnRemove(pState, pLevel, pPos, pNewState, pMovedByPiston);
+    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pMovedByPiston) {mimicOnRemove(pState, pLevel, pPos, pNewState, pMovedByPiston);
         super.onRemove(pState, pLevel, pPos, pNewState, pMovedByPiston);
     }
 

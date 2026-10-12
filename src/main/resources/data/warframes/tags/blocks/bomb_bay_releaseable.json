@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "crusty_chunks:small_bomb",
+    "crusty_chunks:medium_bomb",
+    "crusty_chunks:gas_bomb",
+    "crusty_chunks:cluster_of_bombs",
+    "#crusty_chunks:ordinance"
+  ]
+}

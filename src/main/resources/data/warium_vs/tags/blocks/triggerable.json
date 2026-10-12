@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "warframes:airframe_countermeasure_launcher",
-    "warframes:airframe_countermeasure_launcher_slab"
+    "warframes:airframe_countermeasure_launcher_slab",
+    "warframes:airframe_bomb_bay_door"
   ]
 }

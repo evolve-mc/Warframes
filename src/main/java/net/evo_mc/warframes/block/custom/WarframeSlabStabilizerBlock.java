@@ -13,19 +13,13 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RenderShape;
-import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
-import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -38,9 +32,8 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
-public class WarframeSlabStabilizerBlock extends Block implements SimpleWaterloggedBlock, WarframeMimicable {
+public class WarframeSlabStabilizerBlock extends Block implements WarframeMimicable {
     public static final EnumProperty<WarframeHorizontalSlabPositionDouble> TYPE = EnumProperty.create("type", WarframeHorizontalSlabPositionDouble.class);
-    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     protected static final VoxelShape BOTTOM_AABB = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D);
     protected static final VoxelShape TOP_AABB = Block.box(0.0D, 8.0D, 0.0D, 16.0D, 16.0D, 16.0D);
@@ -49,8 +42,7 @@ public class WarframeSlabStabilizerBlock extends Block implements SimpleWaterlog
     public WarframeSlabStabilizerBlock(BlockBehaviour.Properties pProperties) {
         super(pProperties);
         this.registerDefaultState(this.defaultBlockState()
-                .setValue(TYPE, WarframeHorizontalSlabPositionDouble.BOTTOM)
-                .setValue(WATERLOGGED, Boolean.valueOf(false)));
+                .setValue(TYPE, WarframeHorizontalSlabPositionDouble.BOTTOM));
     }
 
     public boolean useShapeForLightOcclusion(BlockState pState) {
@@ -58,7 +50,7 @@ public class WarframeSlabStabilizerBlock extends Block implements SimpleWaterlog
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(TYPE, WATERLOGGED);
+        pBuilder.add(TYPE);
     }
 
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
@@ -79,9 +71,8 @@ public class WarframeSlabStabilizerBlock extends Block implements SimpleWaterlog
         BlockPos blockpos = pContext.getClickedPos();
         BlockState blockstate = pContext.getLevel().getBlockState(blockpos);
         if (blockstate.is(this) && (blockstate.getValue(TYPE) == WarframeHorizontalSlabPositionDouble.TOP || blockstate.getValue(TYPE) == WarframeHorizontalSlabPositionDouble.BOTTOM)) {
-            return blockstate.setValue(TYPE, WarframeHorizontalSlabPositionDouble.DOUBLE).setValue(WATERLOGGED, Boolean.valueOf(false));
+            return blockstate.setValue(TYPE, WarframeHorizontalSlabPositionDouble.DOUBLE);
         } else {
-            FluidState fluidstate = pContext.getLevel().getFluidState(blockpos);
             double relY = pContext.getClickLocation().y - (double) blockpos.getY();
 
             WarframeHorizontalSlabPositionDouble type;
@@ -94,8 +85,7 @@ public class WarframeSlabStabilizerBlock extends Block implements SimpleWaterlog
             }
 
             return this.defaultBlockState()
-                    .setValue(TYPE, type)
-                    .setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
+                    .setValue(TYPE, type);
         }
     }
 
@@ -117,25 +107,6 @@ public class WarframeSlabStabilizerBlock extends Block implements SimpleWaterlog
         } else {
             return false;
         }
-    }
-
-    public FluidState getFluidState(BlockState pState) {
-        return pState.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(pState);
-    }
-
-    public boolean placeLiquid(LevelAccessor pLevel, BlockPos pPos, BlockState pState, FluidState pFluidState) {
-        return pState.getValue(TYPE) != WarframeHorizontalSlabPositionDouble.DOUBLE ? SimpleWaterloggedBlock.super.placeLiquid(pLevel, pPos, pState, pFluidState) : false;
-    }
-
-    public boolean canPlaceLiquid(BlockGetter pLevel, BlockPos pPos, BlockState pState, Fluid pFluid) {
-        return pState.getValue(TYPE) != WarframeHorizontalSlabPositionDouble.DOUBLE ? SimpleWaterloggedBlock.super.canPlaceLiquid(pLevel, pPos, pState, pFluid) : false;
-    }
-
-    public BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos) {
-        if (pState.getValue(WATERLOGGED)) {
-            pLevel.scheduleTick(pCurrentPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
-        }
-        return super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
     }
 
     public boolean isPathfindable(BlockState pState, BlockGetter pLevel, BlockPos pPos, PathComputationType pType) {

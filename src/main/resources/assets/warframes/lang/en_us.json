@@ -60,6 +60,8 @@
   "block.warframes.airframe_covered_rotary_autocannon_barrel": "Airframe Covered Rotary Autocannon Barrel",
   "block.warframes.airframe_air_intake": "Airframe Air Intake",
   "block.warframes.airframe_compressor_intake_cowl": "Airframe Compressor Intake Cowl",
+  "block.warframes.airframe_bomb_bay_door": "Airframe Bomb Bay Door",
+
 
   "block.warframes.heavyframe_block": "Heavyframe Block",
   "block.warframes.heavyframe_slab": "Heavyframe Slab",
@@ -102,6 +104,7 @@
   "tooltip.warframes.size_physics": "Changing the size does not affect physics",
   "tooltip.warframes.layer": "Click with the same block to add a layer. Shift+Left Click with the Warframes Wrench to remove a layer",
   "tooltip.warframes.ram_scoop": "Cools ship based on directional speed (doesn't work when blocked)",
+  "tooltip.warframes.bomb_bay_door_hint": "Opens on redstone, a linked trigger, or when bombs above it drop",
 
   "creativetab.warframes_tab": "Warframes"
 }

@@ -138,6 +138,10 @@ public class ModBlockEntities {
                     ModBlocks.HEAVYFRAME_HALF_PANEL.get()
             ).build(null));
 
+    public static final RegistryObject<BlockEntityType<WarframeBombBayDoorBlockEntity>> WARFRAME_BOMB_BAY_DOOR =
+            BLOCK_ENTITIES.register("warframe_bomb_bay_door", () ->
+                    BlockEntityType.Builder.of(WarframeBombBayDoorBlockEntity::new, ModBlocks.AIRFRAME_BOMB_BAY_DOOR.get()).build(null));
+
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

@@ -16,22 +16,15 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RenderShape;
-import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.material.Fluid;
-import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -40,21 +33,19 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class WarframeSlabWingLayerBlock extends Block implements SimpleWaterloggedBlock, WarframeMimicable {
+public class WarframeSlabWingLayerBlock extends Block implements WarframeMimicable {
     public static final int MAX_LAYERS = 8;
     public static final IntegerProperty LAYERS = BlockStateProperties.LAYERS;
     public static final DirectionProperty FACING = DirectionProperty.create("orientation", Direction.Plane.HORIZONTAL);
     public static final EnumProperty<WarframeHorizontalSlabPosition> HALF =
             EnumProperty.create("half", WarframeHorizontalSlabPosition.class);
-    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     public WarframeSlabWingLayerBlock(BlockBehaviour.Properties pProperties) {
         super(pProperties);
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(LAYERS, Integer.valueOf(1))
                 .setValue(FACING, Direction.NORTH)
-                .setValue(HALF, WarframeHorizontalSlabPosition.BOTTOM)
-                .setValue(WATERLOGGED, Boolean.valueOf(false)));
+                .setValue(HALF, WarframeHorizontalSlabPosition.BOTTOM));
     }
 
     private VoxelShape getShapeFor(BlockState pState) {
@@ -115,7 +106,7 @@ public class WarframeSlabWingLayerBlock extends Block implements SimpleWaterlogg
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(FACING, HALF, LAYERS, WATERLOGGED);
+        pBuilder.add(FACING, HALF, LAYERS);
     }
 
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
@@ -158,13 +149,11 @@ public class WarframeSlabWingLayerBlock extends Block implements SimpleWaterlogg
         }
 
         Direction facing = pContext.getHorizontalDirection().getOpposite();
-        FluidState fluidstate = pContext.getLevel().getFluidState(blockpos);
 
         return this.defaultBlockState()
                 .setValue(FACING, facing)
                 .setValue(HALF, half)
-                .setValue(LAYERS, Integer.valueOf(1))
-                .setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
+                .setValue(LAYERS, Integer.valueOf(1));
     }
 
     public boolean canBeReplaced(BlockState pState, BlockPlaceContext pUseContext) {
@@ -175,24 +164,6 @@ public class WarframeSlabWingLayerBlock extends Block implements SimpleWaterlogg
                 : super.canBeReplaced(pState, pUseContext);
     }
 
-    public FluidState getFluidState(BlockState pState) {
-        return pState.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(pState);
-    }
-
-    public boolean placeLiquid(LevelAccessor pLevel, BlockPos pPos, BlockState pState, FluidState pFluidState) {
-        return SimpleWaterloggedBlock.super.placeLiquid(pLevel, pPos, pState, pFluidState);
-    }
-
-    public boolean canPlaceLiquid(BlockGetter pLevel, BlockPos pPos, BlockState pState, Fluid pFluid) {
-        return SimpleWaterloggedBlock.super.canPlaceLiquid(pLevel, pPos, pState, pFluid);
-    }
-
-    public BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos) {
-        if (pState.getValue(WATERLOGGED)) {
-            pLevel.scheduleTick(pCurrentPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
-        }
-        return !pState.canSurvive(pLevel, pCurrentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
-    }
 
     public boolean isPathfindable(BlockState pState, BlockGetter pLevel, BlockPos pPos, PathComputationType pType) {
         switch (pType) {

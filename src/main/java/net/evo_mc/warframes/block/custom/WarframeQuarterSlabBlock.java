@@ -12,15 +12,10 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RenderShape;
-import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
-import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -28,12 +23,11 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
 
-public class WarframeQuarterSlabBlock extends Block implements SimpleWaterloggedBlock, WarframeMimicable {
+public class WarframeQuarterSlabBlock extends Block implements WarframeMimicable {
     public static final EnumProperty<WarframeHorizontalSlabPosition> HALF =
             EnumProperty.create("half", WarframeHorizontalSlabPosition.class);
     public static final EnumProperty<WarframeCompassPosition> POSITION =
             EnumProperty.create("position", WarframeCompassPosition.class);
-    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     protected static final VoxelShape NORTHEAST_TOP = Block.box(8.0D, 8.0D, 0.0D, 16.0D, 16.0D, 8.0D);
     protected static final VoxelShape NORTHEAST_BOTTOM = Block.box(8.0D, 0.0D, 0.0D, 16.0D, 8.0D, 8.0D);
@@ -68,8 +62,7 @@ public class WarframeQuarterSlabBlock extends Block implements SimpleWaterlogged
         super(pProperties);
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(HALF, WarframeHorizontalSlabPosition.BOTTOM)
-                .setValue(POSITION, WarframeCompassPosition.NORTHEAST)
-                .setValue(WATERLOGGED, Boolean.valueOf(false)));
+                .setValue(POSITION, WarframeCompassPosition.NORTHEAST));
     }
 
     @Override
@@ -106,8 +99,7 @@ public class WarframeQuarterSlabBlock extends Block implements SimpleWaterlogged
         double relY = hit.y - (double) blockpos.getY();
         double relZ = hit.z - (double) blockpos.getZ();
 
-        FluidState fluidstate = pContext.getLevel().getFluidState(blockpos);
-        boolean waterlogged = fluidstate.getType() == Fluids.WATER;
+
 
         WarframeHorizontalSlabPosition half;
         WarframeCompassPosition position;
@@ -161,19 +153,15 @@ public class WarframeQuarterSlabBlock extends Block implements SimpleWaterlogged
 
         return this.defaultBlockState()
                 .setValue(HALF, half)
-                .setValue(POSITION, position)
-                .setValue(WATERLOGGED, Boolean.valueOf(waterlogged));
+                .setValue(POSITION, position);
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(HALF, POSITION, WATERLOGGED);
+        pBuilder.add(HALF, POSITION);
     }
 
-    @Override
-    public FluidState getFluidState(BlockState pState) {
-        return pState.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(pState);
-    }
+
 
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer,

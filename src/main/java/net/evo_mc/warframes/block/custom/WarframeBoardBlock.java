@@ -16,15 +16,12 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.PipeBlock;
 import net.minecraft.world.level.block.RenderShape;
-import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -34,14 +31,14 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import javax.annotation.Nullable;
 import java.util.Map;
 
-public class WarframeBoardBlock extends Block implements WarframeMultiMimicable, SimpleWaterloggedBlock {
+public class WarframeBoardBlock extends Block implements WarframeMultiMimicable {
     public static final BooleanProperty DOWN = BlockStateProperties.DOWN;
     public static final BooleanProperty UP = BlockStateProperties.UP;
     public static final BooleanProperty NORTH = BlockStateProperties.NORTH;
     public static final BooleanProperty SOUTH = BlockStateProperties.SOUTH;
     public static final BooleanProperty WEST = BlockStateProperties.WEST;
     public static final BooleanProperty EAST = BlockStateProperties.EAST;
-    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+
 
     protected static final VoxelShape DOWN_SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 1.0D, 16.0D);
     protected static final VoxelShape UP_SHAPE = Block.box(0.0D, 15.0D, 0.0D, 16.0D, 16.0D, 16.0D);
@@ -60,8 +57,7 @@ public class WarframeBoardBlock extends Block implements WarframeMultiMimicable,
                 .setValue(NORTH, false)
                 .setValue(SOUTH, false)
                 .setValue(WEST, false)
-                .setValue(EAST, false)
-                .setValue(WATERLOGGED, false));
+                .setValue(EAST, false));
         this.shapesCache = this.getShapeForEachState(WarframeBoardBlock::calculateShape);
     }
 
@@ -116,7 +112,7 @@ public class WarframeBoardBlock extends Block implements WarframeMultiMimicable,
         BlockState existing = level.getBlockState(pos);
         BlockState base = existing.is(this)
                 ? existing
-                : this.defaultBlockState().setValue(WATERLOGGED, level.getFluidState(pos).getType() == Fluids.WATER);
+                : this.defaultBlockState();
 
         Direction preferred = pContext.getClickedFace().getOpposite();
         if (!hasFace(base, preferred)) {
@@ -144,20 +140,14 @@ public class WarframeBoardBlock extends Block implements WarframeMultiMimicable,
     @Override
     public BlockState updateShape(BlockState pState, Direction pDirection, BlockState pNeighborState,
                                   LevelAccessor pLevel, BlockPos pPos, BlockPos pNeighborPos) {
-        if (pState.getValue(WATERLOGGED)) {
-            pLevel.scheduleTick(pPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
-        }
         return pState;
     }
 
-    @Override
-    public FluidState getFluidState(BlockState pState) {
-        return pState.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(pState);
-    }
+
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(DOWN, UP, NORTH, SOUTH, WEST, EAST, WATERLOGGED);
+        pBuilder.add(DOWN, UP, NORTH, SOUTH, WEST, EAST);
     }
 
     @Nullable

@@ -19,18 +19,14 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RenderShape;
-import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -42,7 +38,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Map;
 
-public class WarframeHalfLayerBlock extends Block implements WarframeMultiMimicable, WarframeLayered, SimpleWaterloggedBlock {
+public class WarframeHalfLayerBlock extends Block implements WarframeMultiMimicable, WarframeLayered {
     public static final int MAX_LAYERS = 8;
     public static final int NEGATIVE_HALF = 0;
     public static final int POSITIVE_HALF = 1;
@@ -51,7 +47,7 @@ public class WarframeHalfLayerBlock extends Block implements WarframeMultiMimica
     public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.AXIS;
     public static final IntegerProperty NEGATIVE_LAYERS = IntegerProperty.create("negative_layers", 0, MAX_LAYERS);
     public static final IntegerProperty POSITIVE_LAYERS = IntegerProperty.create("positive_layers", 0, MAX_LAYERS);
-    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+
 
     private final Map<BlockState, VoxelShape> shapesCache;
 
@@ -61,8 +57,7 @@ public class WarframeHalfLayerBlock extends Block implements WarframeMultiMimica
                 .setValue(FACING, Direction.UP)
                 .setValue(AXIS, Direction.Axis.X)
                 .setValue(NEGATIVE_LAYERS, 0)
-                .setValue(POSITIVE_LAYERS, 0)
-                .setValue(WATERLOGGED, false));
+                .setValue(POSITIVE_LAYERS, 0));
         this.shapesCache = this.getShapeForEachState(WarframeHalfLayerBlock::calculateShape);
     }
 
@@ -206,8 +201,7 @@ public class WarframeHalfLayerBlock extends Block implements WarframeMultiMimica
             return this.defaultBlockState()
                     .setValue(FACING, face)
                     .setValue(AXIS, half.getAxis())
-                    .setValue(getLayersProperty(getHalfIndex(half)), 1)
-                    .setValue(WATERLOGGED, level.getFluidState(pos).getType() == Fluids.WATER);
+                    .setValue(getLayersProperty(getHalfIndex(half)), 1);
         }
 
         if (pContext.replacingClickedOnBlock()) {
@@ -241,20 +235,14 @@ public class WarframeHalfLayerBlock extends Block implements WarframeMultiMimica
     @Override
     public BlockState updateShape(BlockState pState, Direction pDirection, BlockState pNeighborState,
                                   LevelAccessor pLevel, BlockPos pPos, BlockPos pNeighborPos) {
-        if (pState.getValue(WATERLOGGED)) {
-            pLevel.scheduleTick(pPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
-        }
         return pState;
     }
 
-    @Override
-    public FluidState getFluidState(BlockState pState) {
-        return pState.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(pState);
-    }
+
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(FACING, AXIS, NEGATIVE_LAYERS, POSITIVE_LAYERS, WATERLOGGED);
+        pBuilder.add(FACING, AXIS, NEGATIVE_LAYERS, POSITIVE_LAYERS);
     }
 
     @Nullable

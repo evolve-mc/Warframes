@@ -95,6 +95,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.AIRFRAME_RAM_SCOOP_RADIATOR_SLAB.get());
                         pOutput.accept(ModBlocks.AIRFRAME_COVERED_AUTOCANNON_BARREL.get());
                         pOutput.accept(ModBlocks.AIRFRAME_COVERED_ROTARY_AUTOCANNON_BARREL.get());
+                        pOutput.accept(ModBlocks.AIRFRAME_BOMB_BAY_DOOR.get());
 
                         //Heavyframe Standard Blocks
                         pOutput.accept(ModBlocks.HEAVYFRAME_BLOCK.get());

@@ -12,15 +12,10 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RenderShape;
-import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
-import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -32,10 +27,9 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
-public class WarframeVerticalHalfSlabStabilizerBlock extends Block implements SimpleWaterloggedBlock, WarframeMimicable {
+public class WarframeVerticalHalfSlabStabilizerBlock extends Block implements WarframeMimicable {
     public static final EnumProperty<WarframeEdgePosition> FACING =
             EnumProperty.create("facing", WarframeEdgePosition.class);
-    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     protected static final VoxelShape NORTH_AABB = Block.box(4.0D, 0.0D, 0.0D, 12.0D, 16.0D, 8.0D);
     protected static final VoxelShape SOUTH_AABB = Block.box(4.0D, 0.0D, 8.0D, 12.0D, 16.0D, 16.0D);
@@ -50,8 +44,7 @@ public class WarframeVerticalHalfSlabStabilizerBlock extends Block implements Si
     public WarframeVerticalHalfSlabStabilizerBlock(BlockBehaviour.Properties pProperties) {
         super(pProperties);
         this.registerDefaultState(this.stateDefinition.any()
-                .setValue(FACING, WarframeEdgePosition.NORTH)
-                .setValue(WATERLOGGED, Boolean.valueOf(false)));
+                .setValue(FACING, WarframeEdgePosition.NORTH));
     }
 
     @Override
@@ -77,8 +70,6 @@ public class WarframeVerticalHalfSlabStabilizerBlock extends Block implements Si
         double relX = hit.x - (double) blockpos.getX();
         double relZ = hit.z - (double) blockpos.getZ();
 
-        FluidState fluidstate = pContext.getLevel().getFluidState(blockpos);
-        boolean waterlogged = fluidstate.getType() == Fluids.WATER;
 
         WarframeEdgePosition facing;
         if (clickedFace == Direction.SOUTH) {
@@ -110,19 +101,14 @@ public class WarframeVerticalHalfSlabStabilizerBlock extends Block implements Si
         }
 
         return this.defaultBlockState()
-                .setValue(FACING, facing)
-                .setValue(WATERLOGGED, Boolean.valueOf(waterlogged));
+                .setValue(FACING, facing);
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(FACING, WATERLOGGED);
+        pBuilder.add(FACING);
     }
 
-    @Override
-    public FluidState getFluidState(BlockState pState) {
-        return pState.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(pState);
-    }
 
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer,

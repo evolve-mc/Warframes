@@ -16,20 +16,14 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.RenderShape;
-import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
-import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
@@ -41,14 +35,13 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Map;
 
-public class WarframeVerticalSteppedSlabStabilizerBlock extends Block implements SimpleWaterloggedBlock, WarframeMimicable {
+public class WarframeVerticalSteppedSlabStabilizerBlock extends Block implements WarframeMimicable {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     public static final EnumProperty<WarframeVerticalSlabPosition> AEROFOIL =
             EnumProperty.create("aerofoil", WarframeVerticalSlabPosition.class);
     public static final EnumProperty<WarframeHorizontalSlabPosition> STEP =
             EnumProperty.create("step", WarframeHorizontalSlabPosition.class,
                     WarframeHorizontalSlabPosition.BOTTOM, WarframeHorizontalSlabPosition.TOP);
-    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     private final Map<BlockState, VoxelShape> shapesCache;
 
@@ -57,8 +50,7 @@ public class WarframeVerticalSteppedSlabStabilizerBlock extends Block implements
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(FACING, Direction.NORTH)
                 .setValue(AEROFOIL, WarframeVerticalSlabPosition.CENTER)
-                .setValue(STEP, WarframeHorizontalSlabPosition.BOTTOM)
-                .setValue(WATERLOGGED, Boolean.valueOf(false)));
+                .setValue(STEP, WarframeHorizontalSlabPosition.BOTTOM));
         this.shapesCache = this.getShapeForEachState(WarframeVerticalSteppedSlabStabilizerBlock::calculateShape);
     }
 
@@ -112,7 +104,7 @@ public class WarframeVerticalSteppedSlabStabilizerBlock extends Block implements
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(FACING, AEROFOIL, STEP, WATERLOGGED);
+        pBuilder.add(FACING, AEROFOIL, STEP);
     }
 
     @Nullable
@@ -147,26 +139,12 @@ public class WarframeVerticalSteppedSlabStabilizerBlock extends Block implements
 
         WarframeHorizontalSlabPosition step = relY < 0.5D ? WarframeHorizontalSlabPosition.BOTTOM : WarframeHorizontalSlabPosition.TOP;
 
-        FluidState fluidstate = pContext.getLevel().getFluidState(blockpos);
         return this.defaultBlockState()
                 .setValue(FACING, facing)
                 .setValue(AEROFOIL, aerofoil)
-                .setValue(STEP, step)
-                .setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
+                .setValue(STEP, step);
     }
 
-    @Override
-    public FluidState getFluidState(BlockState pState) {
-        return pState.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(pState);
-    }
-
-    @Override
-    public BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos) {
-        if (pState.getValue(WATERLOGGED)) {
-            pLevel.scheduleTick(pCurrentPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
-        }
-        return super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
-    }
 
     @Override
     public boolean isPathfindable(BlockState pState, BlockGetter pLevel, BlockPos pPos, PathComputationType pType) {

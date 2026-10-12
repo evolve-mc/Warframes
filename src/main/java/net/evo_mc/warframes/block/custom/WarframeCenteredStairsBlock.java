@@ -10,18 +10,12 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RenderShape;
-import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
-import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -30,11 +24,11 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
 
-public class WarframeCenteredStairsBlock extends Block implements SimpleWaterloggedBlock, WarframeMimicable {
+public class WarframeCenteredStairsBlock extends Block implements WarframeMimicable {
 
     public static final EnumProperty<WarframeCenteredStairPosition> POSITION =
             EnumProperty.create("position", WarframeCenteredStairPosition.class);
-    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+
 
     protected static final VoxelShape DOWN_BASE = Block.box(0, 0, 0, 16, 8, 16);
     protected static final VoxelShape UP_BASE = Block.box(0, 8, 0, 16, 16, 16);
@@ -72,8 +66,7 @@ public class WarframeCenteredStairsBlock extends Block implements SimpleWaterlog
     public WarframeCenteredStairsBlock(BlockBehaviour.Properties pProperties) {
         super(pProperties);
         this.registerDefaultState(this.stateDefinition.any()
-                .setValue(POSITION, WarframeCenteredStairPosition.DOWN_X)
-                .setValue(WATERLOGGED, Boolean.valueOf(false)));
+                .setValue(POSITION, WarframeCenteredStairPosition.DOWN_X));
     }
 
     @Override
@@ -124,10 +117,10 @@ public class WarframeCenteredStairsBlock extends Block implements SimpleWaterlog
             axis = isVerticalWedge ? Direction.Axis.Y : Direction.Axis.X;
         }
 
-        FluidState fluidstate = pContext.getLevel().getFluidState(pContext.getClickedPos());
+
         return this.defaultBlockState()
-                .setValue(POSITION, toPosition(side, axis))
-                .setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
+                .setValue(POSITION, toPosition(side, axis));
+
     }
 
     private static WarframeCenteredStairPosition toPosition(Direction side, Direction.Axis axis) {
@@ -141,23 +134,14 @@ public class WarframeCenteredStairsBlock extends Block implements SimpleWaterlog
         };
     }
 
-    @Override
-    public BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos) {
-        if (pState.getValue(WATERLOGGED)) {
-            pLevel.scheduleTick(pCurrentPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
-        }
-        return super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
-    }
+
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(POSITION, WATERLOGGED);
+        pBuilder.add(POSITION);
     }
 
-    @Override
-    public FluidState getFluidState(BlockState pState) {
-        return pState.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(pState);
-    }
+
 
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer,

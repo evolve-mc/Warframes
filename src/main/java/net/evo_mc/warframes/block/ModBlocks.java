@@ -45,33 +45,33 @@ public class ModBlocks {
     public static final RegistryObject<Block> AIRFRAME_SLAB_WING = registerBlock("airframe_slab_wing",
             () -> new WarframeSlabWingBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.ANVIL).noOcclusion().strength(1.0f)));
     public static final RegistryObject<Block> AIRFRAME_LAYER = registerBlock("airframe_layer",
-            () -> new WarframeLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f)));
+            () -> new WarframeLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f).forceSolidOn()));
     public static final RegistryObject<Block> AIRFRAME_STAIRS = registerBlock("airframe_stairs",
             () -> new WarframeStairsBlock(() -> AIRFRAME_BLOCK.get().defaultBlockState(),BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f)));
     public static final RegistryObject<Block> AIRFRAME_HALF_SLAB = registerBlock("airframe_half_slab",
-            () -> new WarframeHalfSlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f)));
+            () -> new WarframeHalfSlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f).forceSolidOn()));
     public static final RegistryObject<Block> AIRFRAME_QUARTER_SLAB = registerBlock("airframe_quarter_slab",
-            () -> new WarframeQuarterSlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f)));
+            () -> new WarframeQuarterSlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f).forceSolidOn()));
     public static final RegistryObject<Block> AIRFRAME_CENTERED_LAYER = registerBlock("airframe_centered_layer",
-            () -> new WarframeCenteredLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f)));
+            () -> new WarframeCenteredLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f).forceSolidOn()));
     public static final RegistryObject<Block> AIRFRAME_EDGE_STRIP_LAYER = registerBlock("airframe_edge_strip_layer",
-            () -> new WarframeEdgeStripLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f)));
+            () -> new WarframeEdgeStripLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f).forceSolidOn()));
     public static final RegistryObject<Block> AIRFRAME_CORE_STRIP_LAYER = registerBlock("airframe_core_strip_layer",
-            () -> new WarframeCoreStripLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f)));
+            () -> new WarframeCoreStripLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f).forceSolidOn()));
     public static final RegistryObject<Block> AIRFRAME_SLAB_STABILIZER = registerBlock("airframe_slab_stabilizer",
             () -> new WarframeSlabStabilizerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.ANVIL).noOcclusion().strength(1.0f)));
     public static final RegistryObject<Block> AIRFRAME_VERTICAL_SLAB_STABILIZER = registerBlock("airframe_vertical_slab_stabilizer",
             () -> new WarframeVerticalSlabStabilizerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.ANVIL).noOcclusion().strength(1.0f)));
     public static final RegistryObject<Block> AIRFRAME_HALF_SLAB_WING = registerBlock("airframe_half_slab_wing",
-            () -> new WarframeHalfSlabWingBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.ANVIL).noOcclusion().strength(1.0f)));
+            () -> new WarframeHalfSlabWingBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.ANVIL).noOcclusion().strength(1.0f).forceSolidOn()));
     public static final RegistryObject<Block> AIRFRAME_HALF_SLAB_STABILIZER = registerBlock("airframe_half_slab_stabilizer",
-            () -> new WarframeHalfSlabStabilizerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.ANVIL).noOcclusion().strength(1.0f)));
+            () -> new WarframeHalfSlabStabilizerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.ANVIL).noOcclusion().strength(1.0f).forceSolidOn()));
     public static final RegistryObject<Block> AIRFRAME_VERTICAL_HALF_SLAB_STABILIZER = registerBlock("airframe_vertical_half_slab_stabilizer",
-            () -> new WarframeVerticalHalfSlabStabilizerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.ANVIL).noOcclusion().strength(1.0f)));
+            () -> new WarframeVerticalHalfSlabStabilizerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.ANVIL).noOcclusion().strength(1.0f).forceSolidOn()));
     public static final RegistryObject<Block> AIRFRAME_CENTERED_STAIRS = registerBlock("airframe_centered_stairs",
             () -> new WarframeCenteredStairsBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f)));
     public static final RegistryObject<Block> AIRFRAME_POINT_LAYER = registerBlock("airframe_point_layer",
-            () -> new WarframePointLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f)));
+            () -> new WarframePointLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f).forceSolidOn()));
     public static final RegistryObject<Block> AIRFRAME_HALF_STAIRS = registerBlock("airframe_half_stairs",
             () -> new WarframeHalfStairBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f)));
     public static final RegistryObject<Block> AIRFRAME_DOOR = registerBlock("airframe_door",
@@ -81,9 +81,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> AIRFRAME_LADDER = registerBlock("airframe_ladder",
             () -> new WarframeLadderBlock(BlockBehaviour.Properties.copy(Blocks.LADDER).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f)));
     public static final RegistryObject<Block> AIRFRAME_BUTTON = registerBlock("airframe_button",
-            () -> new WarframeButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f),WARFRAME_IRON_SOUND, 20, false));
+            () -> new WarframeButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f).forceSolidOn(),WARFRAME_IRON_SOUND, 20, false));
     public static final RegistryObject<Block> AIRFRAME_LEVER = registerBlock("airframe_lever",
-            () -> new WarframeLeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f)));
+            () -> new WarframeLeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f).forceSolidOn()));
     public static final RegistryObject<Block> AIRFRAME_CHEST = registerBlock("airframe_chest",
             () -> new WarframeChestBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f)));
     public static final RegistryObject<Block> AIRFRAME_CONTROL_SURFACE = registerBlock("airframe_control_surface",
@@ -91,19 +91,19 @@ public class ModBlocks {
     public static final RegistryObject<Block> AIRFRAME_VERTICAL_CONTROL_SURFACE = registerBlock("airframe_vertical_control_surface",
             () -> new WarframeVerticalControlSurfaceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.ANVIL).noOcclusion().strength(4.0f)));
     public static final RegistryObject<Block> AIRFRAME_SLAB_STABILIZER_LAYER = registerBlock("airframe_slab_stabilizer_layer",
-            () -> new WarframeSlabStabilizerLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.ANVIL).noOcclusion().strength(1.0f)));
+            () -> new WarframeSlabStabilizerLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.ANVIL).noOcclusion().strength(1.0f).forceSolidOn()));
     public static final RegistryObject<Block> AIRFRAME_SLAB_WING_LAYER = registerBlock("airframe_slab_wing_layer",
-            () -> new WarframeSlabWingLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.ANVIL).noOcclusion().strength(1.0f)));
+            () -> new WarframeSlabWingLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.ANVIL).noOcclusion().strength(1.0f).forceSolidOn()));
     public static final RegistryObject<Block> AIRFRAME_VERTICAL_SLAB_STABILIZER_LAYER = registerBlock("airframe_vertical_slab_stabilizer_layer",
-            () -> new WarframeVerticalSlabStabilizerLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.ANVIL).noOcclusion().strength(1.0f)));
+            () -> new WarframeVerticalSlabStabilizerLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.ANVIL).noOcclusion().strength(1.0f).forceSolidOn()));
     public static final RegistryObject<Block> AIRFRAME_STEPPED_CONTROL_SURFACE = registerBlock("airframe_stepped_control_surface",
             () -> new WarframeSteppedControlSurfaceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.ANVIL).noOcclusion().strength(4.0f)));
     public static final RegistryObject<Block> AIRFRAME_HALF_CONTROL_SURFACE = registerBlock("airframe_half_control_surface",
-            () -> new WarframeHalfControlSurfaceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.ANVIL).noOcclusion().strength(4.0f)));
+            () -> new WarframeHalfControlSurfaceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.ANVIL).noOcclusion().strength(4.0f).forceSolidOn()));
     public static final RegistryObject<Block> AIRFRAME_VERTICAL_STEPPED_CONTROL_SURFACE = registerBlock("airframe_vertical_stepped_control_surface",
             () -> new WarframeVerticalSteppedControlSurfaceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.ANVIL).noOcclusion().strength(4.0f)));
     public static final RegistryObject<Block> AIRFRAME_VERTICAL_HALF_CONTROL_SURFACE = registerBlock("airframe_vertical_half_control_surface",
-            () -> new WarframeVerticalHalfControlSurfaceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.ANVIL).noOcclusion().strength(4.0f)));
+            () -> new WarframeVerticalHalfControlSurfaceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.ANVIL).noOcclusion().strength(4.0f).forceSolidOn()));
     public static final RegistryObject<Block> AIRFRAME_HORIZONTAL_AIR_BRAKE = registerBlock("airframe_horizontal_air_brake",
             () -> new WarframeHorizontalAirBrakeBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.ANVIL).noOcclusion().strength(4.0f)));
     public static final RegistryObject<Block> AIRFRAME_VERTICAL_AIR_BRAKE = registerBlock("airframe_vertical_air_brake",
@@ -115,13 +115,13 @@ public class ModBlocks {
     public static final RegistryObject<Block> AIRFRAME_STEPPED_PYRAMID = registerBlock("airframe_stepped_pyramid",
             () -> new WarframeSteppedPyramidBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f)));
     public static final RegistryObject<Block> AIRFRAME_BOARD = registerBlock("airframe_board",
-            () -> new WarframeBoardBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f)));
+            () -> new WarframeBoardBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f).forceSolidOn()));
     public static final RegistryObject<Block> AIRFRAME_HALF_LAYER = registerBlock("airframe_half_layer",
-            () -> new WarframeHalfLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f)));
+            () -> new WarframeHalfLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f).forceSolidOn()));
     public static final RegistryObject<Block> AIRFRAME_HALF_PANEL = registerBlock("airframe_half_panel",
-            () -> new WarframeHalfPanelBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f)));
+            () -> new WarframeHalfPanelBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f).forceSolidOn()));
     public static final RegistryObject<Block> AIRFRAME_SIDE_STRIP_LAYER = registerBlock("airframe_side_strip_layer",
-            () -> new WarframeSideStripLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f)));
+            () -> new WarframeSideStripLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f).forceSolidOn()));
     public static final RegistryObject<Block> AIRFRAME_STEPPED_SLAB_WING = registerBlock("airframe_stepped_slab_wing",
             () -> new WarframeSteppedSlabWingBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.ANVIL).noOcclusion().strength(1.0f)));
     public static final RegistryObject<Block> AIRFRAME_STEPPED_SLAB_STABILIZER = registerBlock("airframe_stepped_slab_stabilizer",
@@ -156,7 +156,8 @@ public class ModBlocks {
             () -> new WarframeAirIntakeBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f)));
     public static final RegistryObject<Block> AIRFRAME_COMPRESSOR_INTAKE_COWL = registerBlock("airframe_compressor_intake_cowl",
             () -> new WarframeCompressorIntakeCowlBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(4.0f)));
-
+    public static final RegistryObject<Block> AIRFRAME_BOMB_BAY_DOOR = registerBlock("airframe_bomb_bay_door",
+            () -> new WarframeBombBayDoorBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.ANVIL).noOcclusion().strength(4.0f)));
 
 
     public static final RegistryObject<Block> HEAVYFRAME_BLOCK = registerBlock("heavyframe_block",
@@ -164,9 +165,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> HEAVYFRAME_SLAB = registerBlock("heavyframe_slab",
             () -> new WarframeSlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f)));
     public static final RegistryObject<Block> HEAVYFRAME_HALF_SLAB = registerBlock("heavyframe_half_slab",
-            () -> new WarframeHalfSlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f)));
+            () -> new WarframeHalfSlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f).forceSolidOn()));
     public static final RegistryObject<Block> HEAVYFRAME_QUARTER_SLAB = registerBlock("heavyframe_quarter_slab",
-            () -> new WarframeQuarterSlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f)));
+            () -> new WarframeQuarterSlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f).forceSolidOn()));
     public static final RegistryObject<Block> HEAVYFRAME_STAIRS = registerBlock("heavyframe_stairs",
             () -> new WarframeStairsBlock(() -> HEAVYFRAME_BLOCK.get().defaultBlockState(),BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f)));
     public static final RegistryObject<Block> HEAVYFRAME_HALF_STAIRS = registerBlock("heavyframe_half_stairs",
@@ -174,9 +175,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> HEAVYFRAME_PANEL = registerBlock("heavyframe_panel",
             () -> new WarframePanelBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f)));
     public static final RegistryObject<Block> HEAVYFRAME_HALF_PANEL = registerBlock("heavyframe_half_panel",
-            () -> new WarframeHalfPanelBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f)));
+            () -> new WarframeHalfPanelBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f).forceSolidOn()));
     public static final RegistryObject<Block> HEAVYFRAME_BOARD = registerBlock("heavyframe_board",
-            () -> new WarframeBoardBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f)));
+            () -> new WarframeBoardBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f).forceSolidOn()));
     public static final RegistryObject<Block> HEAVYFRAME_CENTERED_STAIRS = registerBlock("heavyframe_centered_stairs",
             () -> new WarframeCenteredStairsBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f)));
     public static final RegistryObject<Block> HEAVYFRAME_STEPPED_PYRAMID = registerBlock("heavyframe_stepped_pyramid",
@@ -184,19 +185,19 @@ public class ModBlocks {
     public static final RegistryObject<Block> HEAVYFRAME_NOSE_CONE = registerBlock("heavyframe_nose_cone",
             () -> new WarframeNoseConeBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f)));
     public static final RegistryObject<Block> HEAVYFRAME_LAYER = registerBlock("heavyframe_layer",
-            () -> new WarframeLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f)));
+            () -> new WarframeLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f).forceSolidOn()));
     public static final RegistryObject<Block> HEAVYFRAME_CENTERED_LAYER = registerBlock("heavyframe_centered_layer",
-            () -> new WarframeCenteredLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f)));
+            () -> new WarframeCenteredLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f).forceSolidOn()));
     public static final RegistryObject<Block> HEAVYFRAME_HALF_LAYER = registerBlock("heavyframe_half_layer",
-            () -> new WarframeHalfLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f)));
+            () -> new WarframeHalfLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f).forceSolidOn()));
     public static final RegistryObject<Block> HEAVYFRAME_EDGE_STRIP_LAYER = registerBlock("heavyframe_edge_strip_layer",
-            () -> new WarframeEdgeStripLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f)));
+            () -> new WarframeEdgeStripLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f).forceSolidOn()));
     public static final RegistryObject<Block> HEAVYFRAME_SIDE_STRIP_LAYER = registerBlock("heavyframe_side_strip_layer",
-            () -> new WarframeSideStripLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f)));
+            () -> new WarframeSideStripLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f).forceSolidOn()));
     public static final RegistryObject<Block> HEAVYFRAME_CORE_STRIP_LAYER = registerBlock("heavyframe_core_strip_layer",
-            () -> new WarframeCoreStripLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f)));
+            () -> new WarframeCoreStripLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f).forceSolidOn()));
     public static final RegistryObject<Block> HEAVYFRAME_POINT_LAYER = registerBlock("heavyframe_point_layer",
-            () -> new WarframePointLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f)));
+            () -> new WarframePointLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f).forceSolidOn()));
     public static final RegistryObject<Block> HEAVYFRAME_TRAPDOOR = registerBlock("heavyframe_trapdoor",
             () -> new WarframeTrapdoorBlock(WARFRAME_IRON_SOUND,BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f)));
     public static final RegistryObject<Block> HEAVYFRAME_DOOR = registerBlock("heavyframe_door",
@@ -206,9 +207,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> HEAVYFRAME_LADDER = registerBlock("heavyframe_ladder",
             () -> new WarframeLadderBlock(BlockBehaviour.Properties.copy(Blocks.LADDER).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f)));
     public static final RegistryObject<Block> HEAVYFRAME_BUTTON = registerBlock("heavyframe_button",
-            () -> new WarframeButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f),WARFRAME_IRON_SOUND, 20, false));
+            () -> new WarframeButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f).forceSolidOn(),WARFRAME_IRON_SOUND, 20, false));
     public static final RegistryObject<Block> HEAVYFRAME_LEVER = registerBlock("heavyframe_lever",
-            () -> new WarframeLeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f)));
+            () -> new WarframeLeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f).forceSolidOn()));
     public static final RegistryObject<Block> HEAVYFRAME_CHEST = registerBlock("heavyframe_chest",
             () -> new WarframeChestBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERITE_BLOCK).noOcclusion().strength(15.0f)));
     public static final RegistryObject<Block> HEAVYFRAME_COVERED_AUTOCANNON_BARREL = registerBlock("heavyframe_covered_autocannon_barrel",

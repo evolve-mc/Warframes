@@ -17,16 +17,11 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RenderShape;
-import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
-import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -35,11 +30,11 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class WarframeHalfSlabWingBlock extends Block implements SimpleWaterloggedBlock, WarframeMimicable {
+public class WarframeHalfSlabWingBlock extends Block implements WarframeMimicable {
     public static final DirectionProperty FACING = DirectionProperty.create("orientation", Direction.Plane.HORIZONTAL);
     public static final EnumProperty<WarframeHorizontalSlabPosition> TYPE =
             EnumProperty.create("type", WarframeHorizontalSlabPosition.class);
-    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+
 
     protected static final VoxelShape NORTH_TOP = Block.box(0.0D, 8.0D, 0.0D, 16.0D, 16.0D, 8.0D);
     protected static final VoxelShape NORTH_BOTTOM = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 8.0D);
@@ -58,8 +53,7 @@ public class WarframeHalfSlabWingBlock extends Block implements SimpleWaterlogge
         super(pProperties);
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(FACING, Direction.NORTH)
-                .setValue(TYPE, WarframeHorizontalSlabPosition.BOTTOM)
-                .setValue(WATERLOGGED, Boolean.valueOf(false)));
+                .setValue(TYPE, WarframeHorizontalSlabPosition.BOTTOM));
     }
 
     @Override
@@ -85,8 +79,6 @@ public class WarframeHalfSlabWingBlock extends Block implements SimpleWaterlogge
         Vec3 hit = pContext.getClickLocation();
         double relY = hit.y - (double) blockpos.getY();
 
-        FluidState fluidstate = pContext.getLevel().getFluidState(blockpos);
-        boolean waterlogged = fluidstate.getType() == Fluids.WATER;
 
         Direction facing = pContext.getHorizontalDirection();
         WarframeHorizontalSlabPosition type;
@@ -100,19 +92,15 @@ public class WarframeHalfSlabWingBlock extends Block implements SimpleWaterlogge
 
         return this.defaultBlockState()
                 .setValue(FACING, facing)
-                .setValue(TYPE, type)
-                .setValue(WATERLOGGED, Boolean.valueOf(waterlogged));
+                .setValue(TYPE, type);
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(FACING, TYPE, WATERLOGGED);
+        pBuilder.add(FACING, TYPE);
     }
 
-    @Override
-    public FluidState getFluidState(BlockState pState) {
-        return pState.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(pState);
-    }
+
 
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer,

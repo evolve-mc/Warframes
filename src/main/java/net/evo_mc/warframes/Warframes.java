@@ -289,6 +289,7 @@ public class Warframes {
             event.registerBlockEntityRenderer(ModBlockEntities.WARFRAME_VERTICAL_CONTROL_SURFACE.get(), WarframeVerticalControlSurfaceRenderer::new);
             event.registerBlockEntityRenderer(ModBlockEntities.WARFRAME_HORIZONTAL_AIR_BRAKE.get(), WarframeHorizontalAirBrakeRenderer::new);
             event.registerBlockEntityRenderer(ModBlockEntities.WARFRAME_VERTICAL_AIR_BRAKE.get(), WarframeVerticalAirBrakeRenderer::new);
+            event.registerBlockEntityRenderer(ModBlockEntities.WARFRAME_BOMB_BAY_DOOR.get(), WarframeBombBayDoorRenderer::new);
         }
 
 

@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "warframes:airframe_ladder",
-    "warframes:heavyframe_ladder"
+    "warframes:heavyframe_ladder",
+    "warframes:airframe_trapdoor"
   ]
 }
