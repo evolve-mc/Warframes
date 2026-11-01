@@ -150,6 +150,11 @@ public class WarframeSlabWingBlock extends Block implements WarframeMimicable {
     public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, @Nullable LivingEntity pPlacer, ItemStack pStack) {
         super.setPlacedBy(pLevel, pPos, pState, pPlacer, pStack);
         mimicSetPlacedBy(pLevel, pPos, pState, pPlacer, pStack);
+    }
+
+    @Override
+    public void onPlace(BlockState pState, Level pLevel, BlockPos pPos, BlockState pOldState, boolean pIsMoving) {
+        super.onPlace(pState, pLevel, pPos, pOldState, pIsMoving);
         if (!pLevel.isClientSide()) {
             pLevel.scheduleTick(pPos, this, 1);
         }

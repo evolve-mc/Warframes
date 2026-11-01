@@ -4,6 +4,8 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
@@ -128,6 +130,24 @@ public class WarframeHalfSlabStabilizerBlock extends Block implements WarframeMi
     public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, @Nullable LivingEntity pPlacer, ItemStack pStack) {
         super.setPlacedBy(pLevel, pPos, pState, pPlacer, pStack);
         mimicSetPlacedBy(pLevel, pPos, pState, pPlacer, pStack);
+    }
+
+    @Override
+    public void onPlace(BlockState pState, Level pLevel, BlockPos pPos, BlockState pOldState, boolean pIsMoving) {
+        super.onPlace(pState, pLevel, pPos, pOldState, pIsMoving);
+        if (!pLevel.isClientSide()) {
+            pLevel.scheduleTick(pPos, this, 1);
+        }
+    }
+
+    @Override
+    public void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
+        super.tick(pState, pLevel, pPos, pRandom);
+        if (net.minecraftforge.fml.ModList.get().isLoaded("valkyrien_warium")) {
+            net.mcreator.valkyrienwarium.procedures.HorizontalStabilizerScriptProcedure.execute(
+                    pLevel, pPos.getX(), pPos.getY(), pPos.getZ(), pState);
+        }
+        pLevel.scheduleTick(pPos, this, 1);
     }
 
     @Override
