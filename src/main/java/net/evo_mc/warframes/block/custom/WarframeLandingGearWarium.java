@@ -59,7 +59,7 @@ public final class WarframeLandingGearWarium {
 
     public static void brake(ServerLevel level, BlockPos wheelPos, BlockState wheelState, BlockPos nodePos) {
         BlockEntity node = getNode(level, nodePos);
-        if (node == null || node.getPersistentData().getDouble("Throttle") >= 0.0 || !init()) {
+        if (node == null || node.getPersistentData().getDouble("Brakes") <= 0.0 || !init()) {
             return;
         }
         try {

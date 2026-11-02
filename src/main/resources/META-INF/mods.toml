@@ -74,14 +74,14 @@ description='''${mod_description}'''
 [[dependencies.warframes]]
 modId="crusty_chunks"
 mandatory=false
-versionRange="[1.0.0,)"
+versionRange="[1.3.10,)"
 ordering="AFTER"
 side="BOTH"
 
 [[dependencies.warframes]]
 modId="valkyrien_warium"
 mandatory=false
-versionRange="[1.0.0,)"
+versionRange="[1.1.7,)"
 ordering="AFTER"
 side="BOTH"
 

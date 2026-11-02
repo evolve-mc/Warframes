@@ -104,7 +104,7 @@
   "tooltip.warframes.size_physics": "Changing the size does not affect physics",
   "tooltip.warframes.layer": "Click with the same block to add a layer. Shift+Left Click with the Warframes Wrench to remove a layer",
   "tooltip.warframes.ram_scoop": "Cools ship based on directional speed (doesn't work when blocked)",
-  "tooltip.warframes.bomb_bay_door_hint": "Opens on redstone, a linked trigger, or when bombs above it drop",
+  "tooltip.warframes.bomb_bay_door_hint": "Can be activated with redstone or by linking to a control nodee",
 
   "creativetab.warframes_tab": "Warframes"
 }
